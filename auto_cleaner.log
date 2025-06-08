@@ -1,0 +1,108 @@
+2025-06-08 12:32:12,985 - INFO - Loading dataset from yourdataset.csv
+2025-06-08 12:32:33,669 - INFO - Loading dataset from xx.csv
+2025-06-08 12:32:33,790 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "maincat.py", line 128, in main
+    df = cleaner.auto_clean(col)
+  File "C:\sambhranta\projects\python package\categoricaldata.py", line 31, in auto_clean
+    self._detect_patterns(column)
+  File "C:\sambhranta\projects\python package\categoricaldata.py", line 59, in _detect_patterns
+    'typo_candidates': self._find_typo_candidates(column),
+  File "C:\sambhranta\projects\python package\categoricaldata.py", line 66, in _find_typo_candidates
+    top_cats = list(self.report[column]['top_categories'].keys())
+KeyError: 'category'
+2025-06-08 19:25:31,047 - INFO - Loading dataset from xx.csv
+2025-06-08 19:25:31,534 - INFO - Found 4 rare categories in category
+2025-06-08 19:25:31,612 - INFO - No typos detected in category
+2025-06-08 19:25:31,614 - INFO - Found 1 rare categories in category
+2025-06-08 19:25:32,066 - INFO - Found 0 potential typos in other_cat_col
+2025-06-08 19:25:32,067 - INFO - Found 0 rare categories in other_cat_col
+2025-06-08 19:25:32,071 - INFO - No typos detected in other_cat_col
+2025-06-08 19:25:32,071 - INFO - Found 0 rare categories in other_cat_col
+2025-06-08 19:25:32,071 - INFO - No rare categories to group in other_cat_col
+2025-06-08 19:25:32,464 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:32,468 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:32,625 - INFO - Found 0 rare categories in month
+2025-06-08 19:25:32,627 - INFO - No typos detected in month
+2025-06-08 19:25:32,628 - INFO - Found 0 rare categories in month
+2025-06-08 19:25:32,628 - INFO - No rare categories to group in month
+2025-06-08 19:25:32,759 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:32,763 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:33,029 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:33,032 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:25:33,119 - INFO - Found 0 rare categories in target
+2025-06-08 19:25:33,121 - INFO - No typos detected in target
+2025-06-08 19:25:33,122 - INFO - Found 0 rare categories in target
+2025-06-08 19:25:33,122 - INFO - No rare categories to group in target
+2025-06-08 19:25:33,366 - ERROR - Unexpected error occurred
+Traceback (most recent call last):
+  File "maincat.py", line 156, in main
+    print(f"  After: {details['after_stats']['unique_values']} unique values, "
+KeyError: 'unique_values'
+2025-06-08 19:50:58,349 - INFO - __main__ - Loading dataset from xx.csv
+2025-06-08 19:50:58,376 - INFO - categoricaldata - Initialized SmartCategoricalCleaner with dataframe of shape (193, 5)
+2025-06-08 19:50:58,378 - INFO - categoricaldata - Memory usage: 0.03 MB
+2025-06-08 19:50:58,826 - INFO - categoricaldata - Found 4 rare categories in category
+2025-06-08 19:50:58,859 - INFO - categoricaldata - No typos detected in category (or threshold too high)
+2025-06-08 19:50:58,861 - INFO - categoricaldata - Found 1 rare categories in category
+2025-06-08 19:50:59,341 - INFO - categoricaldata - No typos detected in other_cat_col (or threshold too high)
+2025-06-08 19:50:59,342 - INFO - categoricaldata - No rare categories to group in other_cat_col
+2025-06-08 19:50:59,696 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:50:59,699 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:50:59,842 - INFO - categoricaldata - No typos detected in month (or threshold too high)
+2025-06-08 19:50:59,843 - INFO - categoricaldata - No rare categories to group in month
+2025-06-08 19:50:59,968 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:50:59,972 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:51:00,229 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:51:00,231 - INFO - matplotlib.category - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-08 19:51:00,371 - INFO - categoricaldata - No typos detected in target (or threshold too high)
+2025-06-08 19:51:00,372 - INFO - categoricaldata - No rare categories to group in target
+2025-06-08 19:51:00,605 - ERROR - __main__ - Unexpected error occurred
+Traceback (most recent call last):
+  File "maincat.py", line 156, in main
+    print(f"  After: {details['after_stats']['unique_values']} unique values, "
+KeyError: 'unique_values'
+2025-06-08 20:01:53,403 - INFO - Loading dataset from input.csv
+2025-06-08 20:02:20,303 - INFO - Loading dataset from xx.csv
+2025-06-08 20:02:20,316 - INFO - Initialized cleaner with dataframe shape (193, 5)
+2025-06-08 20:02:20,316 - INFO - Starting cleaning for column: category
+2025-06-08 20:02:20,343 - INFO - Finished cleaning category in 0.03 seconds
+2025-06-08 20:02:20,344 - INFO - Starting cleaning for column: other_cat_col
+2025-06-08 20:02:20,352 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-08 20:02:20,352 - INFO - Starting cleaning for column: month
+2025-06-08 20:02:20,357 - INFO - Finished cleaning month in 0.00 seconds
+2025-06-08 20:02:20,357 - INFO - Starting cleaning for column: target
+2025-06-08 20:02:20,361 - INFO - Finished cleaning target in 0.00 seconds
+2025-06-08 20:08:41,683 - INFO - Loading dataset from xx.csv
+2025-06-08 20:08:41,695 - INFO - Initialized cleaner with dataframe shape (193, 5)
+2025-06-08 20:08:41,695 - INFO - Starting cleaning for column: category
+2025-06-08 20:08:41,703 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-08 20:08:41,704 - INFO - Starting cleaning for column: other_cat_col
+2025-06-08 20:08:41,708 - INFO - Finished cleaning other_cat_col in 0.00 seconds
+2025-06-08 20:08:41,709 - INFO - Starting cleaning for column: month
+2025-06-08 20:08:41,714 - INFO - Finished cleaning month in 0.01 seconds
+2025-06-08 20:08:41,714 - INFO - Starting cleaning for column: target
+2025-06-08 20:08:41,723 - INFO - Finished cleaning target in 0.01 seconds
+2025-06-08 20:13:10,602 - INFO - Loading dataset from xx.csv
+2025-06-08 20:14:19,218 - INFO - Loading dataset from xx.csv
+2025-06-08 20:21:43,841 - INFO - Loading dataset from input.csv
+2025-06-08 20:21:58,846 - INFO - Loading dataset from xx.csv
+2025-06-08 20:28:24,532 - INFO - Loading dataset from xx.csv
+2025-06-08 20:28:24,552 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-08 20:28:24,557 - INFO - Starting cleaning for column: category
+2025-06-08 20:28:24,570 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-08 20:28:24,570 - INFO - Starting cleaning for column: other_cat_col
+2025-06-08 20:28:24,585 - INFO - Finished cleaning other_cat_col in 0.02 seconds
+2025-06-08 20:29:21,407 - INFO - Loading dataset from xx.csv
+2025-06-08 20:29:21,424 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-08 20:29:21,424 - INFO - Starting cleaning for column: category
+2025-06-08 20:29:21,439 - INFO - Finished cleaning category in 0.02 seconds
+2025-06-08 20:29:21,439 - INFO - Starting cleaning for column: other_cat_col
+2025-06-08 20:29:21,450 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-08 20:38:04,548 - INFO - Loading dataset from xx.csv
+2025-06-08 20:38:25,847 - INFO - Loading dataset from xx.csv
+2025-06-08 20:38:25,863 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-08 20:38:25,864 - INFO - Starting cleaning for column: category
+2025-06-08 20:38:25,884 - INFO - Finished cleaning category in 0.02 seconds
+2025-06-08 20:38:25,885 - INFO - Starting cleaning for column: other_cat_col
+2025-06-08 20:38:25,901 - INFO - Finished cleaning other_cat_col in 0.02 seconds

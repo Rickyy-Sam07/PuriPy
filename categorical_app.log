@@ -1,0 +1,106 @@
+2025-06-08 10:14:14,346 - INFO - Loading dataset from cat.csv
+2025-06-08 10:14:14,351 - INFO - Initial shape: (97, 5)
+2025-06-08 10:14:14,351 - INFO - Starting cleaning for column: category
+2025-06-08 10:14:14,352 - INFO - Filled missing values in category with 'Unknown'
+2025-06-08 10:14:14,353 - INFO - Standardized text in category
+2025-06-08 10:14:14,358 - INFO - Applied fuzzy label matching in category
+2025-06-08 10:14:14,359 - INFO - Enforced consistency levels in category
+2025-06-08 10:14:14,361 - INFO - Grouped rare categories in category (threshold=0.02)
+2025-06-08 10:14:14,364 - INFO - Kept top-8 frequent categories in category
+2025-06-08 10:14:14,364 - INFO - Applied hierarchical encoding in category
+2025-06-08 10:14:14,368 - INFO - Applied frequency encoding to category
+2025-06-08 10:14:14,370 - INFO - Created interaction feature: category_X_other_cat_col
+2025-06-08 10:14:14,372 - INFO - Binned numerical column: age
+2025-06-08 10:14:14,375 - INFO - Applied cyclical encoding to month
+2025-06-08 10:14:14,378 - INFO - Removed 64 duplicate rows.
+2025-06-08 10:14:14,380 - INFO - Optimized data type for category to 'category'
+2025-06-08 10:14:14,393 - INFO - Applied OneHot encoding to category
+2025-06-08 10:14:14,683 - ERROR - Visualization/profiling failed: 'category'
+2025-06-08 10:14:14,696 - INFO - Completed cleaning for column: category
+2025-06-08 10:14:14,707 - INFO - Cleaned data saved to cleaned_categorical.csv
+2025-06-08 10:30:17,906 - INFO - Loading dataset from cat.csv
+2025-06-08 10:30:17,911 - INFO - Initial shape: (97, 5)
+2025-06-08 10:30:17,932 - ERROR - Processing failed: 'in <string>' requires string as left operand, not float
+2025-06-08 10:37:02,722 - INFO - Loading dataset from cat.csv
+2025-06-08 10:37:02,726 - INFO - Initial shape: (97, 5)
+2025-06-08 10:37:02,727 - INFO - Column types: {'category': dtype('O'), 'other_cat_col': dtype('O'), 'age': dtype('int64'), 'month': dtype('int64'), 'target': dtype('int64')}
+2025-06-08 10:37:02,728 - INFO - Categorical column unique values: 12
+2025-06-08 10:37:02,729 - INFO - Missing values: 1
+2025-06-08 10:37:02,729 - INFO - Auto-detecting patterns in categorical data
+2025-06-08 10:37:02,732 - INFO - Detected 3 fuzzy matches
+2025-06-08 10:37:02,732 - INFO - Detected 1 synonyms
+2025-06-08 10:37:02,732 - INFO - Using 5 consistency levels
+2025-06-08 10:37:02,732 - INFO - Applying categorical data cleaning
+2025-06-08 10:37:02,733 - INFO - Starting cleaning for column: category
+2025-06-08 10:37:02,735 - INFO - Filled missing values in category with mode 'male'
+2025-06-08 10:37:02,735 - INFO - Standardized text in category
+2025-06-08 10:37:02,741 - INFO - Applied fuzzy label matching in category
+2025-06-08 10:37:02,742 - INFO - Enforced consistency levels in category
+2025-06-08 10:37:02,743 - INFO - Grouped rare categories in category (threshold=0.05)
+2025-06-08 10:37:02,745 - INFO - Kept top-15 frequent categories in category
+2025-06-08 10:37:02,747 - INFO - Binned numerical column: age
+2025-06-08 10:37:02,748 - INFO - Applied cyclical encoding to month
+2025-06-08 10:37:02,750 - INFO - Removed 49 duplicate rows.
+2025-06-08 10:37:02,751 - INFO - Optimized data type for category to 'category'
+2025-06-08 10:37:02,756 - INFO - Applied OneHot encoding to category
+2025-06-08 10:37:02,757 - WARNING - Cannot visualize category - column not in dataframe
+2025-06-08 10:37:02,757 - INFO - Completed cleaning for column: category
+2025-06-08 10:37:02,763 - INFO - Cleaned data saved to cleaned_categorical.csv
+2025-06-08 11:59:57,969 - INFO - Loading dataset from your.csv
+2025-06-08 11:59:57,986 - ERROR - Input file not found: your.csv
+2025-06-08 11:59:57,987 - INFO - Total execution time: 0.02 seconds
+2025-06-08 12:00:17,273 - INFO - Loading dataset from cat.csv
+2025-06-08 12:00:17,277 - INFO - Initial shape: (97, 5)
+2025-06-08 12:00:17,278 - INFO - Column types: {'category': dtype('O'), 'other_cat_col': dtype('O'), 'age': dtype('int64'), 'month': dtype('int64'), 'target': dtype('int64')}
+2025-06-08 12:00:17,294 - INFO - Categorical column unique values: 12
+2025-06-08 12:00:17,297 - INFO - Missing values: 1
+2025-06-08 12:00:17,297 - INFO - Auto-detecting patterns in categorical data
+2025-06-08 12:00:17,303 - INFO - Detected 3 fuzzy matches
+2025-06-08 12:00:17,303 - INFO - Detected 1 synonyms
+2025-06-08 12:00:17,303 - INFO - Using 5 consistency levels
+2025-06-08 12:00:17,303 - INFO - Applying categorical data cleaning
+2025-06-08 12:00:17,303 - INFO - Starting cleaning for column: category
+2025-06-08 12:00:17,305 - INFO - Filled missing values in category with mode 'male'
+2025-06-08 12:00:17,306 - INFO - Standardized text in category
+2025-06-08 12:00:17,311 - INFO - Applied fuzzy label matching in category
+2025-06-08 12:00:17,312 - INFO - Enforced consistency levels in category
+2025-06-08 12:00:17,314 - INFO - Grouped rare categories in category (threshold=0.05)
+2025-06-08 12:00:17,316 - INFO - Kept top-15 frequent categories in category
+2025-06-08 12:00:17,319 - INFO - Binned numerical column: age
+2025-06-08 12:00:17,322 - INFO - Applied cyclical encoding to month
+2025-06-08 12:00:17,326 - INFO - Removed 49 duplicate rows.
+2025-06-08 12:00:17,327 - INFO - Optimized data type for category to 'category'
+2025-06-08 12:00:17,338 - INFO - Applied OneHot encoding to category
+2025-06-08 12:00:17,338 - WARNING - Cannot visualize category - column not in dataframe
+2025-06-08 12:00:17,338 - INFO - Completed cleaning for column: category
+2025-06-08 12:00:17,344 - INFO - Cleaned data saved to cleaned_categorical.csv
+2025-06-08 12:00:17,370 - INFO - Total execution time: 0.10 seconds
+2025-06-08 12:11:30,285 - INFO - Loading dataset from xx.csv
+2025-06-08 12:11:30,289 - INFO - Initial shape: (193, 5)
+2025-06-08 12:11:30,289 - INFO - Column types: {'category': dtype('O'), 'other_cat_col': dtype('O'), 'age': dtype('int64'), 'month': dtype('int64'), 'target': dtype('int64')}
+2025-06-08 12:11:30,290 - INFO - Categorical column unique values: 12
+2025-06-08 12:11:30,290 - INFO - Missing values: 1
+2025-06-08 12:11:30,290 - INFO - Auto-detecting patterns in categorical data
+2025-06-08 12:11:30,293 - INFO - Detected 3 fuzzy matches
+2025-06-08 12:11:30,293 - INFO - Detected 1 synonyms
+2025-06-08 12:11:30,293 - INFO - Using 5 consistency levels
+2025-06-08 12:11:30,293 - INFO - Applying categorical data cleaning
+2025-06-08 12:11:30,294 - INFO - Starting cleaning for column: category
+2025-06-08 12:11:30,294 - INFO - Filled missing values in category with mode 'male'
+2025-06-08 12:11:30,295 - INFO - Standardized text in category
+2025-06-08 12:11:30,310 - INFO - Applied fuzzy label matching in category
+2025-06-08 12:11:30,311 - INFO - Enforced consistency levels in category
+2025-06-08 12:11:30,312 - INFO - Grouped rare categories in category (threshold=0.05)
+2025-06-08 12:11:30,314 - INFO - Kept top-15 frequent categories in category
+2025-06-08 12:11:30,317 - INFO - Binned numerical column: age
+2025-06-08 12:11:30,319 - INFO - Applied cyclical encoding to month
+2025-06-08 12:11:30,322 - INFO - Removed 145 duplicate rows.
+2025-06-08 12:11:30,323 - INFO - Optimized data type for category to 'category'
+2025-06-08 12:11:30,332 - INFO - Applied OneHot encoding to category
+2025-06-08 12:11:30,333 - WARNING - Cannot visualize category - column not in dataframe
+2025-06-08 12:11:30,333 - INFO - Completed cleaning for column: category
+2025-06-08 12:11:30,337 - INFO - Cleaned data saved to cleaned_categorical.csv
+2025-06-08 12:11:30,364 - INFO - 
+========================================
+Total execution time: 0.08 seconds
+========================================

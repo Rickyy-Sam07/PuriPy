@@ -16,7 +16,7 @@ config = {
     'remove_emojis': True,          # Remove emojis and special symbols
     'remove_numbers': True,         # Remove all numeric digits
     'expand_contractions': True,    # Expand contractions (e.g., "don't" -> "do not")
-    'spelling_correction': False,    # Correct spelling mistakes in words
+    'spelling_correction': True,    # Correct spelling mistakes in words
     'lemmatize': True,              # Reduce words to their base form (e.g., "running" -> "run")
     'stem': False,                  # Reduce words to their root form (e.g., "running" -> "run"); set True to enable
     'tokenize': 'word',             # Tokenize text into words ('word'), sentences ('sentence'), or None for no tokenization

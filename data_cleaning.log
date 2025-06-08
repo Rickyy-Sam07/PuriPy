@@ -60,3 +60,180 @@
 2025-06-08 09:47:50,662 - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
 2025-06-08 09:47:50,665 - INFO - Cleaned data saved to cleaned_output.csv
 2025-06-08 09:47:50,673 - INFO - Total execution time: 0.07 seconds
+2025-06-08 09:58:28,858 - INFO - Using default cleaning configuration
+2025-06-08 09:58:28,858 - INFO - Loading dataset from xx.csv
+2025-06-08 09:58:28,861 - INFO - Initial shape: (9, 6)
+2025-06-08 09:58:28,861 - INFO - Created data cleaning pipeline with 13 steps
+2025-06-08 09:58:28,862 - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:58:28,862 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:58:28,863 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:58:28,863 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:58:28,863 - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:58:28,864 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:58:28,864 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:58:28,864 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:58:28,864 - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:58:28,865 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:58:28,865 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:58:28,865 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:58:28,866 - INFO - Handling 1 missing values in age
+2025-06-08 09:58:28,866 - INFO - Filled missing values in age with 24.88
+2025-06-08 09:58:28,866 - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:58:28,868 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:58:28,868 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:58:28,868 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:58:28,868 - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:58:28,869 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:58:28,869 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:58:28,870 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:58:28,873 - INFO - Removed 1 duplicate rows
+2025-06-08 09:58:28,881 - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:58:28,883 - INFO -   age: min=-5.00, max=40.00, mean=24.23
+2025-06-08 09:58:28,884 - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:58:28,898 - INFO -   department_id: min=101.00, max=108.00, mean=104.50
+2025-06-08 09:58:28,950 - INFO - Adjusting precision for 4 columns: ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
+2025-06-08 09:58:28,950 - WARNING - Column Sales_Before not found or not numeric - cannot adjust precision
+2025-06-08 09:58:28,950 - WARNING - Column Sales_After not found or not numeric - cannot adjust precision
+2025-06-08 09:58:28,951 - WARNING - Column Customer_Satisfaction_Before not found or not numeric - cannot adjust precision
+2025-06-08 09:58:28,951 - WARNING - Column Customer_Satisfaction_After not found or not numeric - cannot adjust precision
+2025-06-08 09:58:28,951 - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:58:28,952 - INFO -   age: min=-5.00, max=40.00, mean=24.23
+2025-06-08 09:58:28,953 - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:58:28,953 - INFO -   department_id: min=101.00, max=108.00, mean=104.50
+2025-06-08 09:58:28,957 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:58:28,969 - INFO - Total execution time: 0.11 seconds
+2025-06-08 09:59:14,878 - INFO - Using default cleaning configuration
+2025-06-08 09:59:14,878 - INFO - Loading dataset from data.csv
+2025-06-08 09:59:14,892 - INFO - Initial shape: (10000, 7)
+2025-06-08 09:59:14,893 - INFO - Created data cleaning pipeline with 13 steps
+2025-06-08 09:59:14,893 - INFO - 1. Initial Data: Shape (10000, 7)
+2025-06-08 09:59:14,896 - INFO -   Sales_Before: min=24.85, max=545.42, mean=203.72
+2025-06-08 09:59:14,896 - INFO -   Sales_After: min=32.41, max=818.22, mean=280.46
+2025-06-08 09:59:14,897 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 09:59:14,897 - INFO - Converted Sales_Before to numeric (0 values became NaN)
+2025-06-08 09:59:14,900 - INFO - Converted Sales_After to numeric (0 values became NaN)
+2025-06-08 09:59:14,904 - INFO - Converted Customer_Satisfaction_Before to numeric (0 values became NaN)
+2025-06-08 09:59:14,905 - INFO - Converted Customer_Satisfaction_After to numeric (0 values became NaN)
+2025-06-08 09:59:14,905 - INFO - 2. After Type Conversion: Shape (10000, 7)
+2025-06-08 09:59:14,907 - INFO -   Sales_Before: min=24.85, max=545.42, mean=203.72
+2025-06-08 09:59:14,908 - INFO -   Sales_After: min=32.41, max=818.22, mean=280.46
+2025-06-08 09:59:14,910 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 09:59:14,913 - INFO - Found 10 constraint violations in Sales_Before
+2025-06-08 09:59:14,916 - INFO - Corrected 10 invalid values in Sales_Before with 203.36
+2025-06-08 09:59:14,918 - INFO - Found 6 constraint violations in Sales_After
+2025-06-08 09:59:14,919 - INFO - Corrected 6 invalid values in Sales_After with 273.20
+2025-06-08 09:59:14,922 - INFO - 3. After Error Correction: Shape (10000, 7)
+2025-06-08 09:59:14,923 - INFO -   Sales_Before: min=50.90, max=453.11, mean=203.79
+2025-06-08 09:59:14,924 - INFO -   Sales_After: min=53.42, max=683.18, mean=280.53
+2025-06-08 09:59:14,925 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 09:59:14,926 - INFO - Handling 1522 missing values in Sales_Before
+2025-06-08 09:59:14,927 - INFO - Filled missing values in Sales_Before with 203.79
+2025-06-08 09:59:14,928 - INFO - Handling 767 missing values in Sales_After
+2025-06-08 09:59:14,929 - INFO - Filled missing values in Sales_After with 280.53
+2025-06-08 09:59:14,931 - INFO - Handling 1670 missing values in Customer_Satisfaction_Before
+2025-06-08 09:59:14,932 - INFO - Filled missing values in Customer_Satisfaction_Before with 70.25
+2025-06-08 09:59:14,933 - INFO - Handling 1640 missing values in Customer_Satisfaction_After
+2025-06-08 09:59:14,934 - INFO - Filled missing values in Customer_Satisfaction_After with 73.87
+2025-06-08 09:59:14,934 - INFO - 4. After Missing Values: Shape (10000, 7)
+2025-06-08 09:59:14,935 - INFO -   Sales_Before: min=50.90, max=453.11, mean=203.79
+2025-06-08 09:59:14,936 - INFO -   Sales_After: min=53.42, max=683.18, mean=280.53
+2025-06-08 09:59:14,936 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 09:59:14,939 - INFO - Found 327 outliers in Sales_Before (bounds: 88 - 317)
+2025-06-08 09:59:14,941 - INFO - Capped outliers in Sales_Before
+2025-06-08 09:59:14,944 - INFO - Found 194 outliers in Sales_After (bounds: 76 - 477)
+2025-06-08 09:59:14,944 - INFO - Capped outliers in Sales_After
+2025-06-08 09:59:14,947 - INFO - Found 7 outliers in Customer_Satisfaction_Before (bounds: 27 - 112)
+2025-06-08 09:59:14,948 - INFO - Capped outliers in Customer_Satisfaction_Before
+2025-06-08 09:59:14,952 - INFO - Found 17 outliers in Customer_Satisfaction_After (bounds: 28 - 121)
+2025-06-08 09:59:14,953 - INFO - Capped outliers in Customer_Satisfaction_After
+2025-06-08 09:59:14,953 - INFO - 5. After Outliers: Shape (10000, 7)
+2025-06-08 09:59:14,954 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 09:59:14,954 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.76
+2025-06-08 09:59:14,955 - INFO -   Customer_Satisfaction_Before: min=27.01, max=100.00, mean=70.25
+2025-06-08 09:59:14,965 - INFO - Removed 5 duplicate rows
+2025-06-08 09:59:14,966 - INFO - 6. After Duplicates: Shape (9995, 7)
+2025-06-08 09:59:14,966 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 09:59:14,968 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.74
+2025-06-08 09:59:14,969 - INFO -   Customer_Satisfaction_Before: min=27.01, max=100.00, mean=70.25
+2025-06-08 09:59:14,969 - INFO - Adjusting precision for 4 columns: ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
+2025-06-08 09:59:14,970 - INFO - Adjusted precision of Sales_Before to 2 decimal places
+2025-06-08 09:59:14,971 - INFO - Adjusted precision of Sales_After to 2 decimal places
+2025-06-08 09:59:14,972 - INFO - Adjusted precision of Customer_Satisfaction_Before to 1 decimal places
+2025-06-08 09:59:14,973 - INFO - Adjusted precision of Customer_Satisfaction_After to 1 decimal places
+2025-06-08 09:59:14,973 - INFO - 7. Final Data: Shape (9995, 7)
+2025-06-08 09:59:14,974 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 09:59:14,974 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.74
+2025-06-08 09:59:14,976 - INFO -   Customer_Satisfaction_Before: min=27.00, max=100.00, mean=70.26
+2025-06-08 09:59:15,013 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:59:15,044 - INFO - Total execution time: 0.17 seconds
+2025-06-08 10:13:59,684 - INFO - Using default cleaning configuration
+2025-06-08 10:13:59,684 - INFO - Loading dataset from data.csv
+2025-06-08 10:13:59,701 - INFO - Initial shape: (10000, 7)
+2025-06-08 10:13:59,702 - INFO - Created data cleaning pipeline with 13 steps
+2025-06-08 10:13:59,702 - INFO - 1. Initial Data: Shape (10000, 7)
+2025-06-08 10:13:59,703 - INFO -   Sales_Before: min=24.85, max=545.42, mean=203.72
+2025-06-08 10:13:59,706 - INFO -   Sales_After: min=32.41, max=818.22, mean=280.46
+2025-06-08 10:13:59,707 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 10:13:59,709 - INFO - Converted Sales_Before to numeric (0 values became NaN)
+2025-06-08 10:13:59,711 - INFO - Converted Sales_After to numeric (0 values became NaN)
+2025-06-08 10:13:59,712 - INFO - Converted Customer_Satisfaction_Before to numeric (0 values became NaN)
+2025-06-08 10:13:59,713 - INFO - Converted Customer_Satisfaction_After to numeric (0 values became NaN)
+2025-06-08 10:13:59,714 - INFO - 2. After Type Conversion: Shape (10000, 7)
+2025-06-08 10:13:59,715 - INFO -   Sales_Before: min=24.85, max=545.42, mean=203.72
+2025-06-08 10:13:59,715 - INFO -   Sales_After: min=32.41, max=818.22, mean=280.46
+2025-06-08 10:13:59,716 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 10:13:59,717 - INFO - Found 10 constraint violations in Sales_Before
+2025-06-08 10:13:59,719 - INFO - Corrected 10 invalid values in Sales_Before with 203.36
+2025-06-08 10:13:59,721 - INFO - Found 6 constraint violations in Sales_After
+2025-06-08 10:13:59,723 - INFO - Corrected 6 invalid values in Sales_After with 273.20
+2025-06-08 10:13:59,726 - INFO - 3. After Error Correction: Shape (10000, 7)
+2025-06-08 10:13:59,727 - INFO -   Sales_Before: min=50.90, max=453.11, mean=203.79
+2025-06-08 10:13:59,728 - INFO -   Sales_After: min=53.42, max=683.18, mean=280.53
+2025-06-08 10:13:59,729 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 10:13:59,730 - INFO - Handling 1522 missing values in Sales_Before
+2025-06-08 10:13:59,731 - INFO - Filled missing values in Sales_Before with 203.79
+2025-06-08 10:13:59,731 - INFO - Handling 767 missing values in Sales_After
+2025-06-08 10:13:59,733 - INFO - Filled missing values in Sales_After with 280.53
+2025-06-08 10:13:59,734 - INFO - Handling 1670 missing values in Customer_Satisfaction_Before
+2025-06-08 10:13:59,735 - INFO - Filled missing values in Customer_Satisfaction_Before with 70.25
+2025-06-08 10:13:59,735 - INFO - Handling 1640 missing values in Customer_Satisfaction_After
+2025-06-08 10:13:59,737 - INFO - Filled missing values in Customer_Satisfaction_After with 73.87
+2025-06-08 10:13:59,737 - INFO - 4. After Missing Values: Shape (10000, 7)
+2025-06-08 10:13:59,738 - INFO -   Sales_Before: min=50.90, max=453.11, mean=203.79
+2025-06-08 10:13:59,739 - INFO -   Sales_After: min=53.42, max=683.18, mean=280.53
+2025-06-08 10:13:59,740 - INFO -   Customer_Satisfaction_Before: min=22.20, max=100.00, mean=70.25
+2025-06-08 10:13:59,745 - INFO - Found 327 outliers in Sales_Before (bounds: 88 - 317)
+2025-06-08 10:13:59,746 - INFO - Capped outliers in Sales_Before
+2025-06-08 10:13:59,748 - INFO - Found 194 outliers in Sales_After (bounds: 76 - 477)
+2025-06-08 10:13:59,749 - INFO - Capped outliers in Sales_After
+2025-06-08 10:13:59,751 - INFO - Found 7 outliers in Customer_Satisfaction_Before (bounds: 27 - 112)
+2025-06-08 10:13:59,752 - INFO - Capped outliers in Customer_Satisfaction_Before
+2025-06-08 10:13:59,754 - INFO - Found 17 outliers in Customer_Satisfaction_After (bounds: 28 - 121)
+2025-06-08 10:13:59,755 - INFO - Capped outliers in Customer_Satisfaction_After
+2025-06-08 10:13:59,755 - INFO - 5. After Outliers: Shape (10000, 7)
+2025-06-08 10:13:59,756 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 10:13:59,757 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.76
+2025-06-08 10:13:59,757 - INFO -   Customer_Satisfaction_Before: min=27.01, max=100.00, mean=70.25
+2025-06-08 10:13:59,765 - INFO - Removed 5 duplicate rows
+2025-06-08 10:13:59,765 - INFO - 6. After Duplicates: Shape (9995, 7)
+2025-06-08 10:13:59,766 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 10:13:59,767 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.74
+2025-06-08 10:13:59,768 - INFO -   Customer_Satisfaction_Before: min=27.01, max=100.00, mean=70.25
+2025-06-08 10:13:59,769 - INFO - Adjusting precision for 4 columns: ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
+2025-06-08 10:13:59,769 - INFO - Adjusted precision of Sales_Before to 2 decimal places
+2025-06-08 10:13:59,771 - INFO - Adjusted precision of Sales_After to 2 decimal places
+2025-06-08 10:13:59,772 - INFO - Adjusted precision of Customer_Satisfaction_Before to 1 decimal places
+2025-06-08 10:13:59,772 - INFO - Adjusted precision of Customer_Satisfaction_After to 1 decimal places
+2025-06-08 10:13:59,772 - INFO - 7. Final Data: Shape (9995, 7)
+2025-06-08 10:13:59,775 - INFO -   Sales_Before: min=88.04, max=316.72, mean=203.42
+2025-06-08 10:13:59,776 - INFO -   Sales_After: min=75.68, max=477.37, mean=279.74
+2025-06-08 10:13:59,776 - INFO -   Customer_Satisfaction_Before: min=27.00, max=100.00, mean=70.26
+2025-06-08 10:13:59,810 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 10:13:59,821 - INFO - 
+========================================
+Total execution time: 0.14 seconds
+========================================
+2025-06-08 20:07:16,713 - INFO - __main__ - Starting categorical data cleaning pipeline for xx.csv
+2025-06-08 20:07:16,727 - INFO - __main__ - Loaded data with shape (193, 5)
+2025-06-08 20:07:16,729 - INFO - __main__ - Removed duplicate rows.
+2025-06-08 20:07:16,732 - ERROR - __main__ - Pipeline failed: 'NoneType' object is not callable

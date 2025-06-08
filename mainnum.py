@@ -27,7 +27,7 @@ DEFAULT_CONFIG = {
     # Specify which columns should be converted to numeric types
     # For non-numeric datasets, set this to [] or remove columns that aren't numeric
     'type_conversion': {
-        'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']
+        'numeric_cols': ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
     },
     
     # Missing Value Handling
@@ -36,7 +36,7 @@ DEFAULT_CONFIG = {
     # threshold: maximum ratio of missing values allowed (0.0 to 1.0)
     'missing_values': {
         'strategy': 'mean',  # Options: 'mean', 'median', 'mode'
-        'threshold': 0.5     # Columns with >50% missing values will be flagged
+        'threshold': 0.5     # Columns with >40% missing values will be flagged
     },
     
     # Data Constraints & Validation
@@ -45,10 +45,10 @@ DEFAULT_CONFIG = {
     # correction: how to replace invalid values ('median', 'mean', 'mode')
     'data_errors': {
         'constraints': {
-            'age': lambda x: (x >= 18) & (x <= 65),  # Valid age range for employees
-            'salary': lambda x: (x >= 30000) & (x <= 200000),  # Valid salary range
-            'score': lambda x: (x >= 0) & (x <= 100),  # Percentage-based score
-            'years_experience': lambda x: (x >= 0) & (x <= 40)  # Valid experience range
+            'Sales_Before': lambda x: (x >= 50) & (x <= 500),  # Valid sales range
+            'Sales_After': lambda x: (x >= 50) & (x <= 700),  # Valid sales range
+            'Customer_Satisfaction_Before': lambda x: (x >= 0) & (x <= 100),  # Percentage-based score
+            'Customer_Satisfaction_After': lambda x: (x >= 0) & (x <= 100)  # Percentage-based score
         },
         'correction': 'median'  # Use median of valid values to replace invalid ones
     },
@@ -61,7 +61,7 @@ DEFAULT_CONFIG = {
     'outliers': {
         'method': 'iqr',  # Interquartile Range method (Q1-1.5*IQR to Q3+1.5*IQR)
         'action': 'cap',  # Cap values at the boundaries instead of removing rows
-        'columns': ['age', 'salary', 'years_experience', 'score']  # Columns to check
+        'columns': ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']  # Columns to check
     },
     
     # Duplicate Handling
@@ -77,11 +77,10 @@ DEFAULT_CONFIG = {
     # ----------------
     # Control decimal places for each column (0 = integer, >0 = decimal places)
     'precision': {
-        'age': 0,                # Integer ages (no decimals)
-        'salary': 0,             # Round salaries to whole numbers
-        'score': 1,              # Keep one decimal place for scores
-        'years_experience': 0,   # Integer years
-        'department_id': 0       # Integer IDs
+        'Sales_Before': 2,      # Two decimal places for currency
+        'Sales_After': 2,       # Two decimal places for currency
+        'Customer_Satisfaction_Before': 1,  # One decimal place for satisfaction scores
+        'Customer_Satisfaction_After': 1    # One decimal place for satisfaction scores
     }
 }
 
@@ -157,7 +156,7 @@ FINANCIAL_CONFIG = {
 ```
 """
 
-def main(input_path: str = "xx.csv", output_path: str = "cleaned_output.csv", config: Dict = None):
+def main(input_path: str = "data.csv", output_path: str = "cleaned_output.csv", config: Dict = None):
     """
     Clean numeric data from a CSV file based on the provided configuration.
     
@@ -198,7 +197,7 @@ def main(input_path: str = "xx.csv", output_path: str = "cleaned_output.csv", co
         raise
     finally:
         total_time = time.time() - total_start
-        logger.info(f"Total execution time: {total_time:.2f} seconds")
+        logger.info(f"\n{'='*40}\nTotal execution time: {total_time:.2f} seconds\n{'='*40}")
 
 # Example of running with a custom configuration
 if __name__ == "__main__":

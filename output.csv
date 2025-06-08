@@ -1,6 +1,6 @@
 collection_id,collection_name,description,num_items,category,created_date
-1,Collection_NCjyD,this is a description for,944,Music,2023-02-02 
-2,Collection_etBTg,this is a description for,31,Movies,2023-10-05
-3,Collection_ukegv,this is a description for,885,Books,2023-06-02
-4,Collection_zzagM,this is a descriptoin for do not,629,Games,2023-05-29
-5,Collection_qOhAA,this is a description for collection,552,Movies,2023-09-15
+1,Collection_NCjyD,description,944,Music,2023-02-02 
+2,Collection_etBTg,description,31,Movies,2023-10-05
+3,Collection_ukegv,description,885,Books,2023-06-02
+4,Collection_zzagM,description,629,Games,2023-05-29
+5,Collection_qOhAA,description collection,552,Movies,2023-09-15
