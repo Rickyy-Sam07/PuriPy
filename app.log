@@ -1,0 +1,868 @@
+2025-06-08 00:23:09,183 - __main__ - INFO - Analyzing dataset with shape (6, 4)
+2025-06-08 00:23:36,744 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:23:36,752 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:23:36,787 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:23:36,965 - INFO - Loading dataset from xx.csv
+2025-06-08 00:23:36,969 - INFO - Initial shape: (9, 6)
+2025-06-08 00:23:36,969 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:23:36,969 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:23:36,972 - INFO - Generated configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function build_data_errors_config.<locals>.<lambda> at 0x000001914DC7E700>, 'score': <function build_data_errors_config.<locals>.<lambda> at 0x000001914DC7E550>}, 'correction': 'median'}, 'precision': {'age': 2}}
+2025-06-08 00:23:36,977 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 00:23:36,977 - INFO - 
+========================================
+2025-06-08 00:23:36,977 - INFO - Total execution time: 0.01 seconds
+2025-06-08 00:23:36,977 - INFO - ========================================
+2025-06-08 00:23:59,040 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:23:59,045 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:23:59,080 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:23:59,280 - INFO - Loading dataset from xx.csv
+2025-06-08 00:23:59,284 - INFO - Initial shape: (9, 6)
+2025-06-08 00:23:59,285 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:23:59,286 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:23:59,290 - INFO - Generated configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function build_data_errors_config.<locals>.<lambda> at 0x000001F1838BB700>, 'score': <function build_data_errors_config.<locals>.<lambda> at 0x000001F1838BB550>}, 'correction': 'median'}, 'precision': {'age': 2}}
+2025-06-08 00:23:59,294 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 00:23:59,295 - INFO - 
+========================================
+2025-06-08 00:23:59,296 - INFO - Total execution time: 0.02 seconds
+2025-06-08 00:23:59,297 - INFO - ========================================
+2025-06-08 00:29:53,763 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:29:53,769 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:29:53,802 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:31:48,619 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:31:48,625 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:31:48,658 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:33:39,475 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:33:39,480 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:33:39,518 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:33:39,742 - INFO - Loading dataset from xx.csv
+2025-06-08 00:33:39,744 - INFO - Initial shape: (9, 6)
+2025-06-08 00:33:39,745 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:33:39,745 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:33:39,748 - INFO - Generated configuration:
+{'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'type_conversion': {'numeric_cols': []}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x0000026074E1E1F0>, 'salary': <function <lambda> at 0x000002603A18C670>, 'score': <function <lambda> at 0x000002603A18C700>}, 'correction': 'median'}, 'precision': {'age': 0}}
+2025-06-08 00:33:39,752 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 00:33:39,752 - INFO - 
+========================================
+2025-06-08 00:33:39,753 - INFO - Total execution time: 0.01 seconds
+2025-06-08 00:33:39,753 - INFO - ========================================
+2025-06-08 00:34:59,692 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:34:59,697 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:34:59,733 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:34:59,933 - INFO - Loading dataset from xx.csv
+2025-06-08 00:34:59,937 - INFO - Data loaded in 0.00s. Shape: (9, 6)
+2025-06-08 00:34:59,938 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:34:59,938 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:34:59,943 - INFO - Generated configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function build_data_errors_config.<locals>.<lambda> at 0x00000190FF2DD790>, 'score': <function build_data_errors_config.<locals>.<lambda> at 0x00000190FF2DD5E0>}, 'correction': 'median'}, 'precision': {'age': 2}}
+2025-06-08 00:34:59,960 - INFO - Saving cleaned data to cleaned_output.csv
+2025-06-08 00:34:59,965 - INFO - Data saved in 0.00s
+2025-06-08 00:34:59,965 - INFO - 
+========================================
+2025-06-08 00:34:59,966 - INFO - Total execution time: 0.03 seconds
+2025-06-08 00:34:59,966 - INFO - ========================================
+2025-06-08 00:35:28,989 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:35:28,995 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:35:29,029 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:35:29,227 - INFO - Loading dataset from xx.csv
+2025-06-08 00:35:29,232 - INFO - Data loaded in 0.00s. Shape: (9, 6)
+2025-06-08 00:35:29,232 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:35:29,233 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:35:29,238 - INFO - Generated configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function build_data_errors_config.<locals>.<lambda> at 0x000002829A15C790>, 'score': <function build_data_errors_config.<locals>.<lambda> at 0x000002829A15C5E0>}, 'correction': 'median'}, 'precision': {'age': 2}}
+2025-06-08 00:35:29,238 - INFO - Saving cleaned data to cleaned_output.csv
+2025-06-08 00:35:29,243 - INFO - Data saved in 0.00s
+2025-06-08 00:35:29,243 - INFO - 
+========================================
+2025-06-08 00:35:29,244 - INFO - Total execution time: 0.02 seconds
+2025-06-08 00:35:29,244 - INFO - ========================================
+2025-06-08 00:40:02,747 - INFO - Downloaded NLTK resource: punkt
+2025-06-08 00:40:02,752 - INFO - Downloaded NLTK resource: stopwords
+2025-06-08 00:40:02,883 - INFO - Downloaded NLTK resource: wordnet
+2025-06-08 00:40:03,101 - INFO - Loading dataset from xx.csv
+2025-06-08 00:40:03,106 - INFO - Data loaded in 0.00s. Shape: (9, 6)
+2025-06-08 00:40:03,106 - INFO - Analyzing dataset to generate cleaning configuration
+2025-06-08 00:40:03,107 - INFO - Analyzing dataset with shape (9, 6)
+2025-06-08 00:40:03,110 - INFO - Generated configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function build_data_errors_config.<locals>.<lambda> at 0x0000023A35FCC790>, 'score': <function build_data_errors_config.<locals>.<lambda> at 0x0000023A35FCC5E0>}, 'correction': 'median'}, 'precision': {'age': 2}}
+2025-06-08 00:40:03,111 - INFO - Saving cleaned data to cleaned_output.csv
+2025-06-08 00:40:03,115 - INFO - Data saved in 0.00s
+2025-06-08 00:40:03,116 - INFO - 
+========================================
+2025-06-08 00:40:03,116 - INFO - Total execution time: 0.02 seconds
+2025-06-08 00:40:03,116 - INFO - ========================================
+2025-06-08 00:42:49,681 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 00:42:49,686 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 00:42:49,686 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001AAB3D8E1F0>, 'salary': <function <lambda> at 0x000001AAF6C30040>, 'score': <function <lambda> at 0x000001AAF6C300D0>}, 'correction': 'median'}, 'precision': {'age': 0}}
+2025-06-08 00:42:49,686 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 00:42:49,692 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 00:42:49,717 - numericdata - INFO - Missing values handled with mean
+2025-06-08 00:42:49,733 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 00:42:49,734 - numericdata - WARNING - Skipping column 'salary': Unable to parse string "not_available" at position 4
+2025-06-08 00:42:49,734 - numericdata - WARNING - Skipping column 'score': Unable to parse string "abc" at position 8
+2025-06-08 00:42:49,734 - numericdata - INFO - Converted column 'department_id' to numeric.
+2025-06-08 00:42:49,736 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 00:42:49,738 - __main__ - ERROR - Processing failed: '>' not supported between instances of 'str' and 'int'
+2025-06-08 00:42:49,738 - __main__ - INFO - 
+========================================
+2025-06-08 00:42:49,738 - __main__ - INFO - Total execution time: 0.06 seconds
+2025-06-08 00:42:49,738 - __main__ - INFO - ========================================
+2025-06-08 00:46:27,530 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 00:46:27,534 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 00:46:27,534 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001BA6BE2E1F0>, 'salary': <function <lambda> at 0x000001BA2ED02040>, 'score': <function <lambda> at 0x000001BA2ED020D0>}, 'correction': 'median'}, 'precision': {'age': 0}}
+2025-06-08 00:46:27,534 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 00:46:27,540 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 00:46:27,544 - numericdata - INFO - Missing values handled with mean
+2025-06-08 00:46:27,545 - numericdata - INFO - Converted column 'salary' to numeric
+2025-06-08 00:46:27,545 - numericdata - INFO - Converted column 'score' to numeric
+2025-06-08 00:46:27,545 - numericdata - INFO - Converted column 'department_id' to numeric
+2025-06-08 00:46:27,561 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 00:46:27,563 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 00:46:27,564 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 00:46:27,565 - numericdata - INFO - Data Cleaning Report
+2025-06-08 00:46:27,565 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001BA6BE2E1F0>, 'salary': <function <lambda> at 0x000001BA2ED02040>, 'score': <function <lambda> at 0x000001BA2ED020D0>}, 'correction': 'median'}, 'precision': {'age': 0}}
+2025-06-08 00:46:27,565 - numericdata - INFO - Final Data Summary:
+2025-06-08 00:46:27,594 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    27.926562  166880.000000          3.595000  89.885250     104.500000  NaN
+std      6.410498  310407.104668          3.146803   3.011354       2.416987  NaN
+min     22.000000   48140.000000          0.080000  85.182000     101.080000  NaN
+25%     24.156250   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.968750   60000.000000          2.500000  90.100000     104.500000  NaN
+75%     31.250000   62500.000000          5.250000  90.650000     106.250000  NaN
+max     39.600000  934900.000000          9.680000  95.200000     107.920000  NaN
+2025-06-08 00:46:27,608 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 00:46:27,608 - __main__ - INFO - 
+========================================
+2025-06-08 00:46:27,608 - __main__ - INFO - Total execution time: 0.08 seconds
+2025-06-08 00:46:27,608 - __main__ - INFO - ========================================
+2025-06-08 00:50:57,212 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 00:50:57,217 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 00:50:57,217 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x00000264691AE1F0>, 'salary': <function <lambda> at 0x000002642C082040>, 'score': <function <lambda> at 0x000002642C0820D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x000002642C082160>, 'department_id': 0}}
+2025-06-08 00:50:57,217 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 00:50:57,224 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 00:50:57,230 - numericdata - INFO - Missing values handled with mean
+2025-06-08 00:50:57,230 - numericdata - INFO - Converted column 'salary' to numeric
+2025-06-08 00:50:57,231 - numericdata - INFO - Converted column 'score' to numeric
+2025-06-08 00:50:57,231 - numericdata - INFO - Converted column 'department_id' to numeric
+2025-06-08 00:50:57,246 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 00:50:57,250 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 00:50:57,253 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 00:50:57,253 - numericdata - INFO - Data Cleaning Report
+2025-06-08 00:50:57,253 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x00000264691AE1F0>, 'salary': <function <lambda> at 0x000002642C082040>, 'score': <function <lambda> at 0x000002642C0820D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x000002642C082160>, 'department_id': 0}}
+2025-06-08 00:50:57,253 - numericdata - INFO - Final Data Summary:
+2025-06-08 00:50:57,263 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    27.926562  166880.000000          3.595000  89.885250     104.500000  NaN
+std      6.410498  310407.104668          3.146803   3.011354       2.416987  NaN
+min     22.000000   48140.000000          0.080000  85.182000     101.080000  NaN
+25%     24.156250   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.968750   60000.000000          2.500000  90.100000     104.500000  NaN
+75%     31.250000   62500.000000          5.250000  90.650000     106.250000  NaN
+max     39.600000  934900.000000          9.680000  95.200000     107.920000  NaN
+2025-06-08 00:50:57,276 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 00:50:57,277 - __main__ - INFO - 
+========================================
+2025-06-08 00:50:57,277 - __main__ - INFO - Total execution time: 0.06 seconds
+2025-06-08 00:50:57,277 - __main__ - INFO - ========================================
+2025-06-08 08:39:48,053 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:39:48,073 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:39:48,073 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001B0889C5A80>, 'salary': <function <lambda> at 0x000001B08D9C67A0>, 'score': <function <lambda> at 0x000001B0901C9DA0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x000001B0901C9E40>, 'department_id': 0}}
+2025-06-08 08:39:48,073 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:39:48,085 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:39:48,091 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:39:48,092 - numericdata - INFO - Converted column 'salary' to numeric
+2025-06-08 08:39:48,092 - numericdata - INFO - Converted column 'score' to numeric
+2025-06-08 08:39:48,092 - numericdata - INFO - Converted column 'department_id' to numeric
+2025-06-08 08:39:48,107 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:39:48,111 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:39:48,115 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:39:48,115 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:39:48,115 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001B0889C5A80>, 'salary': <function <lambda> at 0x000001B08D9C67A0>, 'score': <function <lambda> at 0x000001B0901C9DA0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x000001B0901C9E40>, 'department_id': 0}}
+2025-06-08 08:39:48,115 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:39:48,123 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    27.926562  166880.000000          3.595000  89.885250     104.500000  NaN
+std      6.410498  310407.104668          3.146803   3.011354       2.416987  NaN
+min     22.000000   48140.000000          0.080000  85.182000     101.080000  NaN
+25%     24.156250   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.968750   60000.000000          2.500000  90.100000     104.500000  NaN
+75%     31.250000   62500.000000          5.250000  90.650000     106.250000  NaN
+max     39.600000  934900.000000          9.680000  95.200000     107.920000  NaN
+2025-06-08 08:39:48,139 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:39:48,139 - __main__ - INFO - 
+========================================
+2025-06-08 08:39:48,139 - __main__ - INFO - Total execution time: 0.09 seconds
+2025-06-08 08:39:48,139 - __main__ - INFO - ========================================
+2025-06-08 08:40:14,684 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:40:14,690 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:40:14,690 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002082671D1F0>, 'salary': <function <lambda> at 0x0000020869922040>, 'score': <function <lambda> at 0x00000208699220D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x0000020869922160>, 'department_id': 0}}
+2025-06-08 08:40:14,690 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:40:14,700 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:40:14,708 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:40:14,708 - numericdata - INFO - Converted column 'salary' to numeric
+2025-06-08 08:40:14,709 - numericdata - INFO - Converted column 'score' to numeric
+2025-06-08 08:40:14,709 - numericdata - INFO - Converted column 'department_id' to numeric
+2025-06-08 08:40:14,723 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:40:14,726 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:40:14,728 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:40:14,728 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:40:14,728 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002082671D1F0>, 'salary': <function <lambda> at 0x0000020869922040>, 'score': <function <lambda> at 0x00000208699220D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': <function <lambda> at 0x0000020869922160>, 'department_id': 0}}
+2025-06-08 08:40:14,728 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:40:14,738 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    27.926562  166880.000000          3.595000  89.885250     104.500000  NaN
+std      6.410498  310407.104668          3.146803   3.011354       2.416987  NaN
+min     22.000000   48140.000000          0.080000  85.182000     101.080000  NaN
+25%     24.156250   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.968750   60000.000000          2.500000  90.100000     104.500000  NaN
+75%     31.250000   62500.000000          5.250000  90.650000     106.250000  NaN
+max     39.600000  934900.000000          9.680000  95.200000     107.920000  NaN
+2025-06-08 08:40:14,749 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:40:14,750 - __main__ - INFO - 
+========================================
+2025-06-08 08:40:14,750 - __main__ - INFO - Total execution time: 0.07 seconds
+2025-06-08 08:40:14,750 - __main__ - INFO - ========================================
+2025-06-08 08:48:17,179 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:48:17,194 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:48:17,194 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002D09C94D1F0>, 'salary': <function <lambda> at 0x000002D0DFB4DF70>, 'score': <function <lambda> at 0x000002D0DFB80040>, 'years_experience': <function <lambda> at 0x000002D0DFB800D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:48:17,194 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:48:17,198 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:48:17,202 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:48:17,226 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:48:17,227 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:48:17,229 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:48:17,229 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:48:17,229 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002D09C94D1F0>, 'salary': <function <lambda> at 0x000002D0DFB4DF70>, 'score': <function <lambda> at 0x000002D0DFB80040>, 'years_experience': <function <lambda> at 0x000002D0DFB800D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:48:17,229 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:48:17,236 - numericdata - INFO -               age        salary  years_experience      score  department_id city
+count    8.000000       8.00000          8.000000   8.000000       8.000000    8
+unique        NaN           NaN               NaN        NaN            NaN    4
+top           NaN           NaN               NaN        NaN            NaN  NYC
+freq          NaN           NaN               NaN        NaN            NaN    3
+mean    25.334375  134400.00000          3.737500  89.976250     104.500000  NaN
+std      9.854377  218344.11242          2.508806   2.855911       2.290352  NaN
+min      5.800000   48700.00000          1.000000  85.910000     101.400000  NaN
+25%     22.000000   51500.00000          2.000000  88.275000     102.750000  NaN
+50%     24.937500   60000.00000          2.750000  90.100000     104.500000  NaN
+75%     31.250000   62500.00000          5.250000  90.650000     106.250000  NaN
+max     38.000000  674500.00000          8.400000  95.200000     107.600000  NaN
+2025-06-08 08:48:17,247 - __main__ - INFO - Converted 'department_id' to integer.
+2025-06-08 08:48:17,250 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:48:17,250 - __main__ - INFO - 
+========================================
+2025-06-08 08:48:17,250 - __main__ - INFO - Total execution time: 0.07 seconds
+2025-06-08 08:48:17,250 - __main__ - INFO - ========================================
+2025-06-08 08:48:40,524 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:48:40,527 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:48:40,527 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x00000295DD4FD1F0>, 'salary': <function <lambda> at 0x00000295A207DF70>, 'score': <function <lambda> at 0x00000295A20B0040>, 'years_experience': <function <lambda> at 0x00000295A20B00D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:48:40,527 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:48:40,530 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:48:40,533 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:48:40,547 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:48:40,549 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:48:40,552 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:48:40,552 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:48:40,552 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['salary', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x00000295DD4FD1F0>, 'salary': <function <lambda> at 0x00000295A207DF70>, 'score': <function <lambda> at 0x00000295A20B0040>, 'years_experience': <function <lambda> at 0x00000295A20B00D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:48:40,552 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:48:40,561 - numericdata - INFO -               age        salary  years_experience      score  department_id city
+count    8.000000       8.00000          8.000000   8.000000       8.000000    8
+unique        NaN           NaN               NaN        NaN            NaN    4
+top           NaN           NaN               NaN        NaN            NaN  NYC
+freq          NaN           NaN               NaN        NaN            NaN    3
+mean    25.334375  134400.00000          3.737500  89.976250     104.500000  NaN
+std      9.854377  218344.11242          2.508806   2.855911       2.290352  NaN
+min      5.800000   48700.00000          1.000000  85.910000     101.400000  NaN
+25%     22.000000   51500.00000          2.000000  88.275000     102.750000  NaN
+50%     24.937500   60000.00000          2.750000  90.100000     104.500000  NaN
+75%     31.250000   62500.00000          5.250000  90.650000     106.250000  NaN
+max     38.000000  674500.00000          8.400000  95.200000     107.600000  NaN
+2025-06-08 08:48:40,569 - __main__ - INFO - Converted 'department_id' to integer.
+2025-06-08 08:48:40,572 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:48:40,572 - __main__ - INFO - 
+========================================
+2025-06-08 08:48:40,573 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 08:48:40,573 - __main__ - INFO - ========================================
+2025-06-08 08:53:03,540 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:53:03,543 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:53:03,544 - __main__ - INFO - Initial data types:
+age                 float64
+salary               object
+years_experience      int64
+score                object
+department_id         int64
+city                 object
+dtype: object
+2025-06-08 08:53:03,544 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x0000023EAFD1D1F0>, 'salary': <function <lambda> at 0x0000023EF2BCDF70>, 'score': <function <lambda> at 0x0000023EF2C00040>, 'years_experience': <function <lambda> at 0x0000023EF2C000D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:53:03,544 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:53:03,548 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:53:03,553 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:53:03,563 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:53:03,564 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:53:03,566 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:53:03,566 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:53:03,566 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x0000023EAFD1D1F0>, 'salary': <function <lambda> at 0x0000023EF2BCDF70>, 'score': <function <lambda> at 0x0000023EF2C00040>, 'years_experience': <function <lambda> at 0x0000023EF2C000D0>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:53:03,566 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:53:03,577 - numericdata - INFO -               age        salary  years_experience      score  department_id city
+count    8.000000       8.00000          8.000000   8.000000       8.000000    8
+unique        NaN           NaN               NaN        NaN            NaN    4
+top           NaN           NaN               NaN        NaN            NaN  NYC
+freq          NaN           NaN               NaN        NaN            NaN    3
+mean    25.334375  134400.00000          3.475000  89.976250     104.500000  NaN
+std      9.854377  218344.11242          2.754607   2.855911       2.290352  NaN
+min      5.800000   48700.00000          0.400000  85.910000     101.400000  NaN
+25%     22.000000   51500.00000          1.750000  88.275000     102.750000  NaN
+50%     24.937500   60000.00000          2.500000  90.100000     104.500000  NaN
+75%     31.250000   62500.00000          5.250000  90.650000     106.250000  NaN
+max     38.000000  674500.00000          8.400000  95.200000     107.600000  NaN
+2025-06-08 08:53:03,585 - __main__ - INFO - Converted 'department_id' to integer.
+2025-06-08 08:53:03,588 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:53:03,588 - __main__ - INFO - Final shape: (8, 6)
+2025-06-08 08:53:03,589 - __main__ - INFO - Final data types:
+age                 float64
+salary              float64
+years_experience    float64
+score               float64
+department_id         int32
+city                 object
+dtype: object
+2025-06-08 08:53:03,589 - __main__ - INFO - 
+========================================
+2025-06-08 08:53:03,589 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 08:53:03,589 - __main__ - INFO - ========================================
+2025-06-08 08:57:08,742 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:57:08,744 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:57:08,745 - __main__ - INFO - Initial data types:
+age                 float64
+salary               object
+years_experience      int64
+score                object
+department_id         int64
+city                 object
+dtype: object
+2025-06-08 08:57:08,745 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001AA87B0D1F0>, 'salary': <function <lambda> at 0x000001AACAD89430>, 'score': <function <lambda> at 0x000001AACAD894C0>, 'years_experience': <function <lambda> at 0x000001AACAD89550>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:57:08,745 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:57:08,745 - numericdata - INFO - Created cleaning pipeline with steps: ['log_cleaning_step', 'convert_data_types', 'handle_missing_values', 'detect_and_handle_outliers', 'handle_duplicates', 'correct_data_errors', 'adjust_precision', 'document_transformations']
+2025-06-08 08:57:08,748 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:57:08,748 - numericdata - WARNING - Column age: 1 values converted to NaN
+2025-06-08 08:57:08,750 - numericdata - WARNING - Column salary: 1 values converted to NaN
+2025-06-08 08:57:08,750 - numericdata - WARNING - Column score: 1 values converted to NaN
+2025-06-08 08:57:08,751 - numericdata - INFO - Column department_id converted to integer IDs
+2025-06-08 08:57:08,754 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:57:08,766 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:57:08,767 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:57:08,769 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:57:08,769 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:57:08,769 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000001AA87B0D1F0>, 'salary': <function <lambda> at 0x000001AACAD89430>, 'score': <function <lambda> at 0x000001AACAD894C0>, 'years_experience': <function <lambda> at 0x000001AACAD89550>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:57:08,769 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:57:08,779 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    25.334375  148225.000000          3.475000  90.297188     104.500000  NaN
+std      9.854377  214956.884381          2.754607   2.906478       2.290352  NaN
+min      5.800000   48800.000000          0.400000  86.040000     101.400000  NaN
+25%     22.000000   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.937500   60000.000000          2.500000  90.506250     104.500000  NaN
+75%     31.250000   96250.000000          5.250000  91.868750     106.250000  NaN
+max     38.000000  670000.000000          8.400000  95.200000     107.600000  NaN
+2025-06-08 08:57:08,788 - __main__ - INFO - Converted 'department_id' to integer.
+2025-06-08 08:57:08,790 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:57:08,790 - __main__ - INFO - Final shape: (8, 6)
+2025-06-08 08:57:08,792 - __main__ - INFO - Final data types:
+age                 float64
+salary              float64
+years_experience    float64
+score               float64
+department_id         int32
+city                 object
+dtype: object
+2025-06-08 08:57:08,792 - __main__ - INFO - 
+========================================
+2025-06-08 08:57:08,792 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 08:57:08,792 - __main__ - INFO - ========================================
+2025-06-08 08:57:40,731 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 08:57:40,734 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 08:57:40,735 - __main__ - INFO - Initial data types:
+age                 float64
+salary               object
+years_experience      int64
+score                object
+department_id         int64
+city                 object
+dtype: object
+2025-06-08 08:57:40,735 - __main__ - INFO - Using default configuration:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002036BFDD1F0>, 'salary': <function <lambda> at 0x000002032F279430>, 'score': <function <lambda> at 0x000002032F2794C0>, 'years_experience': <function <lambda> at 0x000002032F279550>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:57:40,735 - __main__ - INFO - Initializing numeric cleaning pipeline
+2025-06-08 08:57:40,735 - numericdata - INFO - Created cleaning pipeline with steps: ['log_cleaning_step', 'convert_data_types', 'handle_missing_values', 'detect_and_handle_outliers', 'handle_duplicates', 'correct_data_errors', 'adjust_precision', 'document_transformations']
+2025-06-08 08:57:40,738 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 08:57:40,739 - numericdata - WARNING - Column age: 1 values converted to NaN
+2025-06-08 08:57:40,739 - numericdata - WARNING - Column salary: 1 values converted to NaN
+2025-06-08 08:57:40,740 - numericdata - WARNING - Column score: 1 values converted to NaN
+2025-06-08 08:57:40,740 - numericdata - INFO - Column department_id converted to integer IDs
+2025-06-08 08:57:40,744 - numericdata - INFO - Missing values handled with mean
+2025-06-08 08:57:40,753 - numericdata - INFO - Capped outliers using iqr
+2025-06-08 08:57:40,754 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 08:57:40,755 - numericdata - INFO - Applied data error corrections: median
+2025-06-08 08:57:40,755 - numericdata - INFO - Data Cleaning Report
+2025-06-08 08:57:40,755 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap'}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002036BFDD1F0>, 'salary': <function <lambda> at 0x000002032F279430>, 'score': <function <lambda> at 0x000002032F2794C0>, 'years_experience': <function <lambda> at 0x000002032F279550>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 2, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 08:57:40,755 - numericdata - INFO - Final Data Summary:
+2025-06-08 08:57:40,764 - numericdata - INFO -               age         salary  years_experience      score  department_id city
+count    8.000000       8.000000          8.000000   8.000000       8.000000    8
+unique        NaN            NaN               NaN        NaN            NaN    4
+top           NaN            NaN               NaN        NaN            NaN  NYC
+freq          NaN            NaN               NaN        NaN            NaN    3
+mean    25.334375  148225.000000          3.475000  90.297188     104.500000  NaN
+std      9.854377  214956.884381          2.754607   2.906478       2.290352  NaN
+min      5.800000   48800.000000          0.400000  86.040000     101.400000  NaN
+25%     22.000000   51500.000000          1.750000  88.275000     102.750000  NaN
+50%     24.937500   60000.000000          2.500000  90.506250     104.500000  NaN
+75%     31.250000   96250.000000          5.250000  91.868750     106.250000  NaN
+max     38.000000  670000.000000          8.400000  95.200000     107.600000  NaN
+2025-06-08 08:57:40,777 - __main__ - INFO - Converted 'department_id' to integer.
+2025-06-08 08:57:40,780 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 08:57:40,780 - __main__ - INFO - Final shape: (8, 6)
+2025-06-08 08:57:40,781 - __main__ - INFO - Final data types:
+age                 float64
+salary              float64
+years_experience    float64
+score               float64
+department_id         int32
+city                 object
+dtype: object
+2025-06-08 08:57:40,781 - __main__ - INFO - 
+========================================
+2025-06-08 08:57:40,781 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 08:57:40,781 - __main__ - INFO - ========================================
+2025-06-08 09:01:24,400 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:01:24,403 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:01:24,404 - __main__ - INFO - Initial data types:
+age                 float64
+salary               object
+years_experience      int64
+score                object
+department_id         int64
+city                 object
+dtype: object
+2025-06-08 09:01:24,404 - __main__ - INFO - Starting data cleaning pipeline...
+2025-06-08 09:01:24,404 - numericdata - INFO - Created cleaning pipeline with steps: ['log_cleaning_step', 'convert_data_types', 'handle_missing_values', 'detect_and_handle_outliers', 'handle_duplicates', 'correct_data_errors', 'adjust_precision', 'document_transformations']
+2025-06-08 09:01:24,407 - numericdata - INFO - Initial Data Snapshot
+None
+2025-06-08 09:01:24,408 - numericdata - WARNING - Column age: 1 values converted to NaN
+2025-06-08 09:01:24,408 - numericdata - WARNING - Column salary: 1 values converted to NaN
+2025-06-08 09:01:24,408 - numericdata - WARNING - Column score: 1 values converted to NaN
+2025-06-08 09:01:24,409 - numericdata - INFO - Column department_id converted to integer IDs
+2025-06-08 09:01:24,412 - numericdata - INFO - Missing values handled with mean
+2025-06-08 09:01:24,412 - numericdata - INFO - Processing outliers in columns: ['age', 'salary', 'years_experience', 'score']
+2025-06-08 09:01:24,423 - numericdata - INFO - Found 1 outliers in age
+2025-06-08 09:01:24,424 - numericdata - INFO - Capped outliers in age to [10.00, 42.00]
+2025-06-08 09:01:24,426 - numericdata - INFO - Found 2 outliers in salary
+2025-06-08 09:01:24,427 - numericdata - INFO - Capped outliers in salary to [25000.00, 97000.00]
+2025-06-08 09:01:24,430 - numericdata - INFO - Found 1 outliers in score
+2025-06-08 09:01:24,431 - numericdata - INFO - Capped outliers in score to [82.80, 98.00]
+2025-06-08 09:01:24,432 - numericdata - INFO - Removed 1 duplicate rows.
+2025-06-08 09:01:24,434 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:01:24,436 - numericdata - INFO - Corrected 1 values in age with 25.0
+2025-06-08 09:01:24,437 - numericdata - INFO - Data Cleaning Report
+2025-06-08 09:01:24,437 - numericdata - INFO - Configuration Used:
+{'type_conversion': {'numeric_cols': ['age', 'salary', 'years_experience', 'score', 'department_id']}, 'missing_values': {'strategy': 'mean', 'threshold': 0.5}, 'outliers': {'method': 'iqr', 'action': 'cap', 'columns': ['age', 'salary', 'years_experience', 'score']}, 'duplicates': {'subset': None, 'keep': 'first'}, 'data_errors': {'constraints': {'age': <function <lambda> at 0x000002AAF3A5D1F0>, 'salary': <function <lambda> at 0x000002AAB6CB9550>, 'score': <function <lambda> at 0x000002AAB6CB95E0>, 'years_experience': <function <lambda> at 0x000002AAB6CB9670>}, 'correction': 'median'}, 'precision': {'age': 0, 'salary': 0, 'score': 1, 'years_experience': 0, 'department_id': 0}}
+2025-06-08 09:01:24,437 - numericdata - INFO - Final Data Summary:
+2025-06-08 09:01:24,444 - numericdata - INFO -               age        salary  years_experience      score  department_id city
+count    8.000000      8.000000          8.000000   8.000000        8.00000    8
+unique        NaN           NaN               NaN        NaN            NaN    4
+top           NaN           NaN               NaN        NaN            NaN  NYC
+freq          NaN           NaN               NaN        NaN            NaN    3
+mean    27.984375  66750.000000          3.625000  91.053125      104.50000  NaN
+std      6.511130  19933.819074          3.248626   4.199542        2.44949  NaN
+min     22.000000  48000.000000          0.000000  85.000000      101.00000  NaN
+25%     24.156250  51500.000000          1.750000  88.275000      102.75000  NaN
+50%     25.000000  60000.000000          2.500000  90.912500      104.50000  NaN
+75%     31.250000  76750.000000          5.250000  93.025000      106.25000  NaN
+max     40.000000  97000.000000         10.000000  98.000000      108.00000  NaN
+2025-06-08 09:01:24,453 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:01:24,453 - __main__ - INFO - Final shape: (8, 6)
+2025-06-08 09:01:24,454 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 09:18:25,144 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:18:25,148 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:18:25,148 - numericdata - INFO - Initial Data: Shape (9, 6)
+2025-06-08 09:18:25,148 - numericdata - INFO - Converted age to numeric
+2025-06-08 09:18:25,149 - numericdata - INFO - Converted salary to numeric
+2025-06-08 09:18:25,149 - numericdata - INFO - Converted years_experience to numeric
+2025-06-08 09:18:25,149 - numericdata - INFO - Converted score to numeric
+2025-06-08 09:18:25,149 - numericdata - INFO - Converted department_id to numeric
+2025-06-08 09:18:25,151 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:18:25,151 - numericdata - INFO - Filled missing values in age with 24.875
+2025-06-08 09:18:25,151 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:18:25,152 - numericdata - INFO - Filled missing values in salary with 175000.0
+2025-06-08 09:18:25,152 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:18:25,152 - numericdata - INFO - Filled missing values in score with 91.725
+2025-06-08 09:18:25,154 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:18:25,156 - numericdata - INFO - Corrected 1 values in age with 27.5
+2025-06-08 09:18:25,157 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:18:25,157 - numericdata - INFO - Corrected 1 values in salary with 60000.0
+2025-06-08 09:18:25,158 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:18:25,159 - numericdata - INFO - Corrected 1 values in score with 90.1
+2025-06-08 09:18:25,163 - numericdata - INFO - Found 1 outliers in age
+2025-06-08 09:18:25,166 - numericdata - INFO - Capped outliers in age: [22-40] -> [17-38]
+2025-06-08 09:18:25,168 - numericdata - INFO - Found 1 outliers in salary
+2025-06-08 09:18:25,169 - numericdata - INFO - Capped outliers in salary: [48000-175000] -> [40000-72000]
+2025-06-08 09:18:25,175 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:18:25,176 - numericdata - INFO - Final Data: Shape (8, 6)
+2025-06-08 09:18:25,179 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:18:25,187 - __main__ - INFO - Total execution time: 0.04 seconds
+2025-06-08 09:18:57,268 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:18:57,271 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:18:57,271 - numericdata - INFO - Initial Data: Shape (9, 6)
+2025-06-08 09:18:57,271 - numericdata - INFO - Converted age to numeric
+2025-06-08 09:18:57,271 - numericdata - INFO - Converted salary to numeric
+2025-06-08 09:18:57,273 - numericdata - INFO - Converted years_experience to numeric
+2025-06-08 09:18:57,273 - numericdata - INFO - Converted score to numeric
+2025-06-08 09:18:57,273 - numericdata - INFO - Converted department_id to numeric
+2025-06-08 09:18:57,274 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:18:57,274 - numericdata - INFO - Filled missing values in age with 24.875
+2025-06-08 09:18:57,274 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:18:57,275 - numericdata - INFO - Filled missing values in salary with 175000.0
+2025-06-08 09:18:57,275 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:18:57,276 - numericdata - INFO - Filled missing values in score with 91.725
+2025-06-08 09:18:57,277 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:18:57,278 - numericdata - INFO - Corrected 1 values in age with 27.5
+2025-06-08 09:18:57,278 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:18:57,279 - numericdata - INFO - Corrected 1 values in salary with 60000.0
+2025-06-08 09:18:57,280 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:18:57,281 - numericdata - INFO - Corrected 1 values in score with 90.1
+2025-06-08 09:18:57,286 - numericdata - INFO - Found 1 outliers in age
+2025-06-08 09:18:57,288 - numericdata - INFO - Capped outliers in age: [22-40] -> [17-38]
+2025-06-08 09:18:57,289 - numericdata - INFO - Found 1 outliers in salary
+2025-06-08 09:18:57,290 - numericdata - INFO - Capped outliers in salary: [48000-175000] -> [40000-72000]
+2025-06-08 09:18:57,297 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:18:57,297 - numericdata - INFO - Final Data: Shape (8, 6)
+2025-06-08 09:18:57,300 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:18:57,309 - __main__ - INFO - Total execution time: 0.04 seconds
+2025-06-08 09:21:51,812 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:21:51,815 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:21:51,815 - numericdata - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:21:51,815 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:21:51,817 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:21:51,817 - numericdata - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:21:51,817 - numericdata - INFO - Converted age to numeric (0 values became NaN)
+2025-06-08 09:21:51,818 - numericdata - INFO - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:21:51,818 - numericdata - INFO - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:21:51,819 - numericdata - INFO - Converted score to numeric (1 values became NaN)
+2025-06-08 09:21:51,820 - numericdata - INFO - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:21:51,820 - numericdata - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:21:51,821 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:21:51,821 - numericdata - INFO -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:21:51,822 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:21:51,824 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:21:51,825 - numericdata - INFO - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:21:51,826 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:21:51,827 - numericdata - INFO - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:21:51,830 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:21:51,832 - numericdata - INFO - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:21:51,834 - numericdata - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:21:51,835 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:21:51,835 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:21:51,836 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:21:51,836 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:21:51,838 - numericdata - INFO - Filled missing values in age with 29.25
+2025-06-08 09:21:51,838 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:21:51,839 - numericdata - INFO - Filled missing values in salary with 57500.00
+2025-06-08 09:21:51,840 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:21:51,840 - numericdata - INFO - Filled missing values in score with 89.86
+2025-06-08 09:21:51,841 - numericdata - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:21:51,841 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:21:51,841 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:21:51,842 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:21:51,846 - numericdata - INFO - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:21:51,848 - numericdata - INFO - Capped outliers in age
+2025-06-08 09:21:51,851 - numericdata - INFO - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:21:51,852 - numericdata - INFO - Capped outliers in score
+2025-06-08 09:21:51,852 - numericdata - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:21:51,853 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:21:51,854 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:21:51,855 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:21:51,858 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:21:51,858 - numericdata - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:21:51,858 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:21:51,859 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:21:51,859 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:21:51,859 - numericdata - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:21:51,859 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:21:51,860 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:21:51,860 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:21:51,863 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:21:51,874 - __main__ - INFO - Total execution time: 0.06 seconds
+2025-06-08 09:25:10,051 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:25:10,053 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:25:10,054 - numericdata - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:25:10,054 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:25:10,054 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:25:10,054 - numericdata - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:25:10,055 - numericdata - INFO - Converted age to numeric (0 values became NaN)
+2025-06-08 09:25:10,055 - numericdata - INFO - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:25:10,056 - numericdata - INFO - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:25:10,056 - numericdata - INFO - Converted score to numeric (1 values became NaN)
+2025-06-08 09:25:10,056 - numericdata - INFO - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:25:10,056 - numericdata - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:25:10,057 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:25:10,057 - numericdata - INFO -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:25:10,057 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:25:10,059 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:25:10,059 - numericdata - INFO - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:25:10,060 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:25:10,062 - numericdata - INFO - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:25:10,063 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:25:10,065 - numericdata - INFO - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:25:10,066 - numericdata - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:25:10,069 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:25:10,069 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:25:10,069 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:25:10,071 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:25:10,072 - numericdata - INFO - Filled missing values in age with 29.25
+2025-06-08 09:25:10,072 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:25:10,072 - numericdata - INFO - Filled missing values in salary with 57500.00
+2025-06-08 09:25:10,073 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:25:10,074 - numericdata - INFO - Filled missing values in score with 89.86
+2025-06-08 09:25:10,074 - numericdata - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:25:10,074 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:25:10,076 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:25:10,076 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:25:10,077 - numericdata - INFO - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:25:10,078 - numericdata - INFO - Capped outliers in age
+2025-06-08 09:25:10,083 - numericdata - INFO - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:25:10,084 - numericdata - INFO - Capped outliers in score
+2025-06-08 09:25:10,084 - numericdata - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:25:10,085 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:25:10,086 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:25:10,086 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:25:10,090 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:25:10,090 - numericdata - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:25:10,091 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:25:10,092 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:25:10,092 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:25:10,092 - numericdata - INFO - No precision configuration provided
+2025-06-08 09:25:10,092 - numericdata - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:25:10,093 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:25:10,093 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:25:10,093 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:25:10,098 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:25:10,106 - __main__ - INFO - Total execution time: 0.06 seconds
+2025-06-08 09:27:59,507 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:27:59,509 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:27:59,509 - numericdata - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:27:59,510 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:27:59,510 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:27:59,511 - numericdata - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:27:59,511 - numericdata - INFO - Converted age to numeric (0 values became NaN)
+2025-06-08 09:27:59,512 - numericdata - INFO - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:27:59,512 - numericdata - INFO - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:27:59,513 - numericdata - INFO - Converted score to numeric (1 values became NaN)
+2025-06-08 09:27:59,513 - numericdata - INFO - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:27:59,513 - numericdata - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:27:59,513 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:27:59,514 - numericdata - INFO -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:27:59,514 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:27:59,516 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:27:59,516 - numericdata - INFO - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:27:59,517 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:27:59,517 - numericdata - INFO - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:27:59,518 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:27:59,518 - numericdata - INFO - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:27:59,519 - numericdata - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:27:59,520 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:27:59,520 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:27:59,520 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:27:59,521 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:27:59,521 - numericdata - INFO - Filled missing values in age with 29.25
+2025-06-08 09:27:59,521 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:27:59,523 - numericdata - INFO - Filled missing values in salary with 57500.00
+2025-06-08 09:27:59,523 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:27:59,524 - numericdata - INFO - Filled missing values in score with 89.86
+2025-06-08 09:27:59,524 - numericdata - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:27:59,525 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:27:59,525 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:27:59,525 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:27:59,527 - numericdata - INFO - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:27:59,529 - numericdata - INFO - Capped outliers in age
+2025-06-08 09:27:59,533 - numericdata - INFO - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:27:59,538 - numericdata - INFO - Capped outliers in score
+2025-06-08 09:27:59,539 - numericdata - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:27:59,541 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:27:59,541 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:27:59,542 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:27:59,544 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:27:59,544 - numericdata - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:27:59,545 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:27:59,546 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:27:59,546 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:27:59,546 - numericdata - INFO - Adjusting precision for columns: ['age', 'salary', 'score', 'years_experience', 'department_id']
+2025-06-08 09:27:59,546 - numericdata - INFO - Adjusted precision of age to 0 decimal places (integer)
+2025-06-08 09:27:59,548 - numericdata - INFO - Adjusted precision of salary to 0 decimal places (integer)
+2025-06-08 09:27:59,548 - numericdata - INFO - Adjusted precision of score to 1 decimal places
+2025-06-08 09:27:59,549 - numericdata - INFO - Adjusted precision of years_experience to 0 decimal places (integer)
+2025-06-08 09:27:59,549 - numericdata - INFO - Adjusted precision of department_id to 0 decimal places (integer)
+2025-06-08 09:27:59,550 - numericdata - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:27:59,550 - numericdata - INFO -   age: min=22.00, max=38.00, mean=28.88
+2025-06-08 09:27:59,550 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:27:59,551 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:27:59,554 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:27:59,560 - __main__ - INFO - Total execution time: 0.05 seconds
+2025-06-08 09:36:10,871 - __main__ - INFO - Loading dataset from xx.csv
+2025-06-08 09:36:10,874 - __main__ - INFO - Initial shape: (9, 6)
+2025-06-08 09:36:10,874 - numericdata - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:36:10,875 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:36:10,876 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:36:10,876 - numericdata - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:36:10,876 - numericdata - INFO - Converted age to numeric (0 values became NaN)
+2025-06-08 09:36:10,877 - numericdata - INFO - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:36:10,877 - numericdata - INFO - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:36:10,878 - numericdata - INFO - Converted score to numeric (1 values became NaN)
+2025-06-08 09:36:10,879 - numericdata - INFO - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:36:10,879 - numericdata - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:36:10,879 - numericdata - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:36:10,879 - numericdata - INFO -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:36:10,880 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:36:10,880 - numericdata - INFO - Found 1 constraint violations in age
+2025-06-08 09:36:10,881 - numericdata - INFO - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:36:10,883 - numericdata - INFO - Found 1 constraint violations in salary
+2025-06-08 09:36:10,883 - numericdata - INFO - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:36:10,884 - numericdata - INFO - Found 1 constraint violations in score
+2025-06-08 09:36:10,885 - numericdata - INFO - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:36:10,885 - numericdata - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:36:10,885 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:36:10,886 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:36:10,886 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:36:10,887 - numericdata - INFO - Handling 1 missing values in age
+2025-06-08 09:36:10,887 - numericdata - INFO - Filled missing values in age with 29.25
+2025-06-08 09:36:10,888 - numericdata - INFO - Handling 1 missing values in salary
+2025-06-08 09:36:10,889 - numericdata - INFO - Filled missing values in salary with 57500.00
+2025-06-08 09:36:10,891 - numericdata - INFO - Handling 1 missing values in score
+2025-06-08 09:36:10,893 - numericdata - INFO - Filled missing values in score with 89.86
+2025-06-08 09:36:10,893 - numericdata - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:36:10,895 - numericdata - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:36:10,895 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:36:10,896 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:36:10,897 - numericdata - INFO - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:36:10,898 - numericdata - INFO - Capped outliers in age
+2025-06-08 09:36:10,902 - numericdata - INFO - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:36:10,903 - numericdata - INFO - Capped outliers in score
+2025-06-08 09:36:10,903 - numericdata - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:36:10,905 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:36:10,905 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:36:10,906 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:36:10,908 - numericdata - INFO - Removed 1 duplicate rows
+2025-06-08 09:36:10,908 - numericdata - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:36:10,908 - numericdata - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:36:10,910 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:36:10,910 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:36:10,910 - numericdata - INFO - Adjusting precision for columns: ['age', 'salary', 'score', 'years_experience', 'department_id']
+2025-06-08 09:36:10,911 - numericdata - INFO - Adjusted precision of age to 0 decimal places (integer)
+2025-06-08 09:36:10,912 - numericdata - INFO - Adjusted precision of salary to 0 decimal places (integer)
+2025-06-08 09:36:10,914 - numericdata - INFO - Adjusted precision of score to 1 decimal places
+2025-06-08 09:36:10,915 - numericdata - INFO - Adjusted precision of years_experience to 0 decimal places (integer)
+2025-06-08 09:36:10,915 - numericdata - INFO - Adjusted precision of department_id to 0 decimal places (integer)
+2025-06-08 09:36:10,916 - numericdata - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:36:10,916 - numericdata - INFO -   age: min=22.00, max=38.00, mean=28.88
+2025-06-08 09:36:10,917 - numericdata - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:36:10,917 - numericdata - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:36:10,921 - __main__ - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:36:10,929 - __main__ - INFO - Total execution time: 0.06 seconds
+2025-06-08 09:47:50,609 - numericdata - INFO - create_cleaning_pipeline:99 - Created data cleaning pipeline with 13 steps
+2025-06-08 09:47:50,609 - numericdata - INFO - log_cleaning_step:112 - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:47:50,609 - numericdata - INFO - log_cleaning_step:117 -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:47:50,610 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,610 - numericdata - INFO - log_cleaning_step:117 -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:47:50,610 - numericdata - INFO - convert_data_types:151 - Converted age to numeric (0 values became NaN)
+2025-06-08 09:47:50,611 - numericdata - INFO - convert_data_types:151 - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:47:50,612 - numericdata - INFO - convert_data_types:151 - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:47:50,613 - numericdata - INFO - convert_data_types:151 - Converted score to numeric (1 values became NaN)
+2025-06-08 09:47:50,613 - numericdata - INFO - convert_data_types:151 - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:47:50,613 - numericdata - INFO - log_cleaning_step:112 - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:47:50,613 - numericdata - INFO - log_cleaning_step:117 -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:47:50,615 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:47:50,615 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,617 - numericdata - INFO - correct_data_errors:181 - Found 1 constraint violations in age
+2025-06-08 09:47:50,619 - numericdata - INFO - correct_data_errors:195 - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:47:50,621 - numericdata - INFO - correct_data_errors:181 - Found 1 constraint violations in salary
+2025-06-08 09:47:50,623 - numericdata - INFO - correct_data_errors:195 - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:47:50,625 - numericdata - INFO - correct_data_errors:181 - Found 1 constraint violations in score
+2025-06-08 09:47:50,628 - numericdata - INFO - correct_data_errors:195 - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:47:50,628 - numericdata - INFO - log_cleaning_step:112 - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:47:50,630 - numericdata - INFO - log_cleaning_step:117 -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:47:50,630 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,631 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,632 - numericdata - INFO - handle_missing_values:211 - Handling 1 missing values in age
+2025-06-08 09:47:50,633 - numericdata - INFO - handle_missing_values:224 - Filled missing values in age with 29.25
+2025-06-08 09:47:50,633 - numericdata - INFO - handle_missing_values:211 - Handling 1 missing values in salary
+2025-06-08 09:47:50,634 - numericdata - INFO - handle_missing_values:224 - Filled missing values in salary with 57500.00
+2025-06-08 09:47:50,634 - numericdata - INFO - handle_missing_values:211 - Handling 1 missing values in score
+2025-06-08 09:47:50,635 - numericdata - INFO - handle_missing_values:224 - Filled missing values in score with 89.86
+2025-06-08 09:47:50,635 - numericdata - INFO - log_cleaning_step:112 - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:47:50,636 - numericdata - INFO - log_cleaning_step:117 -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:47:50,637 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,637 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,639 - numericdata - INFO - detect_and_handle_outliers:254 - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:47:50,641 - numericdata - INFO - detect_and_handle_outliers:259 - Capped outliers in age
+2025-06-08 09:47:50,645 - numericdata - INFO - detect_and_handle_outliers:254 - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:47:50,647 - numericdata - INFO - detect_and_handle_outliers:259 - Capped outliers in score
+2025-06-08 09:47:50,648 - numericdata - INFO - log_cleaning_step:112 - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:47:50,649 - numericdata - INFO - log_cleaning_step:117 -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:47:50,650 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,650 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,652 - numericdata - INFO - handle_duplicates:275 - Removed 1 duplicate rows
+2025-06-08 09:47:50,652 - numericdata - INFO - log_cleaning_step:112 - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:47:50,654 - numericdata - INFO - log_cleaning_step:117 -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:47:50,654 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:47:50,655 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:47:50,655 - numericdata - INFO - adjust_precision:307 - Adjusting precision for 5 columns: ['age', 'salary', 'score', 'years_experience', 'department_id']
+2025-06-08 09:47:50,656 - numericdata - INFO - adjust_precision:317 - Adjusted precision of age to integer (0 decimals)
+2025-06-08 09:47:50,657 - numericdata - INFO - adjust_precision:317 - Adjusted precision of salary to integer (0 decimals)
+2025-06-08 09:47:50,657 - numericdata - INFO - adjust_precision:319 - Adjusted precision of score to 1 decimal places
+2025-06-08 09:47:50,659 - numericdata - INFO - adjust_precision:317 - Adjusted precision of years_experience to integer (0 decimals)
+2025-06-08 09:47:50,660 - numericdata - INFO - adjust_precision:317 - Adjusted precision of department_id to integer (0 decimals)
+2025-06-08 09:47:50,660 - numericdata - INFO - log_cleaning_step:112 - 7. Final Data: Shape (8, 6)
+2025-06-08 09:47:50,661 - numericdata - INFO - log_cleaning_step:117 -   age: min=22.00, max=38.00, mean=28.88
+2025-06-08 09:47:50,662 - numericdata - INFO - log_cleaning_step:117 -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:47:50,662 - numericdata - INFO - log_cleaning_step:117 -   years_experience: min=0.00, max=10.00, mean=3.62

@@ -1,0 +1,62 @@
+2025-06-08 09:47:50,603 - INFO - Using default cleaning configuration
+2025-06-08 09:47:50,605 - INFO - Loading dataset from xx.csv
+2025-06-08 09:47:50,608 - INFO - Initial shape: (9, 6)
+2025-06-08 09:47:50,609 - INFO - Created data cleaning pipeline with 13 steps
+2025-06-08 09:47:50,609 - INFO - 1. Initial Data: Shape (9, 6)
+2025-06-08 09:47:50,609 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:47:50,610 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,610 - INFO -   department_id: min=101.00, max=108.00, mean=104.67
+2025-06-08 09:47:50,610 - INFO - Converted age to numeric (0 values became NaN)
+2025-06-08 09:47:50,611 - INFO - Converted salary to numeric (0 values became NaN)
+2025-06-08 09:47:50,612 - INFO - Converted years_experience to numeric (0 values became NaN)
+2025-06-08 09:47:50,613 - INFO - Converted score to numeric (1 values became NaN)
+2025-06-08 09:47:50,613 - INFO - Converted department_id to numeric (0 values became NaN)
+2025-06-08 09:47:50,613 - INFO - 2. After Type Conversion: Shape (9, 6)
+2025-06-08 09:47:50,613 - INFO -   age: min=-5.00, max=40.00, mean=24.88
+2025-06-08 09:47:50,615 - INFO -   salary: min=48000.00, max=1000000.00, mean=175000.00
+2025-06-08 09:47:50,615 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,617 - INFO - Found 1 constraint violations in age
+2025-06-08 09:47:50,619 - INFO - Corrected 1 invalid values in age with 30.00
+2025-06-08 09:47:50,621 - INFO - Found 1 constraint violations in salary
+2025-06-08 09:47:50,623 - INFO - Corrected 1 invalid values in salary with 60000.00
+2025-06-08 09:47:50,625 - INFO - Found 1 constraint violations in score
+2025-06-08 09:47:50,628 - INFO - Corrected 1 invalid values in score with 90.10
+2025-06-08 09:47:50,628 - INFO - 3. After Error Correction: Shape (9, 6)
+2025-06-08 09:47:50,630 - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:47:50,630 - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,631 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,632 - INFO - Handling 1 missing values in age
+2025-06-08 09:47:50,633 - INFO - Filled missing values in age with 29.25
+2025-06-08 09:47:50,633 - INFO - Handling 1 missing values in salary
+2025-06-08 09:47:50,634 - INFO - Filled missing values in salary with 57500.00
+2025-06-08 09:47:50,634 - INFO - Handling 1 missing values in score
+2025-06-08 09:47:50,635 - INFO - Filled missing values in score with 89.86
+2025-06-08 09:47:50,635 - INFO - 4. After Missing Values: Shape (9, 6)
+2025-06-08 09:47:50,636 - INFO -   age: min=22.00, max=40.00, mean=29.25
+2025-06-08 09:47:50,637 - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,637 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,639 - INFO - Found 1 outliers in age (bounds: 18 - 38)
+2025-06-08 09:47:50,641 - INFO - Capped outliers in age
+2025-06-08 09:47:50,645 - INFO - Found 2 outliers in score (bounds: 86 - 92)
+2025-06-08 09:47:50,647 - INFO - Capped outliers in score
+2025-06-08 09:47:50,648 - INFO - 5. After Outliers: Shape (9, 6)
+2025-06-08 09:47:50,649 - INFO -   age: min=22.00, max=37.50, mean=28.97
+2025-06-08 09:47:50,650 - INFO -   salary: min=48000.00, max=70000.00, mean=57500.00
+2025-06-08 09:47:50,650 - INFO -   years_experience: min=0.00, max=10.00, mean=3.89
+2025-06-08 09:47:50,652 - INFO - Removed 1 duplicate rows
+2025-06-08 09:47:50,652 - INFO - 6. After Duplicates: Shape (8, 6)
+2025-06-08 09:47:50,654 - INFO -   age: min=22.00, max=37.50, mean=28.84
+2025-06-08 09:47:50,654 - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:47:50,655 - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:47:50,655 - INFO - Adjusting precision for 5 columns: ['age', 'salary', 'score', 'years_experience', 'department_id']
+2025-06-08 09:47:50,656 - INFO - Adjusted precision of age to integer (0 decimals)
+2025-06-08 09:47:50,657 - INFO - Adjusted precision of salary to integer (0 decimals)
+2025-06-08 09:47:50,657 - INFO - Adjusted precision of score to 1 decimal places
+2025-06-08 09:47:50,659 - INFO - Adjusted precision of years_experience to integer (0 decimals)
+2025-06-08 09:47:50,660 - INFO - Adjusted precision of department_id to integer (0 decimals)
+2025-06-08 09:47:50,660 - INFO - 7. Final Data: Shape (8, 6)
+2025-06-08 09:47:50,661 - INFO -   age: min=22.00, max=38.00, mean=28.88
+2025-06-08 09:47:50,662 - INFO -   salary: min=48000.00, max=70000.00, mean=57187.50
+2025-06-08 09:47:50,662 - INFO -   years_experience: min=0.00, max=10.00, mean=3.62
+2025-06-08 09:47:50,665 - INFO - Cleaned data saved to cleaned_output.csv
+2025-06-08 09:47:50,673 - INFO - Total execution time: 0.07 seconds

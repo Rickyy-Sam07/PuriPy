@@ -1,0 +1,10 @@
+age,salary,years_experience,score,department_id,city
+25,50000,2,88.5,101,NYC
+,60000,5,92.3,102,LA
+22,52000,1,85.0,103,NYC
+40,1000000,10,95.2,104,LA
+22,not_available,3,87.6,105,Chicago
+30,60000,6,90.1,106,NYC
+30,60000,6,90.1,106,NYC
+-5,70000,2,105.0,107,Boston
+35,48000,0,abc,108,LA

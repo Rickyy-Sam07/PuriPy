@@ -1,0 +1,7 @@
+pandas
+logging
+emot
+emoji
+contractions
+better_profanity
+nltk

@@ -1,0 +1,98 @@
+2025-06-06 20:07:40,210 - textcleaner - INFO - validate_config:69 - Starting configuration validation
+2025-06-06 20:07:40,212 - textcleaner - WARNING - validate_config:99 - Spell checker unavailable for english. Disabling spelling correction.
+2025-06-06 20:07:40,212 - textcleaner - INFO - validate_config:102 - Configuration validation completed successfully
+2025-06-06 20:07:40,218 - textcleaner - INFO - clean_dataframe:221 - Auto-detected text column: description
+2025-06-06 20:07:44,243 - textcleaner - DEBUG - clean:128 - Processing text of length 43
+2025-06-06 20:07:44,243 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 43 to 43
+2025-06-06 20:07:44,244 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 43 to 43
+2025-06-06 20:07:44,245 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 43 to 43
+2025-06-06 20:07:44,252 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 43 to 43
+2025-06-06 20:07:44,252 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 43 to 42
+2025-06-06 20:07:44,252 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 43 to 42
+2025-06-06 20:07:44,252 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 43 to 38
+2025-06-06 20:07:44,262 - textcleaner - DEBUG - clean:128 - Processing text of length 53
+2025-06-06 20:07:44,263 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 53 to 53
+2025-06-06 20:07:44,263 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 53 to 28
+2025-06-06 20:07:44,263 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 53 to 28
+2025-06-06 20:07:44,268 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 53 to 28
+2025-06-06 20:07:44,269 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 53 to 27
+2025-06-06 20:07:44,269 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 53 to 27
+2025-06-06 20:07:44,269 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 53 to 27
+2025-06-06 20:07:44,319 - textcleaner - DEBUG - clean:128 - Processing text of length 31
+2025-06-06 20:07:44,320 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 31 to 31
+2025-06-06 20:07:44,320 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 31 to 31
+2025-06-06 20:07:44,320 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 31 to 31
+2025-06-06 20:07:44,325 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 31 to 26
+2025-06-06 20:07:44,325 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 31 to 26
+2025-06-06 20:07:44,325 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 31 to 26
+2025-06-06 20:07:44,325 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 31 to 26
+2025-06-06 20:07:44,347 - textcleaner - DEBUG - clean:128 - Processing text of length 31
+2025-06-06 20:07:44,347 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 31 to 32
+2025-06-06 20:07:44,349 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 31 to 32
+2025-06-06 20:07:44,349 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 31 to 32
+2025-06-06 20:07:44,353 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 31 to 32
+2025-06-06 20:07:44,353 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 31 to 32
+2025-06-06 20:07:44,353 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 31 to 32
+2025-06-06 20:07:44,353 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 31 to 32
+2025-06-06 20:07:44,364 - textcleaner - DEBUG - clean:128 - Processing text of length 38
+2025-06-06 20:07:44,364 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 38 to 38
+2025-06-06 20:07:44,365 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 38 to 38
+2025-06-06 20:07:44,365 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 38 to 38
+2025-06-06 20:07:44,372 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 38 to 38
+2025-06-06 20:07:44,372 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 38 to 37
+2025-06-06 20:07:44,372 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 38 to 37
+2025-06-06 20:07:44,373 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 38 to 37
+2025-06-06 20:07:47,969 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 23
+2025-06-06 20:07:47,992 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:07:48,047 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:07:48,101 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 22
+2025-06-06 20:07:48,104 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:08:21,940 - textcleaner - INFO - validate_config:69 - Starting configuration validation
+2025-06-06 20:08:21,942 - textcleaner - WARNING - validate_config:99 - Spell checker unavailable for english. Disabling spelling correction.
+2025-06-06 20:08:21,942 - textcleaner - INFO - validate_config:102 - Configuration validation completed successfully
+2025-06-06 20:08:21,945 - textcleaner - INFO - clean_dataframe:221 - Auto-detected text column: description
+2025-06-06 20:08:26,052 - textcleaner - DEBUG - clean:128 - Processing text of length 43
+2025-06-06 20:08:26,054 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 43 to 43
+2025-06-06 20:08:26,054 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 43 to 43
+2025-06-06 20:08:26,055 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 43 to 43
+2025-06-06 20:08:26,061 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 43 to 43
+2025-06-06 20:08:26,061 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 43 to 42
+2025-06-06 20:08:26,061 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 43 to 42
+2025-06-06 20:08:26,061 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 43 to 38
+2025-06-06 20:08:26,182 - textcleaner - DEBUG - clean:128 - Processing text of length 53
+2025-06-06 20:08:26,182 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 53 to 53
+2025-06-06 20:08:26,183 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 53 to 28
+2025-06-06 20:08:26,183 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 53 to 28
+2025-06-06 20:08:26,186 - textcleaner - DEBUG - clean:128 - Processing text of length 31
+2025-06-06 20:08:26,187 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 31 to 31
+2025-06-06 20:08:26,188 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 31 to 31
+2025-06-06 20:08:26,188 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 31 to 31
+2025-06-06 20:08:26,190 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 53 to 28
+2025-06-06 20:08:26,190 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 53 to 27
+2025-06-06 20:08:26,191 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 53 to 27
+2025-06-06 20:08:26,191 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 53 to 27
+2025-06-06 20:08:26,194 - textcleaner - DEBUG - clean:128 - Processing text of length 31
+2025-06-06 20:08:26,195 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 31 to 32
+2025-06-06 20:08:26,195 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 31 to 32
+2025-06-06 20:08:26,196 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 31 to 32
+2025-06-06 20:08:26,196 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 31 to 26
+2025-06-06 20:08:26,197 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 31 to 26
+2025-06-06 20:08:26,197 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 31 to 26
+2025-06-06 20:08:26,197 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 31 to 26
+2025-06-06 20:08:26,203 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 31 to 32
+2025-06-06 20:08:26,203 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 31 to 32
+2025-06-06 20:08:26,203 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 31 to 32
+2025-06-06 20:08:26,203 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 31 to 32
+2025-06-06 20:08:26,216 - textcleaner - DEBUG - clean:128 - Processing text of length 38
+2025-06-06 20:08:26,217 - textcleaner - DEBUG - clean:144 - Step 1 (expand_contractions) - length changed from 38 to 38
+2025-06-06 20:08:26,217 - textcleaner - DEBUG - clean:144 - Step 2 (remove_urls) - length changed from 38 to 38
+2025-06-06 20:08:26,217 - textcleaner - DEBUG - clean:144 - Step 3 (remove_html) - length changed from 38 to 38
+2025-06-06 20:08:26,225 - textcleaner - DEBUG - clean:144 - Step 4 (remove_emojis) - length changed from 38 to 38
+2025-06-06 20:08:26,225 - textcleaner - DEBUG - clean:144 - Step 5 (remove_numbers) - length changed from 38 to 37
+2025-06-06 20:08:26,225 - textcleaner - DEBUG - clean:144 - Step 6 (lowercase) - length changed from 38 to 37
+2025-06-06 20:08:26,225 - textcleaner - DEBUG - clean:144 - Step 7 (remove_punctuation) - length changed from 38 to 37
+2025-06-06 20:08:29,761 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 23
+2025-06-06 20:08:29,871 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:08:29,906 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:08:29,908 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 11
+2025-06-06 20:08:29,911 - textcleaner - DEBUG - clean:188 - Text cleaning completed. Final length: 22
