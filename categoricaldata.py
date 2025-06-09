@@ -1,4 +1,3 @@
-# categoricaldata.py - Optimized with Thefuzz library
 import pandas as pd
 import numpy as np
 import logging
@@ -21,7 +20,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[logging.FileHandler('auto_cleaner.log'), logging.StreamHandler()]
+    handlers=[logging.FileHandler('categoricalapp.log'), logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
 
@@ -30,8 +29,16 @@ class SmartCategoricalCleaner:
     
     def __init__(self, df: pd.DataFrame, target_column: Optional[str] = None, 
                 n_jobs: int = -1, memory_efficient: bool = False):
+        """
+        Initialize the categorical data cleaner
+        
+        Args:
+            df: Input DataFrame
+            target_column: Target column name for supervised encodings
+            n_jobs: Number of parallel jobs (-1 for all cores)
+            memory_efficient: If True, operate on original dataframe to save memory
+        """
         try:
-            # Make a copy only if memory_efficient is False
             self.df = df if memory_efficient else df.copy()
             self.target = target_column
             self.report = {}
@@ -41,7 +48,6 @@ class SmartCategoricalCleaner:
             self._category_cache = {}
             self.execution_times = {}
             
-            # Store DataFrame info
             self._df_info = {
                 'shape': df.shape,
                 'memory': df.memory_usage(deep=True).sum() / (1024**2)  # in MB
@@ -60,20 +66,32 @@ class SmartCategoricalCleaner:
                   encoding_strategy: Optional[str] = None,
                   create_features: bool = True,
                   similarity_threshold: float = 80) -> pd.DataFrame:
-        """Main cleaning pipeline with customizable options"""
+        """
+        Main cleaning pipeline with customizable options
+        
+        Args:
+            column: Name of column to clean
+            fix_typos: Whether to automatically correct typos
+            group_rare: Whether to group rare categories
+            rare_threshold: Frequency below which categories are grouped
+            apply_encoding: Whether to apply encoding
+            encoding_strategy: Encoding method ('onehot', 'label', 'ordinal', 'frequency')
+            create_features: Whether to generate derived features
+            similarity_threshold: Threshold for typo detection (0-100)
+            
+        Returns:
+            DataFrame with cleaned categorical column
+        """
         start_time = time.time()
         
         try:
-            # Validate column exists
             if column not in self.df.columns:
                 raise ValueError(f"Column '{column}' not found in dataset")
                 
             logger.info(f"Starting cleaning for column: {column}")
             
-            # Store original state for report
             self._detect_patterns(column)
             
-            # Apply cleaning steps
             self._handle_missing(column)
             self._standardize_text(column)
             
@@ -89,7 +107,6 @@ class SmartCategoricalCleaner:
             if create_features:
                 self._auto_feature_engineering(column)
             
-            # Update report with after stats
             self.report[column]['after_stats'] = {
                 'nunique': self.df[column].nunique() if column in self.df.columns else 0,
                 'missing': self.df[column].isna().sum() if column in self.df.columns else 0
@@ -97,16 +114,15 @@ class SmartCategoricalCleaner:
             
             self.cleaned_columns.append(column)
             
-            # Clean up cache to free memory
+            # Clean up 
             if column in self._category_cache:
                 del self._category_cache[column]
             
-            # Record execution time
             end_time = time.time()
             self.execution_times[column] = end_time - start_time
             logger.info(f"Finished cleaning {column} in {end_time - start_time:.2f} seconds")
             
-            # Run garbage collection if in memory-efficient mode
+            # garbage collection 
             if self.memory_efficient:
                 gc.collect()
                 
@@ -117,9 +133,13 @@ class SmartCategoricalCleaner:
             raise
 
     def _detect_patterns(self, column: str):
-        """Auto-detect data patterns and issues"""
+        """
+        Auto-detect data patterns and issues
+        
+        Identifies potential issues like missing values, rare categories,
+        and possible typos in the specified column.
+        """
         try:
-            # Initialize report for this column
             self.report[column] = {
                 'unique_values': self.df[column].nunique(),
                 'missing_values': self.df[column].isna().sum(),
@@ -129,25 +149,31 @@ class SmartCategoricalCleaner:
                 'actions_performed': []
             }
             
-            # Basic pattern detection
             total_rows = len(self.df)
             cardinality_ratio = self.df[column].nunique() / total_rows
             self.report[column]['high_cardinality'] = cardinality_ratio > 0.5
-            
-            # Find typos and rare categories
+        
             self.report[column]['typo_candidates'] = self._find_typo_candidates(column)
             self.report[column]['rare_categories'] = self._find_rare_categories(column)
             
         except Exception as e:
             logger.error(f"Error detecting patterns for {column}: {str(e)}")
-            # Initialize empty report to avoid errors in other methods
+            
             if column not in self.report:
                 self.report[column] = {'actions_performed': []}
 
     def _find_typo_candidates(self, column: str, threshold: int = 80) -> Dict[str, str]:
-        """Find potential typos using Thefuzz library"""
+        """
+        Find potential typos using fuzzy string matching
+        
+        Args:
+            column: Column name to check for typos
+            threshold: Similarity threshold (0-100)
+            
+        Returns:
+            Dictionary mapping potential typos to their likely corrections
+        """
         try:
-            # Cache the top categories for this column
             if column not in self._category_cache:
                 self._category_cache[column] = {
                     'top_cats': list(self.report[column]['top_categories'].keys()),
@@ -157,11 +183,9 @@ class SmartCategoricalCleaner:
             top_cats = self._category_cache[column]['top_cats']
             unique_vals = self._category_cache[column]['unique_vals']
             
-            # Skip if conditions aren't right
             if len(top_cats) < 2 or not pd.api.types.is_string_dtype(self.df[column]):
                 return {}
             
-            # Process large datasets in parallel
             if len(unique_vals) > 1000 and self.n_jobs != 1:
                 unique_list = list(unique_vals)
                 batch_size = min(1000, len(unique_list))
@@ -178,7 +202,6 @@ class SmartCategoricalCleaner:
                 return {orig: match for orig, match in results if match}
                 
             else:
-                # Serial processing for smaller datasets
                 typo_candidates = {}
                 for val in unique_vals:
                     if not isinstance(val, str) or val in top_cats:
@@ -195,7 +218,17 @@ class SmartCategoricalCleaner:
             return {}
     
     def _process_typo_candidate(self, val, top_cats, threshold):
-        """Helper function for parallel typo detection"""
+        """
+        Helper function for parallel typo detection
+        
+        Args:
+            val: Value to check
+            top_cats: List of common categories to match against
+            threshold: Similarity threshold
+            
+        Returns:
+            Tuple of (original_value, corrected_value) if match found, None otherwise
+        """
         try:
             if not isinstance(val, str) or val in top_cats:
                 return None
@@ -208,13 +241,20 @@ class SmartCategoricalCleaner:
             return None
 
     def _find_rare_categories(self, column: str, threshold: float = 0.05) -> List[str]:
-        """Identify categories below frequency threshold"""
+        """
+        Identify categories that occur below a frequency threshold
+        
+        Args:
+            column: Column name to analyze
+            threshold: Frequency threshold below which categories are considered rare
+            
+        Returns:
+            List of category values that are considered rare
+        """
         try:
-            # Skip if not enough data or all values are unique
             if len(self.df) < 20 or self.df[column].nunique() == len(self.df):
                 return []
                 
-            # Use vectorized operations for better performance
             freq = self.df[column].value_counts(normalize=True)
             rare_cats = list(freq[freq < threshold].index)
             
@@ -225,17 +265,19 @@ class SmartCategoricalCleaner:
             return []
 
     def _handle_missing(self, column: str):
-        """Auto-handle missing values"""
+        """
+        Auto-handle missing values in categorical columns
+        
+        Uses 'Unknown' for high-cardinality columns and mode imputation for others
+        """
         try:
             missing_count = self.df[column].isna().sum()
             
             if missing_count > 0:
                 if self.df[column].nunique() > 10 or len(self.df) < 100:
-                    # For high cardinality or small datasets, use 'Unknown'
                     self.df[column] = self.df[column].fillna('Unknown')
                     method = "'Unknown' placeholder"
                 else:
-                    # For low cardinality with sufficient data, use mode
                     mode_value = self.df[column].mode()[0]
                     self.df[column] = self.df[column].fillna(mode_value)
                     method = f"mode imputation"
@@ -248,15 +290,16 @@ class SmartCategoricalCleaner:
             logger.error(f"Error handling missing values in {column}: {str(e)}")
 
     def _standardize_text(self, column: str):
-        """Auto-format text data with optimized vectorization"""
+        """
+        Auto-format text data with optimized vectorization
+        
+        Converts to lowercase, removes extra spaces and standardizes formatting
+        """
         try:
-            # Only process if column contains string data
             if pd.api.types.is_string_dtype(self.df[column]) or self.df[column].dtype == 'object':
-                # Get non-NaN mask once for efficiency
                 non_na_mask = ~self.df[column].isna()
                 
                 if non_na_mask.any():
-                    # Convert only non-NaN values to string and apply transformations
                     self.df.loc[non_na_mask, column] = (
                         self.df.loc[non_na_mask, column]
                         .astype(str)
@@ -271,13 +314,17 @@ class SmartCategoricalCleaner:
             logger.error(f"Error standardizing text in {column}: {str(e)}")
 
     def _fix_typos(self, column: str, similarity_threshold: float = 80):
-        """Apply automatic typo correction using Thefuzz"""
+        """
+        Apply automatic typo correction using fuzzy matching
+        
+        Args:
+            column: Column name to clean
+            similarity_threshold: Similarity score threshold (0-100)
+        """
         try:
-            # Get typos with specified threshold
             typos = self._find_typo_candidates(column, threshold=int(similarity_threshold))
             
             if typos:
-                # Use efficient replacement
                 self.df[column] = self.df[column].replace(typos)
                 
                 self.report[column]['actions_performed'].append(
@@ -288,18 +335,21 @@ class SmartCategoricalCleaner:
             logger.error(f"Error fixing typos in {column}: {str(e)}")
 
     def _group_rare_categories(self, column: str, threshold: float = 0.05):
-        """Auto-group rare categories with optimized implementation"""
+        """
+        Auto-group rare categories with optimized implementation
+        
+        Args:
+            column: Column name to process
+            threshold: Frequency threshold below which categories are grouped as 'Other'
+        """
         try:
-            # Find rare categories
             rare = self._find_rare_categories(column, threshold)
             
             if rare:
-                # Create indicator column to track which rows were grouped
                 indicator_col = f"{column}_other"
                 is_rare = self.df[column].isin(rare)
                 self.df[indicator_col] = is_rare.astype(int)
                 
-                # Group rare categories
                 self.df.loc[is_rare, column] = 'Other'
                 
                 self.report[column]['actions_performed'].append(
@@ -310,14 +360,20 @@ class SmartCategoricalCleaner:
             logger.error(f"Error grouping rare categories in {column}: {str(e)}")
 
     def _optimize_encoding(self, column: str, strategy: Optional[str] = None):
-        """Auto-select best encoding strategy"""
+        """
+        Auto-select best encoding strategy for categorical columns
+        
+        Args:
+            column: Column name to encode
+            strategy: Encoding strategy ('onehot', 'label', 'ordinal', 'frequency')
+                     If None, strategy is auto-selected based on cardinality
+        """
         try:
             if column not in self.df.columns:
                 return
                 
             unique_count = self.df[column].nunique()
             
-            # Auto-select strategy based on cardinality
             if strategy is None:
                 if unique_count <= 10:
                     strategy = 'onehot'
@@ -326,7 +382,6 @@ class SmartCategoricalCleaner:
                 else:
                     strategy = 'ordinal' if unique_count <= 1000 else 'frequency'
             
-            # Apply encoding strategy
             if strategy == 'onehot':
                 encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
                 encoded = encoder.fit_transform(self.df[[column]])
@@ -377,9 +432,13 @@ class SmartCategoricalCleaner:
             self.report[column]['actions_performed'].append(f"Encoding failed: {str(e)}")
 
     def _auto_feature_engineering(self, column: str):
-        """Create derived features with optimized implementation"""
+        """
+        Create derived features with optimized implementation
+        
+        Creates frequency encoding, target encoding (if target column available),
+        and limited interaction features with previously cleaned columns.
+        """
         try:
-            # Skip if column was encoded and no longer exists
             if column not in self.df.columns:
                 return
                 
@@ -427,7 +486,12 @@ class SmartCategoricalCleaner:
             logger.error(f"Error creating features for {column}: {str(e)}")
 
     def get_cleaning_report(self) -> Dict:
-        """Generate detailed cleaning report with execution times"""
+        """
+        Generate detailed cleaning report with execution times
+        
+        Returns:
+            Dictionary containing cleaning statistics and actions for each column
+        """
         detailed_report = {}
         
         for col, info in self.report.items():
@@ -443,14 +507,27 @@ class SmartCategoricalCleaner:
             
         return detailed_report
 
-# Function to clean all categorical columns with progress bar
+
 def clean_all_categorical_columns(df: pd.DataFrame, 
                               target_column: Optional[str] = None,
                               excluded_columns: List[str] = None,
                               n_jobs: int = -1,
                               memory_efficient: bool = False,
                               **kwargs) -> pd.DataFrame:
-    """Clean all detected categorical columns in a dataframe"""
+    """
+    Clean all detected categorical columns in a dataframe
+    
+    Args:
+        df: Input DataFrame
+        target_column: Target column for supervised learning
+        excluded_columns: Columns to exclude from cleaning
+        n_jobs: Number of parallel jobs (-1 for all cores)
+        memory_efficient: If True, operate in memory-efficient mode
+        **kwargs: Additional arguments for auto_clean
+        
+    Returns:
+        DataFrame with cleaned categorical columns
+    """
     try:
         start_time = time.time()
         excluded = excluded_columns or []
@@ -459,14 +536,9 @@ def clean_all_categorical_columns(df: pd.DataFrame,
         cleaner = SmartCategoricalCleaner(df, target_column, n_jobs=n_jobs, memory_efficient=memory_efficient)
         
         # Auto-detect categorical columns
-        categorical_columns = [
-            col for col in df.columns
-            if col not in excluded and col != target_column and (
-                pd.api.types.is_object_dtype(df[col]) or (
-                    pd.api.types.is_numeric_dtype(df[col]) and df[col].nunique() < 20
-                )
-            )
-        ]
+        categorical_columns = detect_categorical_columns(df)
+        categorical_columns = [col for col in categorical_columns 
+                              if col not in excluded and col != target_column]
         
         # Process each column with progress bar
         logger.info(f"Processing {len(categorical_columns)} categorical columns")
@@ -483,8 +555,17 @@ def clean_all_categorical_columns(df: pd.DataFrame,
         logger.error(f"Error in categorical cleaning: {str(e)}")
         return df  # Return original dataframe if processing fails
 
+
 def detect_categorical_columns(df: pd.DataFrame) -> List[str]:
-    """Improved automatic detection for categorical columns"""
+    """
+    Improved automatic detection for categorical columns
+    
+    Args:
+        df: Input DataFrame
+        
+    Returns:
+        List of column names that likely represent categorical features
+    """
     categorical_cols = []
     num_rows = len(df)
     
@@ -504,3 +585,222 @@ def detect_categorical_columns(df: pd.DataFrame) -> List[str]:
                 categorical_cols.append(col)
     
     return categorical_cols
+
+
+def save_cleaning_report_as_text(cleaner: SmartCategoricalCleaner, file_path: str = "cleaning_report.txt") -> None:
+    """
+    Save the categorical data cleaning report as a plain text file
+    
+    Args:
+        cleaner: The SmartCategoricalCleaner instance with completed cleaning operations
+        file_path: Path where to save the text report
+        
+    Returns:
+        None
+    """
+    try:
+        report = cleaner.get_cleaning_report()
+        df_info = cleaner._df_info
+        
+        with open(file_path, 'w') as f:
+            # Header
+            f.write("==================================================\n")
+            f.write("             CATEGORICAL CLEANING REPORT           \n")
+            f.write("==================================================\n\n")
+            
+            # Dataset info
+            f.write("DATASET INFORMATION:\n")
+            f.write(f"Shape: {df_info['shape'][0]} rows x {df_info['shape'][1]} columns\n")
+            f.write(f"Memory usage: {df_info['memory']:.2f} MB\n\n")
+            
+            # Total execution time
+            total_time = sum(cleaner.execution_times.values())
+            f.write(f"Total cleaning time: {total_time:.2f} seconds\n\n")
+            
+            # Column summaries
+            f.write("==================================================\n")
+            f.write("               COLUMN SUMMARIES                   \n")
+            f.write("==================================================\n\n")
+            
+            for col, details in report.items():
+                f.write(f"COLUMN: {col}\n")
+                f.write("-" * 50 + "\n")
+                
+                # Before stats
+                before_stats = details.get('before_stats', {})
+                f.write(f"Before cleaning:\n")
+                f.write(f"  - Unique values: {before_stats.get('unique_values', 'N/A')}\n")
+                f.write(f"  - Missing values: {before_stats.get('missing_values', 'N/A')}\n")
+                
+                # After stats
+                after_stats = details.get('after_stats', {})
+                f.write(f"After cleaning:\n")
+                f.write(f"  - Unique values: {after_stats.get('nunique', 'N/A')}\n")
+                f.write(f"  - Missing values: {after_stats.get('missing', 'N/A')}\n")
+                
+                # Actions performed
+                f.write("\nActions performed:\n")
+                for i, action in enumerate(details.get('actions_performed', []), 1):
+                    f.write(f"  {i}. {action}\n")
+                
+                # Execution time
+                exec_time = details.get('execution_time', 0)
+                f.write(f"\nExecution time: {exec_time:.2f} seconds\n\n")
+                
+                f.write("==================================================\n\n")
+                
+            f.write("End of report\n")
+            
+        logger.info(f"Cleaning report saved to {file_path}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to save cleaning report: {str(e)}")
+        return False
+
+
+def print_cleaning_summary(cleaner: SmartCategoricalCleaner) -> None:
+    """
+    Print a text-based summary of the categorical data cleaning to the console
+    
+    Args:
+        cleaner: The SmartCategoricalCleaner instance with completed cleaning operations
+        
+    Returns:
+        None
+    """
+    try:
+        report = cleaner.get_cleaning_report()
+        total_time = sum(cleaner.execution_times.values())
+        
+        print("\n" + "=" * 60)
+        print(" " * 15 + "CATEGORICAL CLEANING SUMMARY")
+        print("=" * 60)
+        
+        print(f"\nProcessed {len(report)} columns in {total_time:.2f} seconds")
+        print(f"Columns processed: {', '.join(report.keys())}")
+        
+        print("\n" + "-" * 60)
+        print("COLUMN HIGHLIGHTS")
+        print("-" * 60)
+        
+        for col, details in report.items():
+            before_missing = details.get('before_stats', {}).get('missing_values', 0)
+            after_missing = details.get('after_stats', {}).get('missing', 0)
+            
+            actions = details.get('actions_performed', [])
+            action_count = len(actions)
+            
+            print(f"\n{col}:")
+            print(f"  • {action_count} cleaning actions performed")
+            if before_missing > 0:
+                missing_fixed = before_missing - after_missing
+                print(f"  • {missing_fixed} missing values handled ({before_missing} → {after_missing})")
+            
+            print(f"  • Time: {details.get('execution_time', 0):.2f}s")
+        
+        print("\nFor detailed information, see the full report file.")
+        
+    except Exception as e:
+        logger.error(f"Failed to print cleaning summary: {str(e)}")
+
+
+def clean_and_report(df: pd.DataFrame, 
+                    target_column: Optional[str] = None,
+                    excluded_columns: List[str] = None,
+                    report_path: str = "cleaning_report.txt",
+                    print_summary: bool = True,
+                    **kwargs) -> Tuple[pd.DataFrame, Dict]:
+    """
+    Clean categorical columns and generate a comprehensive text report
+    
+    Args:
+        df: Input DataFrame
+        target_column: Target column for supervised learning
+        excluded_columns: Columns to exclude from cleaning
+        report_path: Path to save the text report
+        print_summary: Whether to print a summary to console
+        **kwargs: Additional arguments for the cleaner
+        
+    Returns:
+        Tuple containing the cleaned DataFrame and cleaning report dict
+    """
+    try:
+        start_time = time.time()
+        excluded = excluded_columns or []
+        
+        # Initialize cleaner
+        cleaner = SmartCategoricalCleaner(df, target_column, 
+                                        n_jobs=kwargs.get('n_jobs', -1), 
+                                        memory_efficient=kwargs.get('memory_efficient', False))
+        
+        # Auto-detect categorical columns
+        categorical_columns = detect_categorical_columns(df)
+        categorical_columns = [col for col in categorical_columns 
+                              if col not in excluded and col != target_column]
+        
+        # Process each column with progress bar
+        logger.info(f"Processing {len(categorical_columns)} categorical columns")
+        for col in tqdm(categorical_columns, desc="Cleaning columns"):
+            try:
+                cleaner.auto_clean(col, **kwargs)
+            except Exception as e:
+                logger.error(f"Failed to clean {col}: {str(e)}")
+        
+        # Generate report
+        if report_path:
+            save_cleaning_report_as_text(cleaner, report_path)
+            
+        if print_summary:
+            print_cleaning_summary(cleaner)
+            
+        logger.info(f"Completed in {time.time() - start_time:.2f} seconds")
+        
+        return cleaner.df, cleaner.get_cleaning_report()
+        
+    except Exception as e:
+        logger.error(f"Error in categorical cleaning: {str(e)}")
+        return df, {}  # Return original dataframe if processing fails
+
+
+def detect_temporal_columns(df: pd.DataFrame) -> List[str]:
+    """
+    Detect columns that might represent temporal data (year, month, etc.)
+    
+    Args:
+        df: Input DataFrame
+        
+    Returns:
+        List of column names that likely represent temporal features
+    """
+    temporal_columns = []
+    
+    time_related_names = [
+        'year', 'month', 'day', 'week', 'quarter', 'semester',
+        'yr', 'mo', 'season', 'period', 'fiscal'
+    ]
+    
+    for col in df.columns:
+        col_lower = col.lower()
+        
+        # Check if column name contains temporal terms
+        if any(term in col_lower for term in time_related_names):
+            if pd.api.types.is_numeric_dtype(df[col]):
+                # Check for reasonable ranges for year, month, day, etc.
+                if 'year' in col_lower or 'yr' in col_lower:
+                    if df[col].min() >= 1900 and df[col].max() <= 2100:
+                        temporal_columns.append(col)
+                elif 'month' in col_lower or 'mo' in col_lower:
+                    if df[col].min() >= 1 and df[col].max() <= 12:
+                        temporal_columns.append(col)
+                elif 'day' in col_lower:
+                    if df[col].min() >= 1 and df[col].max() <= 31:
+                        temporal_columns.append(col)
+                elif 'quarter' in col_lower:
+                    if df[col].min() >= 1 and df[col].max() <= 4:
+                        temporal_columns.append(col)
+                else:
+                    # If we can't determine type but name suggests temporal
+                    temporal_columns.append(col)
+    
+    return temporal_columns

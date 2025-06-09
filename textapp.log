@@ -1142,3 +1142,67 @@ Total execution time: 15.25 seconds
 ========================================
 Total execution time: 10.82 seconds
 ========================================
+2025-06-09 20:07:19,835 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:19,855 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:19,894 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:54,194 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:54,197 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:54,220 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:54,242 - INFO - Data loaded in 0.02s
+2025-06-09 20:07:54,260 - INFO - Auto-detected text column: description
+2025-06-09 20:07:54,261 - INFO - Processing 16 chunks across 16 cores
+2025-06-09 20:07:58,216 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,220 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,239 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,321 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,323 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,343 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,371 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,376 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,398 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,400 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,403 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,417 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,423 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,430 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,430 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,430 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,433 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,434 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,434 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,434 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,434 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,438 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,444 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,448 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,453 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,461 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,463 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,464 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,469 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,473 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,475 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,476 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,477 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,480 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,494 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,498 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,502 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,504 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,520 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,521 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,523 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,547 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,582 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,584 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,586 - INFO - Downloaded NLTK resource: punkt
+2025-06-09 20:07:58,590 - INFO - Downloaded NLTK resource: stopwords
+2025-06-09 20:07:58,605 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:07:58,612 - INFO - Downloaded NLTK resource: wordnet
+2025-06-09 20:08:02,611 - INFO - Completed parallel cleaning
+2025-06-09 20:08:02,619 - INFO - Cleaning completed in 8.37s
+2025-06-09 20:08:02,627 - INFO - Data saved in 0.00s
+2025-06-09 20:08:02,627 - INFO - 
+========================================
+Total execution time: 8.41 seconds
+========================================

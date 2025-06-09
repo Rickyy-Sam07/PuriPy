@@ -1,10 +1,8 @@
-# main.py
+
 import pandas as pd
 import time
 from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column
 import logging
-
-# Configure logging to match textcleaner's setup
 logger = logging.getLogger(__name__)
 
 config = {
@@ -28,20 +26,17 @@ config = {
 }
 
 
-def main():
-    # Start timing
+def main1():
+    
     start_time = time.time()
     
     try:
-        # Load raw data
         load_start = time.time()
         df = pd.read_csv('sample.csv')
         logger.info(f"Data loaded in {time.time() - load_start:.2f}s")
         
-        # Create cleaner
         cleaner = create_text_cleaner(config)
-        
-        # Clean data
+    
         clean_start = time.time()
         cleaned_df = clean_dataframe(
             df,
@@ -51,13 +46,13 @@ def main():
         )
         logger.info(f"Cleaning completed in {time.time() - clean_start:.2f}s")
         
-        # Replace original text column
+      
         original_text_col = auto_detect_text_column(df)
         if 'cleaned_text' in cleaned_df.columns:
             cleaned_df[original_text_col] = cleaned_df['cleaned_text']
             cleaned_df.drop(columns=['cleaned_text'], inplace=True)
         
-        # Save results
+  
         save_start = time.time()
         cleaned_df.to_csv('output.csv', index=False)
         logger.info(f"Data saved in {time.time() - save_start:.2f}s")
@@ -67,9 +62,8 @@ def main():
         raise
     
     finally:
-        # Calculate total time
         total_time = time.time() - start_time
         logger.info(f"\n{'='*40}\nTotal execution time: {total_time:.2f} seconds\n{'='*40}")
 
 if __name__ == "__main__":
-    main()
+    main1()

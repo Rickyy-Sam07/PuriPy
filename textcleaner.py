@@ -11,7 +11,7 @@ from nltk.util import ngrams
 import emoji
 import contractions
 from better_profanity import profanity
-from textblob import TextBlob  # Changed from SpellChecker
+from textblob import TextBlob  
 from tqdm import tqdm
 from multiprocessing import Pool, cpu_count
 import warnings
@@ -24,7 +24,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("app.log", mode='a'),
+        logging.FileHandler("textapp.log", mode='a'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -70,14 +70,14 @@ def validate_config(config: dict) -> None:
         logger.error(f"Unsupported language: {config['language']}")
         raise ValueError(f"Unsupported language: {config['language']}. Available: {stopwords.fileids()}")
     
-    # Updated spelling correction validation
+
     if config['spelling_correction'] and config['language'] not in ['en', 'english']:
         warnings.warn("TextBlob spelling correction only supports English. Disabling spelling correction.")
         config['spelling_correction'] = False
 
 # ---------------------- URL Removal ----------------------
 def improved_url_removal(text: str) -> str:
-    """Remove URLs and domain-like patterns (e.g., W.W.W.apple.com)"""
+    """Remove URLs and domain-like patterns"""  
     url_pattern = r'(https?://\S+|www\.\S+|(?:\b\w+\.)+\w{2,})'
     return re.sub(url_pattern, '', text, flags=re.IGNORECASE)
 
@@ -88,7 +88,7 @@ def clean(
     stop_words: set,
     lemmatizer: Optional[WordNetLemmatizer],
     stemmer: Optional[PorterStemmer]
-) -> str:  # Removed SpellChecker parameter
+) -> str:  
     """Apply all configured cleaning steps to a single text string."""
     try:
         if pd.isna(text):
@@ -184,7 +184,7 @@ def clean_text_factory(config: dict) -> Callable[[str], str]:
     """Create a text cleaner with validated configuration."""
     validate_config(config)
     
-    # Initialize components
+    
     stop_words = set()
     if config['remove_stopwords'] or config['profanity_filter']:
         stop_words = set(stopwords.words(config['language']))
@@ -201,10 +201,6 @@ def clean_text_factory(config: dict) -> Callable[[str], str]:
     
     return partial(clean, config=config, stop_words=stop_words,
                   lemmatizer=lemmatizer, stemmer=stemmer)
-
-# ---------------------- Remaining Functions Unchanged ----------------------
-# [Keep all other functions (clean_dataframe, _parallel_clean, etc.) identical]
-
 
 # ---------------------- DataFrame Cleaning ----------------------
 def clean_dataframe(

@@ -106,3 +106,15 @@ KeyError: 'unique_values'
 2025-06-08 20:38:25,884 - INFO - Finished cleaning category in 0.02 seconds
 2025-06-08 20:38:25,885 - INFO - Starting cleaning for column: other_cat_col
 2025-06-08 20:38:25,901 - INFO - Finished cleaning other_cat_col in 0.02 seconds
+2025-06-09 08:47:55,630 - INFO - Loading dataset from xx.csv
+2025-06-09 08:47:55,660 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-09 08:47:55,661 - INFO - Starting cleaning for column: category
+2025-06-09 08:47:55,673 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-09 08:47:55,673 - INFO - Starting cleaning for column: other_cat_col
+2025-06-09 08:47:55,677 - INFO - Finished cleaning other_cat_col in 0.00 seconds
+2025-06-10 00:51:12,282 - INFO - Loading dataset from xx.csv
+2025-06-10 00:51:12,325 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 00:51:12,326 - INFO - Starting cleaning for column: category
+2025-06-10 00:51:12,350 - INFO - Finished cleaning category in 0.02 seconds
+2025-06-10 00:51:12,351 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 00:51:12,362 - INFO - Finished cleaning other_cat_col in 0.01 seconds
