@@ -31,7 +31,6 @@ class SmartCategoricalCleaner:
                 n_jobs: int = -1, memory_efficient: bool = False):
         """
         Initialize the categorical data cleaner
-        
         Args:
             df: Input DataFrame
             target_column: Target column name for supervised encodings
@@ -442,7 +441,7 @@ class SmartCategoricalCleaner:
             if column not in self.df.columns:
                 return
                 
-            # Track created features
+            # created features
             created_features = []
             
             # 1. Count encoding - frequency of each category
@@ -558,7 +557,7 @@ def clean_all_categorical_columns(df: pd.DataFrame,
 
 def detect_categorical_columns(df: pd.DataFrame) -> List[str]:
     """
-    Improved automatic detection for categorical columns
+     automatic detection for categorical columns
     
     Args:
         df: Input DataFrame

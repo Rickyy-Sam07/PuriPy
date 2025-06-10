@@ -1,7 +1,6 @@
-
 import pandas as pd
 import time
-from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column
+from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column , save_text_cleaning_report_as_txt
 import logging
 logger = logging.getLogger(__name__)
 
@@ -27,7 +26,6 @@ config = {
 
 
 def main1():
-    
     start_time = time.time()
     
     try:
@@ -35,24 +33,43 @@ def main1():
         df = pd.read_csv('sample.csv')
         logger.info(f"Data loaded in {time.time() - load_start:.2f}s")
         
+        # First detect the text column
+        text_column = auto_detect_text_column(df)
+        output_column = 'cleaned_text'
+        
+        # Create the cleaner
         cleaner = create_text_cleaner(config)
     
+        # Clean the text
         clean_start = time.time()
         cleaned_df = clean_dataframe(
             df,
             cleaner,
+            text_column=text_column,
+            output_column=output_column,
             parallel=True,
             verbose=True
         )
         logger.info(f"Cleaning completed in {time.time() - clean_start:.2f}s")
         
-      
-        original_text_col = auto_detect_text_column(df)
+        # Generate the report AFTER cleaning (not before)
+        save_text_cleaning_report_as_txt(
+            df=cleaned_df,
+            text_column=text_column,
+            output_column=output_column,
+            config=config,
+            file_path="text_cleaning_report.txt",
+            include_samples=5
+        )
+        
+        # Option to replace original with cleaned (careful with this!)
+        # Currently this REMOVES the cleaned text and replaces original
+        # Consider keeping both columns instead
         if 'cleaned_text' in cleaned_df.columns:
-            cleaned_df[original_text_col] = cleaned_df['cleaned_text']
+            cleaned_df[f"{text_column}_original"] = cleaned_df[text_column]
+            cleaned_df[text_column] = cleaned_df['cleaned_text']
             cleaned_df.drop(columns=['cleaned_text'], inplace=True)
         
-  
         save_start = time.time()
         cleaned_df.to_csv('output.csv', index=False)
         logger.info(f"Data saved in {time.time() - save_start:.2f}s")

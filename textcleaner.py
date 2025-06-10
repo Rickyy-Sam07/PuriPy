@@ -18,6 +18,7 @@ import warnings
 import numpy as np
 from functools import partial
 import sys
+import time
 
 # ---------------------- Logging Setup ----------------------
 logging.basicConfig(
@@ -275,7 +276,197 @@ def auto_detect_text_column(df: pd.DataFrame) -> str:
     word_counts = {col: df[col].astype(str).str.split().str.len().mean() for col in text_cols}
     return max(word_counts, key=word_counts.get)
 
+# ---------------------- Report Generation ----------------------
+def save_text_cleaning_report_as_txt(
+    df: pd.DataFrame,
+    text_column: str,
+    output_column: str,
+    config: dict = None,
+    file_path: str = "text_cleaning_report.txt",
+    include_samples: int = 5
+) -> bool:
+    """
+    Generate and save a text cleaning report to a text file
+    
+    Args:
+        df: DataFrame containing the original and cleaned text
+        text_column: Name of the column containing the original text
+        output_column: Name of the column containing the cleaned text
+        config: Configuration dictionary used for cleaning (optional)
+        file_path: Path where to save the text report
+        include_samples: Number of text samples to include in report (0 to disable)
+        
+    Returns:
+        bool: True if report was successfully saved, False otherwise
+    """
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            # Header
+            f.write("==================================================\n")
+            f.write("             TEXT CLEANING REPORT                 \n")
+            f.write("==================================================\n\n")
+            
+            # Dataset info
+            f.write("DATASET INFORMATION:\n")
+            f.write(f"Rows: {len(df)}\n")
+            f.write(f"Original column: {text_column}\n")
+            f.write(f"Cleaned column: {output_column}\n\n")
+            
+            # Configuration used
+            if config:
+                f.write("CLEANING CONFIGURATION:\n")
+                for key, value in config.items():
+                    f.write(f"- {key}: {value}\n")
+                f.write("\n")
+            
+            # Statistics
+            f.write("CLEANING STATISTICS:\n")
+            
+            # Calculate character and word count before and after
+            char_count_before = df[text_column].astype(str).str.len().sum()
+            char_count_after = df[output_column].astype(str).str.len().sum()
+            
+            word_count_before = df[text_column].astype(str).str.split().str.len().sum()
+            word_count_after = df[output_column].astype(str).str.split().str.len().sum()
+            
+            char_reduction = 100 * (1 - char_count_after / char_count_before) if char_count_before > 0 else 0
+            word_reduction = 100 * (1 - word_count_after / word_count_before) if word_count_before > 0 else 0
+            
+            f.write(f"Characters before cleaning: {char_count_before:,}\n")
+            f.write(f"Characters after cleaning: {char_count_after:,}\n")
+            f.write(f"Character reduction: {char_reduction:.2f}%\n\n")
+            
+            f.write(f"Words before cleaning: {word_count_before:,}\n")
+            f.write(f"Words after cleaning: {word_count_after:,}\n")
+            f.write(f"Word reduction: {word_reduction:.2f}%\n\n")
+            
+            # Empty values
+            empty_before = df[df[text_column].isna() | (df[text_column].astype(str) == '')].shape[0]
+            empty_after = df[df[output_column].isna() | (df[output_column].astype(str) == '')].shape[0]
+            
+            f.write(f"Empty values before: {empty_before} ({100 * empty_before / len(df):.2f}%)\n")
+            f.write(f"Empty values after: {empty_after} ({100 * empty_after / len(df):.2f}%)\n\n")
+            
+            # Unique values
+            unique_before = df[text_column].nunique()
+            unique_after = df[output_column].nunique()
+            
+            f.write(f"Unique values before: {unique_before}\n")
+            f.write(f"Unique values after: {unique_after}\n\n")
+            
+            # Average length
+            avg_len_before = df[text_column].astype(str).str.len().mean()
+            avg_len_after = df[output_column].astype(str).str.len().mean()
+            
+            f.write(f"Average length before: {avg_len_before:.2f} characters\n")
+            f.write(f"Average length after: {avg_len_after:.2f} characters\n\n")
+            
+            # Sample before and after
+            if include_samples > 0:
+                f.write("SAMPLE TRANSFORMATIONS:\n")
+                sample_size = min(include_samples, len(df))
+                sample_df = df.sample(sample_size)
+                
+                for i in range(sample_size):
+                    sample = sample_df.iloc[i]
+                    f.write(f"Sample {i+1}:\n")
+                    before = str(sample[text_column])
+                    after = str(sample[output_column])
+                    f.write(f"Before: {before[:100]}{'...' if len(before) > 100 else ''}\n")
+                    f.write(f"After: {after[:100]}{'...' if len(after) > 100 else ''}\n\n")
+            
+            # Most common tokens (if feasible)
+            try:
+                from collections import Counter
+                all_words = ' '.join(df[output_column].astype(str)).split()
+                if len(all_words) > 0:
+                    word_counts = Counter(all_words).most_common(10)
+                    f.write("TOP 10 TOKENS AFTER CLEANING:\n")
+                    for word, count in word_counts:
+                        f.write(f"- {word}: {count} occurrences\n")
+                    f.write("\n")
+            except:
+                pass
+            
+            f.write("==================================================\n")
+            f.write("End of report\n")
+            
+        logger.info(f"Text cleaning report saved to {file_path}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to save text cleaning report: {str(e)}")
+        return False
+
+
+def clean_with_report(
+    df: pd.DataFrame,
+    config: dict,
+    text_column: Optional[str] = None,
+    output_column: str = 'cleaned_text',
+    report_path: str = "text_cleaning_report.txt",
+    parallel: bool = False,
+    verbose: bool = True
+) -> pd.DataFrame:
+    """
+    Clean text data and generate a comprehensive report
+    
+    Args:
+        df: Input DataFrame
+        config: Cleaning configuration dictionary
+        text_column: Column containing text to clean (auto-detected if None)
+        output_column: Column name for cleaned text
+        report_path: Path to save the report (None to skip report)
+        parallel: Whether to use parallel processing
+        verbose: Whether to show progress bars
+        
+    Returns:
+        DataFrame with cleaned text
+    """
+    start_time = time.time()
+    
+    try:
+        # Auto-detect text column if not specified
+        if text_column is None:
+            text_column = auto_detect_text_column(df)
+            logger.info(f"Auto-detected text column: {text_column}")
+        
+        # Create and apply the cleaner
+        cleaner = create_text_cleaner(config)
+        cleaned_df = clean_dataframe(
+            df, 
+            cleaner, 
+            text_column=text_column,
+            output_column=output_column,
+            parallel=parallel, 
+            verbose=verbose
+        )
+        
+        # Generate report if path is provided
+        if report_path:
+            # Add execution time to config for reporting
+            report_config = config.copy() if config else {}
+            report_config['execution_time'] = f"{time.time() - start_time:.2f} seconds"
+            report_config['parallel_processing'] = parallel
+            report_config['cpu_cores'] = cpu_count() if parallel else 1
+            
+            save_text_cleaning_report_as_txt(
+                cleaned_df,
+                text_column,
+                output_column,
+                report_config,
+                report_path
+            )
+            
+        logger.info(f"Text cleaning completed in {time.time() - start_time:.2f} seconds")
+        return cleaned_df
+        
+    except Exception as e:
+        logger.error(f"Text cleaning failed: {str(e)}")
+        raise
+
 # ---------------------- Public API ----------------------
 def create_text_cleaner(config: dict) -> Callable[[str], str]:
     """Public API to create a text cleaner."""
     return clean_text_factory(config)
+

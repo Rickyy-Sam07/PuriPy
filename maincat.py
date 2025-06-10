@@ -7,7 +7,7 @@ import os
 import time
 import argparse
 from typing import List, Dict, Any
-from categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns
+from categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns,save_cleaning_report_as_text
 
 #############################################
 #                 CONFIG                    #
@@ -20,6 +20,7 @@ COLUMNS_TO_CLEAN = ["category", "other_cat_col"]               # Set to None for
                                       # Example: COLUMNS_TO_CLEAN = ["category", "product_type"]
 EXCLUDE_COLUMNS = []                  # Columns to exclude from cleaning
 EXPLORE_ONLY = False                  # Set to True to only explore data without cleaning
+FILE_PATH = "cleaning_report.txt"  # Path to save the cleaning report
                                       
 # Advanced Settings
 FIX_TYPOS = True                      # Whether to fix typos in text
@@ -89,11 +90,12 @@ def preview_data(df: pd.DataFrame) -> None:
         missing_percent = missing / len(df) * 100
         print(f"- {col}: type={col_type}, unique={unique_count}, missing={missing} ({missing_percent:.1f}%)")
 
-def main(input_path: str = INPUT_FILE, 
+def main2(input_path: str = INPUT_FILE, 
          output_path: str = OUTPUT_FILE,
          target_column: str = TARGET_COLUMN,
          columns: List[str] = COLUMNS_TO_CLEAN,
          exclude_columns: List[str] = EXCLUDE_COLUMNS,
+         file_path: str = FILE_PATH,
          explore_only: bool = EXPLORE_ONLY,
          fix_typos: bool = FIX_TYPOS,
          group_rare: bool = GROUP_RARE,
@@ -198,6 +200,8 @@ def main(input_path: str = INPUT_FILE,
                     rare_threshold=rare_threshold,
                     similarity_threshold=similarity_threshold
                 )
+            save_cleaning_report_as_text(cleaner, file_path)
+            print("file saved")
         
         # Save results
         df.to_csv(output_path, index=False)
@@ -226,6 +230,8 @@ def main(input_path: str = INPUT_FILE,
         # Print sample of cleaned data
         print("\n===== CLEANED DATA SAMPLE =====")
         print(df.head())
+        
+
 
     except FileNotFoundError:
         print(f"Error: Input file not found: {input_path}")
@@ -271,7 +277,7 @@ if __name__ == "__main__":
         if args.exclude:
             exclude_list = [col.strip() for col in args.exclude.split(',')]
         
-        main(
+        main2(
             input_path=args.input, 
             output_path=args.output,
             target_column=args.target,
@@ -283,8 +289,12 @@ if __name__ == "__main__":
             rare_threshold=args.rare_threshold,
             similarity_threshold=args.similarity,
             memory_efficient=args.memory_efficient,
-            parallel_jobs=args.jobs
+            parallel_jobs=args.jobs,
+            file_path = args.file
         )
+        
+
     else:
-        # Use the default config from the top of the file
-        main()
+        
+        main2()
+        print("final passed")

@@ -118,3 +118,36 @@ KeyError: 'unique_values'
 2025-06-10 00:51:12,350 - INFO - Finished cleaning category in 0.02 seconds
 2025-06-10 00:51:12,351 - INFO - Starting cleaning for column: other_cat_col
 2025-06-10 00:51:12,362 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:17:12,144 - INFO - Loading dataset from xx.csv
+2025-06-10 20:17:12,176 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 20:17:12,176 - INFO - Starting cleaning for column: category
+2025-06-10 20:17:12,189 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-10 20:17:12,190 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 20:17:12,196 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:31:20,268 - INFO - Loading dataset from xx.csv
+2025-06-10 20:31:20,279 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 20:31:20,284 - INFO - Starting cleaning for column: category
+2025-06-10 20:31:20,296 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-10 20:31:20,296 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 20:31:20,303 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:40:03,117 - ERROR - Failed to save cleaning report: get_cleaning_report() missing 1 required positional argument: 'self'
+2025-06-10 20:40:03,117 - INFO - Loading dataset from xx.csv
+2025-06-10 20:40:03,125 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 20:40:03,127 - INFO - Starting cleaning for column: category
+2025-06-10 20:40:03,131 - INFO - Finished cleaning category in 0.00 seconds
+2025-06-10 20:40:03,132 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 20:40:03,139 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:42:27,629 - INFO - Loading dataset from xx.csv
+2025-06-10 20:42:27,641 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 20:42:27,642 - INFO - Starting cleaning for column: category
+2025-06-10 20:42:27,654 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-10 20:42:27,654 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 20:42:27,662 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:42:27,724 - ERROR - Failed to save cleaning report: get_cleaning_report() missing 1 required positional argument: 'self'
+2025-06-10 20:48:09,872 - INFO - Loading dataset from xx.csv
+2025-06-10 20:48:09,881 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-10 20:48:09,882 - INFO - Starting cleaning for column: category
+2025-06-10 20:48:09,889 - INFO - Finished cleaning category in 0.01 seconds
+2025-06-10 20:48:09,889 - INFO - Starting cleaning for column: other_cat_col
+2025-06-10 20:48:09,896 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-10 20:48:09,900 - INFO - Cleaning report saved to cleaning_report.txt
