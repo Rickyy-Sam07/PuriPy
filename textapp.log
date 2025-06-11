@@ -1276,3 +1276,309 @@ Total execution time: 0.04 seconds
 ========================================
 Total execution time: 11.17 seconds
 ========================================
+2025-06-11 13:10:34,041 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:34,070 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:34,112 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:34,142 - INFO - Data loaded in 0.03s
+2025-06-11 13:10:34,286 - INFO - Processing 16 chunks across 16 cores
+2025-06-11 13:10:38,132 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,136 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,156 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,188 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,192 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,203 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,206 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,213 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,229 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,285 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,288 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,307 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,309 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,309 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,311 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,312 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,313 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,315 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,325 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,328 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,336 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,339 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,340 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,344 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,348 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,354 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,372 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,373 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,377 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,382 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,389 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,399 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,403 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,404 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,406 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,407 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,409 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,414 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,415 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,426 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:10:38,431 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:10:38,434 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,443 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,445 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,446 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,453 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,458 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:38,463 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:10:44,047 - INFO - Completed parallel cleaning
+2025-06-11 13:10:44,052 - INFO - Cleaning completed in 9.77s
+2025-06-11 13:10:44,122 - INFO - Text cleaning report saved to text_cleaning_report.txt
+2025-06-11 13:10:44,174 - INFO - Data saved in 0.04s
+2025-06-11 13:10:44,175 - INFO - 
+========================================
+Total execution time: 10.06 seconds
+========================================
+2025-06-11 13:18:10,104 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:10,107 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:10,130 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:10,145 - INFO - Data loaded in 0.01s
+2025-06-11 13:18:10,152 - INFO - Processing 16 chunks across 16 cores
+2025-06-11 13:18:13,834 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,836 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,861 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,867 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,869 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,877 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,880 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,887 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,891 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,893 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,903 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,913 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,927 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,927 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,931 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,931 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:13,953 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,955 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:13,991 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:13,994 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,004 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,005 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,008 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,009 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,012 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,016 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,020 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,040 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,042 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,046 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,049 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,050 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,053 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,055 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,055 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,060 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,070 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,074 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,076 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:18:14,076 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,078 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,079 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,079 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:18:14,085 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,091 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,101 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:14,104 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:18:17,711 - INFO - Completed parallel cleaning
+2025-06-11 13:18:17,716 - INFO - Cleaning completed in 7.57s
+2025-06-11 13:18:17,723 - INFO - Text cleaning report saved to text_cleaning_report.txt
+2025-06-11 13:18:17,729 - INFO - Data saved in 0.00s
+2025-06-11 13:18:17,729 - INFO - 
+========================================
+Total execution time: 7.60 seconds
+========================================
+2025-06-11 13:19:51,010 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:51,013 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:51,038 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:51,044 - INFO - Data loaded in 0.01s
+2025-06-11 13:19:51,049 - INFO - Auto-detected text column: description
+2025-06-11 13:19:51,050 - INFO - Processing 16 chunks across 16 cores
+2025-06-11 13:19:54,857 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:54,860 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:54,882 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:54,893 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:54,897 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:54,907 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:54,911 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:54,920 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:54,921 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:54,925 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:54,934 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:54,934 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:54,939 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:54,949 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:54,962 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,003 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,005 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,028 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,036 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,042 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,058 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,061 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,066 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,069 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,072 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,074 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,078 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,087 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,094 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,097 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,098 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,104 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,111 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,115 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,123 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,123 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,127 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,135 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,138 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,139 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,140 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,143 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,151 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,163 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,164 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:19:55,167 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:55,168 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:19:55,190 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:19:58,795 - INFO - Completed parallel cleaning
+2025-06-11 13:19:58,801 - INFO - Cleaning completed in 7.76s
+2025-06-11 13:19:58,807 - INFO - Data saved in 0.00s
+2025-06-11 13:19:58,807 - INFO - 
+========================================
+Total execution time: 7.77 seconds
+========================================
+2025-06-11 13:22:27,275 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:27,278 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:27,300 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:27,306 - INFO - Data loaded in 0.00s
+2025-06-11 13:22:27,308 - INFO - Auto-detected text column: description
+2025-06-11 13:22:27,312 - INFO - Processing 16 chunks across 16 cores
+2025-06-11 13:22:30,997 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,000 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,023 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,062 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,065 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,086 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,129 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,132 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,137 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,140 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,155 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,157 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,157 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,163 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,163 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,164 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,176 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,178 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,180 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,181 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,186 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,189 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,190 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,195 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,214 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,215 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,215 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,218 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,219 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,222 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,222 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,222 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,223 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,226 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,226 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,229 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,233 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,238 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,241 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,244 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,244 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,252 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,266 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,267 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:22:31,273 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:22:31,275 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:31,298 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:22:35,043 - INFO - Completed parallel cleaning
+2025-06-11 13:22:35,048 - INFO - Cleaning completed in 7.74s
+2025-06-11 13:22:35,054 - INFO - Text cleaning report saved to text_cleaning_report.txt
+2025-06-11 13:22:35,054 - INFO - Report generated in 0.01s
+2025-06-11 13:22:35,060 - INFO - Data saved in 0.00s
+2025-06-11 13:22:35,060 - INFO - 
+========================================
+Total execution time: 7.76 seconds
+========================================
+2025-06-11 13:23:46,043 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:46,046 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:46,071 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:46,096 - INFO - Data loaded in 0.02s
+2025-06-11 13:23:46,175 - INFO - Auto-detected text column: OriginalTweet
+2025-06-11 13:23:46,178 - INFO - Processing 16 chunks across 16 cores
+2025-06-11 13:23:50,014 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,017 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,017 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,022 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,049 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,082 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,086 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,087 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,091 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,103 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,104 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,104 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,108 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,109 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,120 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,121 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,121 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,143 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,144 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,149 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,151 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,155 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,156 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,157 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,157 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,158 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,160 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,161 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,162 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,162 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,166 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,167 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,167 - INFO - Downloaded NLTK resource: punkt
+2025-06-11 13:23:50,168 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,169 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,170 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,170 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,172 - INFO - Downloaded NLTK resource: stopwords
+2025-06-11 13:23:50,176 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,204 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,209 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,211 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,212 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,216 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,216 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,220 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:50,228 - INFO - Downloaded NLTK resource: wordnet
+2025-06-11 13:23:55,845 - INFO - Completed parallel cleaning
+2025-06-11 13:23:55,849 - INFO - Cleaning completed in 9.67s
+2025-06-11 13:23:55,908 - INFO - Text cleaning report saved to text_cleaning_report.txt
+2025-06-11 13:23:55,909 - INFO - Report generated in 0.06s
+2025-06-11 13:23:55,933 - INFO - Data saved in 0.02s
+2025-06-11 13:23:55,933 - INFO - 
+========================================
+Total execution time: 9.86 seconds
+========================================

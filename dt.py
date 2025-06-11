@@ -917,3 +917,97 @@ def detect_date_format(date_str: str) -> str:
             return ''
     except:
         return ''
+
+def save_datetime_cleaning_report_as_text(cleaner: DateTimeCleaner, 
+                                         file_path: str = "datetime_cleaning_report.txt",
+                                         include_samples: int = 5) -> bool:
+    """
+    Save date/time cleaning report as a text file
+    
+    Args:
+        cleaner: DateTimeCleaner instance with completed operations
+        file_path: Path where to save the text report
+        include_samples: Number of sample rows to include in the report
+        
+    Returns:
+        Boolean indicating success
+    """
+    try:
+        report = cleaner.get_report()
+        
+        with open(file_path, 'w') as f:
+            # Header
+            f.write("==================================================\n")
+            f.write("          DATE & TIME CLEANING REPORT             \n")
+            f.write("==================================================\n\n")
+            
+            # Dataset info
+            f.write("DATASET INFORMATION:\n")
+            f.write(f"Shape: {cleaner.df.shape[0]} rows x {cleaner.df.shape[1]} columns\n\n")
+            
+            # Date/time columns summary
+            f.write("==================================================\n")
+            f.write("               COLUMN SUMMARIES                   \n")
+            f.write("==================================================\n\n")
+            
+            for col, details in report.items():
+                f.write(f"COLUMN: {col}\n")
+                f.write("-" * 50 + "\n")
+                
+                # Original data type
+                f.write(f"Original type: {details.get('original_dtype', 'Unknown')}\n")
+                
+                # List of actions performed
+                f.write("\nActions performed:\n")
+                for i, action in enumerate(details.get('actions', []), 1):
+                    f.write(f"  {i}. {action}\n")
+                
+                # List created features if any
+                created_features = details.get('created_features', [])
+                if created_features:
+                    f.write(f"\nFeatures created ({len(created_features)}):\n")
+                    for feature in created_features:
+                        f.write(f"  - {feature}\n")
+                        
+                f.write("\n" + "=" * 50 + "\n\n")
+                
+            # Sample cleaned data
+            if include_samples > 0:
+                f.write("\n==================================================\n")
+                f.write("               SAMPLE CLEANED DATA                \n")
+                f.write("==================================================\n\n")
+                
+                # Get datetime columns that were cleaned
+                datetime_cols = list(report.keys())
+                
+                # Select a subset of columns if there are many
+                if len(datetime_cols) > 5:
+                    display_cols = datetime_cols[:5]
+                    f.write(f"Showing first 5 date/time columns (out of {len(datetime_cols)} total)\n\n")
+                else:
+                    display_cols = datetime_cols
+                
+                # Create a sample representation of data
+                sample_data = cleaner.df[display_cols].head(include_samples).to_string()
+                f.write(sample_data + "\n\n")
+                
+                # Note about generated features
+                all_features = []
+                for col, details in report.items():
+                    all_features.extend(details.get('created_features', []))
+                    
+                if all_features:
+                    f.write(f"\nTotal generated features: {len(all_features)}\n")
+                    if len(all_features) <= 10:
+                        f.write(f"Feature columns: {', '.join(all_features)}\n")
+                    else:
+                        f.write(f"First 10 feature columns: {', '.join(all_features[:10])}...\n")
+                        
+            f.write("\nEnd of report\n")
+            
+        logger.info(f"Date/time cleaning report saved to {file_path}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to save date/time cleaning report: {str(e)}")
+        return False

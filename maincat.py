@@ -36,7 +36,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('categorical_cleaner.log'),
+        logging.FileHandler('categoricalapp.log'),
         logging.StreamHandler()
     ]
 )

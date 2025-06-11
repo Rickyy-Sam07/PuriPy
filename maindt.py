@@ -7,7 +7,7 @@ import os
 import time
 import argparse
 from typing import List, Dict, Tuple, Optional, Any
-from dt import DateTimeCleaner, clean_datetime_columns
+from dt import DateTimeCleaner, clean_datetime_columns, save_datetime_cleaning_report_as_text
 
 #############################################
 #                 CONFIG                    #
@@ -145,11 +145,6 @@ def main(input_path: str = INPUT_FILE,
             print(f"Detected {len(detected_columns)} datetime columns: {', '.join(detected_columns)}")
             date_columns = detected_columns
         else:
-            # Validate that specified columns exist
-            missing_cols = [col for col in date_columns if col not in df.columns]
-            if missing_cols:
-                print(f"Warning: Columns not found in dataset: {', '.join(missing_cols)}")
-                
             # Filter out columns that don't exist
             date_columns = [col for col in date_columns if col in df.columns]
             if not date_columns:
@@ -160,12 +155,10 @@ def main(input_path: str = INPUT_FILE,
         for col in date_columns:
             print(f"\nProcessing column: {col}")
             
-            # Parse dates
             if parse_dates:
                 print(f"  - Parsing dates...")
                 cleaner.parse_datetime(col)
                 
-            # Impute missing values
             if impute_missing and df[col].isna().any():
                 print(f"  - Imputing missing values using {imputation_method}...")
                 if imputation_method == 'seasonal':
@@ -173,12 +166,10 @@ def main(input_path: str = INPUT_FILE,
                 else:
                     cleaner.impute_missing_dates(col, method=imputation_method)
                     
-            # Standardize timezone
             if standardize_timezone:
                 print(f"  - Standardizing timezone to {target_timezone}...")
                 cleaner.standardize_timezone(col, target_timezone=target_timezone)
                 
-            # Extract calendar features
             if extract_features:
                 print(f"  - Extracting calendar features...")
                 cleaner.extract_calendar_features(col, features=calendar_features, fiscal_year_start=fiscal_year_start)
@@ -193,48 +184,39 @@ def main(input_path: str = INPUT_FILE,
         # Get the cleaned dataframe
         df_cleaned = cleaner.df
         
-        # Generate report
-        report = cleaner.get_report()
+        # Generate detailed report
+        report_path =  "datereport.txt"
+        save_datetime_cleaning_report_as_text(cleaner, file_path=report_path)
+        print(f"\nDetailed cleaning report saved to: {report_path}")
         
         # Save results
         df_cleaned.to_csv(output_path, index=False)
         print(f"\nCleaned data saved to: {output_path}")
         
-        # Display report
-        print("\n===== CLEANING REPORT =====")
-        for col, details in report.items():
+        # Display report summary
+        print("\n===== CLEANING SUMMARY =====")
+        for col, details in cleaner.get_report().items():
             print(f"\nColumn: {col}")
-            print(f"  Original type: {details.get('original_dtype', 'Unknown')}")
             
             # Display actions
             actions = details.get('actions', [])
             if actions:
-                print(f"  Actions performed:")
-                for action in actions:
-                    print(f"    - {action}")
-                    
+                print(f"  Actions performed: {len(actions)}")
+                
             # Display created features
             created_features = details.get('created_features', [])
             if created_features:
                 print(f"  Features created: {len(created_features)}")
-                if len(created_features) <= 5:
-                    print(f"    {', '.join(created_features)}")
-                else:
-                    print(f"    {', '.join(created_features[:5])}... and {len(created_features)-5} more")
         
         # Print sample of cleaned data
         print("\n===== CLEANED DATA SAMPLE =====")
-        sample_cols = min(10, len(df_cleaned.columns))  # Show at most 10 columns
+        sample_cols = min(10, len(df_cleaned.columns))
         print(df_cleaned.head()[df_cleaned.columns[:sample_cols]])
         if sample_cols < len(df_cleaned.columns):
             print(f"... and {len(df_cleaned.columns) - sample_cols} more columns")
 
     except FileNotFoundError:
         print(f"Error: Input file not found: {input_path}")
-    except pd.errors.EmptyDataError:
-        print(f"Error: Input file is empty: {input_path}")
-    except pd.errors.ParserError:
-        print(f"Error: Unable to parse {input_path}, check if it's a valid CSV file")
     except Exception as e:
         print(f"Error: {str(e)}")
         logger.exception("Unexpected error occurred")

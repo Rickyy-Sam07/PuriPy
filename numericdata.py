@@ -7,43 +7,12 @@ from typing import Dict, List, Callable, Optional
 from functools import partial, reduce
 
 # Enhanced logging configuration with rotation
-def setup_logger():
-    """Configure a logger with file rotation and proper formatting."""
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
-    
-    # Clear any existing handlers
-    if logger.handlers:
-        logger.handlers.clear()
-    
-    # Create logs directory if it doesn't exist
-    log_dir = os.path.dirname(os.path.abspath(__file__))
-    log_path = os.path.join(log_dir, 'app.log')
-    
-    # Create rotating file handler (10MB max, keep 5 backup files)
-    file_handler = RotatingFileHandler(
-        log_path, maxBytes=10*1024*1024, backupCount=5, encoding='utf-8'
-    )
-    file_handler.setLevel(logging.INFO)
-    file_format = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s'
-    )
-    file_handler.setFormatter(file_format)
-    
-    # Create console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    console_format = logging.Formatter('%(levelname)s - %(message)s')
-    console_handler.setFormatter(console_format)
-    
-    # Add handlers to logger
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
-    
-    return logger
-
-# Initialize logger
-logger = setup_logger()
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler('numericalapp.log'), logging.StreamHandler()]
+)
+logger = logging.getLogger(__name__)
 
 def create_cleaning_pipeline(config: Dict) -> Callable[[pd.DataFrame], pd.DataFrame]:
     """
@@ -325,5 +294,155 @@ def adjust_precision(df: pd.DataFrame, precision: Optional[Dict[str, int]] = Non
     except Exception as e:
         logger.error(f"Precision adjustment failed: {str(e)}", exc_info=True)
         return df
+
+def generate_numeric_cleaning_report(original_df: pd.DataFrame, 
+                                   cleaned_df: pd.DataFrame,
+                                   config: Dict,
+                                   cleaning_logs: Optional[List[str]] = None,
+                                   file_path: str = "numeric_cleaning_report.txt") -> bool:
+    """
+    Generate a comprehensive report of the numeric data cleaning process.
+    
+    Parameters:
+        original_df (pd.DataFrame): Original DataFrame before cleaning
+        cleaned_df (pd.DataFrame): DataFrame after cleaning
+        config (Dict): Configuration dictionary used for cleaning
+        cleaning_logs (List[str], optional): List of log messages from the cleaning process
+        file_path (str): Path where to save the report
+        
+    Returns:
+        bool: True if report was successfully created, False otherwise
+    """
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            # Header
+            f.write("=" * 80 + "\n")
+            f.write(" " * 25 + "NUMERIC DATA CLEANING REPORT\n")
+            f.write("=" * 80 + "\n\n")
+            
+            # Dataset summary
+            f.write("DATASET OVERVIEW\n")
+            f.write("-" * 50 + "\n")
+            f.write(f"Original shape: {original_df.shape[0]} rows x {original_df.shape[1]} columns\n")
+            f.write(f"Cleaned shape: {cleaned_df.shape[0]} rows x {cleaned_df.shape[1]} columns\n")
+            f.write(f"Rows removed: {original_df.shape[0] - cleaned_df.shape[0]}\n\n")
+            
+            # Configuration used
+            f.write("CLEANING CONFIGURATION\n")
+            f.write("-" * 50 + "\n")
+            for section, settings in config.items():
+                f.write(f"{section.replace('_', ' ').title()}:\n")
+                if isinstance(settings, dict):
+                    for key, value in settings.items():
+                        if key == 'constraints':
+                            f.write(f"  - {key}: {list(value.keys()) if value else 'None'}\n")
+                        elif callable(value):
+                            f.write(f"  - {key}: [Custom function]\n")
+                        else:
+                            f.write(f"  - {key}: {value}\n")
+                else:
+                    f.write(f"  - {settings}\n")
+            f.write("\n")
+            
+            # Numeric columns analysis
+            numeric_cols = original_df.select_dtypes(include=[np.number]).columns
+            target_numeric_cols = config.get('type_conversion', {}).get('numeric_cols', [])
+            all_numeric_cols = list(set(numeric_cols).union(set(target_numeric_cols)))
+            
+            f.write("COLUMN-BY-COLUMN ANALYSIS\n")
+            f.write("-" * 50 + "\n")
+            
+            for col in all_numeric_cols:
+                f.write(f"Column: {col}\n")
+                f.write("  - ")  # Changed from "•" to "-" for compatibility
+                
+                # Check if column exists in both dataframes
+                if col in original_df.columns and col in cleaned_df.columns:
+                    # Type conversion
+                    orig_type = original_df[col].dtype
+                    new_type = cleaned_df[col].dtype
+                    f.write(f"Data type: {orig_type} → {new_type}\n")
+                    
+                    # Missing values
+                    orig_missing = original_df[col].isna().sum()
+                    new_missing = cleaned_df[col].isna().sum()
+                    f.write(f"  - Missing values: {orig_missing} → {new_missing}\n")
+                    
+                    if not pd.api.types.is_numeric_dtype(original_df[col]) and pd.api.types.is_numeric_dtype(cleaned_df[col]):
+                        f.write("  - Successfully converted to numeric type\n")
+                    
+                    # Statistics comparison
+                    if pd.api.types.is_numeric_dtype(cleaned_df[col]):
+                        orig_stats = {}
+                        new_stats = {}
+                        
+                        if pd.api.types.is_numeric_dtype(original_df[col]):
+                            orig_stats = {
+                                'min': original_df[col].min(),
+                                'max': original_df[col].max(),
+                                'mean': original_df[col].mean(),
+                                'median': original_df[col].median()
+                            }
+                        
+                        new_stats = {
+                            'min': cleaned_df[col].min(),
+                            'max': cleaned_df[col].max(),
+                            'mean': cleaned_df[col].mean(),
+                            'median': cleaned_df[col].median()
+                        }
+                        
+                        if orig_stats:
+                            f.write("  - Statistics comparison:\n")
+                            f.write(f"    - Min: {orig_stats['min']:.2f} → {new_stats['min']:.2f}\n")
+                            f.write(f"    - Max: {orig_stats['max']:.2f} → {new_stats['max']:.2f}\n")
+                            f.write(f"    - Mean: {orig_stats['mean']:.2f} → {new_stats['mean']:.2f}\n")
+                            f.write(f"    - Median: {orig_stats['median']:.2f} → {new_stats['median']:.2f}\n")
+                        else:
+                            f.write("  - Statistics after cleaning:\n")
+                            f.write(f"    - Min: {new_stats['min']:.2f}\n")
+                            f.write(f"    - Max: {new_stats['max']:.2f}\n")
+                            f.write(f"    - Mean: {new_stats['mean']:.2f}\n")
+                            f.write(f"    - Median: {new_stats['median']:.2f}\n")
+                        
+                        # Precision applied
+                        precision = config.get('precision', {}).get(col)
+                        if precision is not None:
+                            f.write(f"  - Precision adjusted to {precision} decimal places\n")
+                        
+                        # Constraints applied
+                        constraints = config.get('data_errors', {}).get('constraints', {}).get(col)
+                        if constraints:
+                            f.write("  - Business rule constraints were applied\n")
+                        
+                        # Outlier handling
+                        if col in config.get('outliers', {}).get('columns', []):
+                            f.write(f"  - Outlier handling applied using {config.get('outliers', {}).get('method', 'iqr')} method\n")
+                elif col in original_df.columns:
+                    f.write("Column was removed during cleaning\n")
+                elif col in cleaned_df.columns:
+                    f.write("Column was created during cleaning\n")
+                else:
+                    f.write("Column not found in either dataset\n")
+                    
+                f.write("\n")
+            
+            # Include any custom logs if provided
+            if cleaning_logs:
+                f.write("\nCLEANING LOG DETAILS\n")
+                f.write("-" * 50 + "\n")
+                for log in cleaning_logs:
+                    f.write(f"{log}\n")
+            
+            # End of report
+            f.write("\n" + "=" * 80 + "\n")
+            f.write(" " * 30 + "END OF REPORT\n")
+            f.write("=" * 80 + "\n")
+        
+        logger.info(f"Numeric cleaning report saved to {file_path}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to generate cleaning report: {str(e)}")
+        return False
 
 

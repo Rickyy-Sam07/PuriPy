@@ -1,7 +1,10 @@
+# main.py
 import pandas as pd
 import time
-from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column , save_text_cleaning_report_as_txt
+from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column, save_text_cleaning_report_as_txt
 import logging
+
+# Configure logging to match textcleaner's setup
 logger = logging.getLogger(__name__)
 
 config = {
@@ -12,8 +15,8 @@ config = {
     'remove_html': True,            # Remove HTML tags from text
     'remove_emojis': True,          # Remove emojis and special symbols
     'remove_numbers': True,         # Remove all numeric digits
-    'expand_contractions': True,    # Expand contractions (e.g., "don't" -> "do not")
-    'spelling_correction': True,    # Correct spelling mistakes in words
+    'expand_contractions': False,    # Expand contractions (e.g., "don't" -> "do not")
+    'spelling_correction': False,    # Correct spelling mistakes in words
     'lemmatize': True,              # Reduce words to their base form (e.g., "running" -> "run")
     'stem': False,                  # Reduce words to their root form (e.g., "running" -> "run"); set True to enable
     'tokenize': 'word',             # Tokenize text into words ('word'), sentences ('sentence'), or None for no tokenization
@@ -25,51 +28,53 @@ config = {
 }
 
 
-def main1():
+def main():
+    # Start timing
     start_time = time.time()
     
     try:
+        # Load raw data
         load_start = time.time()
-        df = pd.read_csv('sample.csv')
+        df = pd.read_csv('test.csv')
         logger.info(f"Data loaded in {time.time() - load_start:.2f}s")
         
-        # First detect the text column
-        text_column = auto_detect_text_column(df)
-        output_column = 'cleaned_text'
+        # Detect original text column
+        original_text_col = auto_detect_text_column(df)
+        logger.info(f"Auto-detected text column: {original_text_col}")
         
-        # Create the cleaner
+        # Create cleaner
         cleaner = create_text_cleaner(config)
-    
-        # Clean the text
+        
+        # Clean data
         clean_start = time.time()
         cleaned_df = clean_dataframe(
             df,
             cleaner,
-            text_column=text_column,
-            output_column=output_column,
+            text_column=original_text_col,  # Pass the detected column explicitly
+            output_column='cleaned_text',
             parallel=True,
             verbose=True
         )
         logger.info(f"Cleaning completed in {time.time() - clean_start:.2f}s")
         
-        # Generate the report AFTER cleaning (not before)
+        # Generate text cleaning report
+        report_start = time.time()
         save_text_cleaning_report_as_txt(
             df=cleaned_df,
-            text_column=text_column,
-            output_column=output_column,
+            text_column=original_text_col,
+            output_column='cleaned_text',
             config=config,
             file_path="text_cleaning_report.txt",
             include_samples=5
         )
+        logger.info(f"Report generated in {time.time() - report_start:.2f}s")
         
-        # Option to replace original with cleaned (careful with this!)
-        # Currently this REMOVES the cleaned text and replaces original
-        # Consider keeping both columns instead
+        # Replace original text column
         if 'cleaned_text' in cleaned_df.columns:
-            cleaned_df[f"{text_column}_original"] = cleaned_df[text_column]
-            cleaned_df[text_column] = cleaned_df['cleaned_text']
+            cleaned_df[original_text_col] = cleaned_df['cleaned_text']
             cleaned_df.drop(columns=['cleaned_text'], inplace=True)
         
+        # Save results
         save_start = time.time()
         cleaned_df.to_csv('output.csv', index=False)
         logger.info(f"Data saved in {time.time() - save_start:.2f}s")
@@ -79,8 +84,9 @@ def main1():
         raise
     
     finally:
+        # Calculate total time
         total_time = time.time() - start_time
         logger.info(f"\n{'='*40}\nTotal execution time: {total_time:.2f} seconds\n{'='*40}")
 
 if __name__ == "__main__":
-    main1()
+    main()
