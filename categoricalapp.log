@@ -151,3 +151,11 @@ KeyError: 'unique_values'
 2025-06-10 20:48:09,889 - INFO - Starting cleaning for column: other_cat_col
 2025-06-10 20:48:09,896 - INFO - Finished cleaning other_cat_col in 0.01 seconds
 2025-06-10 20:48:09,900 - INFO - Cleaning report saved to cleaning_report.txt
+2025-06-12 02:08:40,335 - INFO - Loading dataset from xx.csv
+2025-06-12 02:14:06,348 - INFO - Loading dataset from testdata\xx.csv
+2025-06-12 02:14:06,357 - INFO - Initialized cleaner with dataframe shape (10, 5)
+2025-06-12 02:14:06,359 - INFO - Starting cleaning for column: category
+2025-06-12 02:14:06,375 - INFO - Finished cleaning category in 0.02 seconds
+2025-06-12 02:14:06,376 - INFO - Starting cleaning for column: other_cat_col
+2025-06-12 02:14:06,382 - INFO - Finished cleaning other_cat_col in 0.01 seconds
+2025-06-12 02:14:06,383 - INFO - Cleaning report saved to testdata\cleaning_report.txt

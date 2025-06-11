@@ -4,6 +4,7 @@ import time
 from numericdata import create_cleaning_pipeline, generate_numeric_cleaning_report
 from typing import Dict
 import os
+from config import DEFAULT_CONFIG
 
 logging.basicConfig(
     level=logging.INFO,
@@ -14,76 +15,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-# Data Cleaning Configuration
-# --------------------------
-# This configuration controls how the data cleaning pipeline processes your dataset.
-# Modify these settings based on your specific dataset requirements.
-
-DEFAULT_CONFIG = {
-    # Type Conversion Settings
-    # -----------------------
-    # Specify which columns should be converted to numeric types
-    # For non-numeric datasets, set this to [] or remove columns that aren't numeric
-    'type_conversion': {
-        'numeric_cols': ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
-    },
-    
-    # Missing Value Handling
-    # ---------------------
-    # strategy: how to fill missing values ('mean', 'median', 'mode')
-    # threshold: maximum ratio of missing values allowed (0.0 to 1.0)
-    'missing_values': {
-        'strategy': 'mean',  # Options: 'mean', 'median', 'mode'
-        'threshold': 0.5     # Columns with >40% missing values will be flagged
-    },
-    
-    # Data Constraints & Validation
-    # ----------------------------
-    # Define valid ranges/rules for each column using lambda functions
-    # correction: how to replace invalid values ('median', 'mean', 'mode')
-    'data_errors': {
-        'constraints': {
-            'Sales_Before': lambda x: (x >= 50) & (x <= 500),  # Valid sales range
-            'Sales_After': lambda x: (x >= 50) & (x <= 700),  # Valid sales range
-            'Customer_Satisfaction_Before': lambda x: (x >= 0) & (x <= 100),  # Percentage-based score
-            'Customer_Satisfaction_After': lambda x: (x >= 0) & (x <= 100)  # Percentage-based score
-        },
-        'correction': 'median'  # Use median of valid values to replace invalid ones
-    },
-    
-    # Outlier Detection & Handling
-    # --------------------------
-    # method: technique to detect outliers ('iqr', 'zscore')
-    # action: how to handle outliers ('cap', 'remove')
-    # columns: specific columns to check for outliers
-    'outliers': {
-        'method': 'iqr',  # Interquartile Range method (Q1-1.5*IQR to Q3+1.5*IQR)
-        'action': 'cap',  # Cap values at the boundaries instead of removing rows
-        'columns': ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']  # Columns to check
-    },
-    
-    # Duplicate Handling
-    # -----------------
-    # subset: columns to consider when identifying duplicates (None = all columns)
-    # keep: which occurrence to keep ('first', 'last', False)
-    'duplicates': {
-        'subset': None,  # Consider all columns when identifying duplicates
-        'keep': 'first'  # Keep the first occurrence and remove others
-    },
-    
-    # Numeric Precision
-    # ----------------
-    # Control decimal places for each column (0 = integer, >0 = decimal places)
-    'precision': {
-        'Sales_Before': 2,      # Two decimal places for currency
-        'Sales_After': 2,       # Two decimal places for currency
-        'Customer_Satisfaction_Before': 1,  # One decimal place for satisfaction scores
-        'Customer_Satisfaction_After': 1    # One decimal place for satisfaction scores
-    }
-}
-
-
-
 
 def main2(input_path: str = "data.csv", output_path: str = "cleaned_output.csv", config: Dict = None):
     """

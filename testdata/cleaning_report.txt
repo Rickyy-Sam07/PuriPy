@@ -1,0 +1,52 @@
+==================================================
+             CATEGORICAL CLEANING REPORT           
+==================================================
+
+DATASET INFORMATION:
+Shape: 10 rows x 5 columns
+Memory usage: 0.00 MB
+
+Total cleaning time: 0.02 seconds
+
+==================================================
+               COLUMN SUMMARIES                   
+==================================================
+
+COLUMN: category
+--------------------------------------------------
+Before cleaning:
+  - Unique values: 8
+  - Missing values: 1
+After cleaning:
+  - Unique values: 0
+  - Missing values: 0
+
+Actions performed:
+  1. Filled 1 missing values using 'Unknown' placeholder
+  2. Standardized text formatting
+  3. Corrected 1 typos using fuzzy matching
+  4. Applied OneHot encoding, created 6 features
+
+Execution time: 0.02 seconds
+
+==================================================
+
+COLUMN: other_cat_col
+--------------------------------------------------
+Before cleaning:
+  - Unique values: 8
+  - Missing values: 0
+After cleaning:
+  - Unique values: 0
+  - Missing values: 0
+
+Actions performed:
+  1. Standardized text formatting
+  2. Corrected 3 typos using fuzzy matching
+  3. Applied OneHot encoding, created 4 features
+
+Execution time: 0.01 seconds
+
+==================================================
+
+End of report

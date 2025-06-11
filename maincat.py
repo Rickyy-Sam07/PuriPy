@@ -7,31 +7,10 @@ import os
 import time
 import argparse
 from typing import List, Dict, Any
-from categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns,save_cleaning_report_as_text
+from categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns, save_cleaning_report_as_text
+from config import config2
 
-#############################################
-#                 CONFIG                    #
-#############################################
-# EDIT THESE SETTINGS AS NEEDED
-INPUT_FILE = "xx.csv"              # Path to your input CSV file
-OUTPUT_FILE = "cleaned.csv"           # Where to save the cleaned data
-TARGET_COLUMN = None                  # Optional target column for supervised learning
-COLUMNS_TO_CLEAN = ["category", "other_cat_col"]               # Set to None for auto-detection or list specific columns
-                                      # Example: COLUMNS_TO_CLEAN = ["category", "product_type"]
-EXCLUDE_COLUMNS = []                  # Columns to exclude from cleaning
-EXPLORE_ONLY = False                  # Set to True to only explore data without cleaning
-FILE_PATH = "cleaning_report.txt"  # Path to save the cleaning report
-                                      
-# Advanced Settings
-FIX_TYPOS = True                      # Whether to fix typos in text
-GROUP_RARE = True                     # Whether to group rare categories
-RARE_THRESHOLD = 0.05                 # Categories with frequency below this are considered rare
-SIMILARITY_THRESHOLD = 80             # Threshold (0-100) for fuzzy matching of typos
-MEMORY_EFFICIENT = False              # Set to True for very large datasets
-PARALLEL_JOBS = -1                    # Number of parallel jobs (-1 for all cores)
-#############################################
-
-# Configure logging
+# configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -90,19 +69,19 @@ def preview_data(df: pd.DataFrame) -> None:
         missing_percent = missing / len(df) * 100
         print(f"- {col}: type={col_type}, unique={unique_count}, missing={missing} ({missing_percent:.1f}%)")
 
-def main2(input_path: str = INPUT_FILE, 
-         output_path: str = OUTPUT_FILE,
-         target_column: str = TARGET_COLUMN,
-         columns: List[str] = COLUMNS_TO_CLEAN,
-         exclude_columns: List[str] = EXCLUDE_COLUMNS,
-         file_path: str = FILE_PATH,
-         explore_only: bool = EXPLORE_ONLY,
-         fix_typos: bool = FIX_TYPOS,
-         group_rare: bool = GROUP_RARE,
-         rare_threshold: float = RARE_THRESHOLD,
-         similarity_threshold: float = SIMILARITY_THRESHOLD,
-         memory_efficient: bool = MEMORY_EFFICIENT,
-         parallel_jobs: int = PARALLEL_JOBS):
+def main2(input_path: str = config2["INPUT_FILE"], 
+         output_path: str = config2["OUTPUT_FILE"],
+         target_column: str = config2["TARGET_COLUMN"],
+         columns: List[str] = config2["COLUMNS_TO_CLEAN"],
+         exclude_columns: List[str] = config2["EXCLUDE_COLUMNS"],
+         file_path: str = config2["FILE_PATH"],
+         explore_only: bool = config2["EXPLORE_ONLY"],
+         fix_typos: bool = config2["FIX_TYPOS"],
+         group_rare: bool = config2["GROUP_RARE"],
+         rare_threshold: float = config2["RARE_THRESHOLD"],
+         similarity_threshold: float = config2["SIMILARITY_THRESHOLD"],
+         memory_efficient: bool = config2["MEMORY_EFFICIENT"],
+         parallel_jobs: int = config2["PARALLEL_JOBS"]):
     """
     Main workflow for categorical data cleaning with automatic detection
     
@@ -112,6 +91,7 @@ def main2(input_path: str = INPUT_FILE,
         target_column: Target column for supervised learning (if any)
         columns: Specific columns to clean (if None, auto-detect)
         exclude_columns: Columns to exclude from cleaning
+        file_path: Path to save the cleaning report
         explore_only: If True, only explore data without cleaning
         fix_typos: Whether to fix typos
         group_rare: Whether to group rare categories
@@ -201,7 +181,7 @@ def main2(input_path: str = INPUT_FILE,
                     similarity_threshold=similarity_threshold
                 )
             save_cleaning_report_as_text(cleaner, file_path)
-            print("file saved")
+            print(f"Cleaning report saved to: {file_path}")
         
         # Save results
         df.to_csv(output_path, index=False)
@@ -230,8 +210,6 @@ def main2(input_path: str = INPUT_FILE,
         # Print sample of cleaned data
         print("\n===== CLEANED DATA SAMPLE =====")
         print(df.head())
-        
-
 
     except FileNotFoundError:
         print(f"Error: Input file not found: {input_path}")
@@ -254,18 +232,19 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         # Parse command line arguments
         parser = argparse.ArgumentParser(description='Smart Categorical Data Cleaner')
-        parser.add_argument('--input', help='Input CSV file path', default=INPUT_FILE)
-        parser.add_argument('--output', help='Output CSV file path', default=OUTPUT_FILE)
-        parser.add_argument('--target', help='Target column name for supervised learning', default=TARGET_COLUMN)
+        parser.add_argument('--input', help='Input CSV file path', default=config2["INPUT_FILE"])
+        parser.add_argument('--output', help='Output CSV file path', default=config2["OUTPUT_FILE"])
+        parser.add_argument('--target', help='Target column name for supervised learning', default=config2["TARGET_COLUMN"])
         parser.add_argument('--columns', help='Comma-separated list of columns to clean (if omitted, auto-detect)', default=None)
         parser.add_argument('--exclude', help='Comma-separated list of columns to exclude', default=None)
-        parser.add_argument('--explore', help='Only explore data without cleaning', action='store_true', default=EXPLORE_ONLY)
-        parser.add_argument('--no-typos', help='Disable typo correction', action='store_false', dest='fix_typos', default=FIX_TYPOS)
-        parser.add_argument('--no-rare', help='Disable rare category grouping', action='store_false', dest='group_rare', default=GROUP_RARE)
-        parser.add_argument('--rare-threshold', help='Threshold for rare category grouping (0-1)', type=float, default=RARE_THRESHOLD)
-        parser.add_argument('--similarity', help='Similarity threshold for fuzzy matching (0-100)', type=float, default=SIMILARITY_THRESHOLD)
-        parser.add_argument('--memory-efficient', help='Use memory-efficient mode', action='store_true', default=MEMORY_EFFICIENT)
-        parser.add_argument('--jobs', help='Number of parallel jobs (-1 for all cores)', type=int, default=PARALLEL_JOBS)
+        parser.add_argument('--explore', help='Only explore data without cleaning', action='store_true', default=config2["EXPLORE_ONLY"])
+        parser.add_argument('--no-typos', help='Disable typo correction', action='store_false', dest='fix_typos', default=config2["FIX_TYPOS"])
+        parser.add_argument('--no-rare', help='Disable rare category grouping', action='store_false', dest='group_rare', default=config2["GROUP_RARE"])
+        parser.add_argument('--rare-threshold', help='Threshold for rare category grouping (0-1)', type=float, default=config2["RARE_THRESHOLD"])
+        parser.add_argument('--similarity', help='Similarity threshold for fuzzy matching (0-100)', type=float, default=config2["SIMILARITY_THRESHOLD"])
+        parser.add_argument('--memory-efficient', help='Use memory-efficient mode', action='store_true', default=config2["MEMORY_EFFICIENT"])
+        parser.add_argument('--jobs', help='Number of parallel jobs (-1 for all cores)', type=int, default=config2["PARALLEL_JOBS"])
+        parser.add_argument('--file', help='Path to save the cleaning report', default=config2["FILE_PATH"])
         args = parser.parse_args()
         
         # Process column lists if provided
@@ -290,11 +269,7 @@ if __name__ == "__main__":
             similarity_threshold=args.similarity,
             memory_efficient=args.memory_efficient,
             parallel_jobs=args.jobs,
-            file_path = args.file
+            file_path=args.file
         )
-        
-
     else:
-        
         main2()
-        print("final passed")

@@ -3,29 +3,12 @@ import pandas as pd
 import time
 from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column, save_text_cleaning_report_as_txt
 import logging
+from config import config
 
 # Configure logging to match textcleaner's setup
 logger = logging.getLogger(__name__)
 
-config = {
-    'lowercase': True,              # Convert all text to lowercase
-    'remove_punctuation': True,     # Remove all punctuation marks
-    'remove_stopwords': True,       # Remove common stopwords (e.g., "the", "is", "and")
-    'remove_urls': True,            # Remove URLs and web addresses
-    'remove_html': True,            # Remove HTML tags from text
-    'remove_emojis': True,          # Remove emojis and special symbols
-    'remove_numbers': True,         # Remove all numeric digits
-    'expand_contractions': False,    # Expand contractions (e.g., "don't" -> "do not")
-    'spelling_correction': False,    # Correct spelling mistakes in words
-    'lemmatize': True,              # Reduce words to their base form (e.g., "running" -> "run")
-    'stem': False,                  # Reduce words to their root form (e.g., "running" -> "run"); set True to enable
-    'tokenize': 'word',             # Tokenize text into words ('word'), sentences ('sentence'), or None for no tokenization
-    'ngram_range': (1, 1),          # Generate n-grams; (1,1) for unigrams only, (1,2) for unigrams and bigrams, etc.
-    'profanity_filter': False,      # Remove or mask profane words; set True to enable
-    'language': 'english',          # Language for stopwords, lemmatization, and spell checking
-    'custom_stopwords': None,       # List of additional stopwords to remove (e.g., ['foo', 'bar']); None for default
-    'custom_profanity': None        # List of additional profane words to filter; None for default
-}
+
 
 
 def main():
