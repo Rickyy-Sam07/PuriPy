@@ -2,7 +2,7 @@
 import pandas as pd
 import time
 import os
-from textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column, save_text_cleaning_report_as_txt
+from .textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column, save_text_cleaning_report_as_txt
 import logging
 from config import config
 

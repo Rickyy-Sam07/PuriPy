@@ -7,7 +7,7 @@ import os
 import time
 import argparse
 from typing import List, Dict, Any
-from categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns, save_cleaning_report_as_text
+from .categoricaldata import SmartCategoricalCleaner, clean_all_categorical_columns, save_cleaning_report_as_text
 from config import config2
 
 # configure logging

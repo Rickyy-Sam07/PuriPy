@@ -40,11 +40,12 @@ setup(
     entry_points={
         'console_scripts': [
             'cleansipy=puripy.app:main',
+            'cleansipy-config=puripy.config_generator:copy_default_config',
         ],
     },
     package_data={
         # The package directory is still 'puripy', but the PyPI name is 'CleansiPy'
-        'puripy': ['assets/*', 'config.py']
+        'CleansiPy': ['assets/*', 'config.py']
     },
     # license="MIT",  # Temporarily remove to avoid license-file metadata issue
     url="https://github.com/Rickyy-Sam07/CleansiPy.git",

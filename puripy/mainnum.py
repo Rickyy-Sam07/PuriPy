@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 import time
-from numericdata import create_cleaning_pipeline, generate_numeric_cleaning_report
+from .numericdata import create_cleaning_pipeline, generate_numeric_cleaning_report
 from typing import Dict
 import os
 from config import DEFAULT_CONFIG

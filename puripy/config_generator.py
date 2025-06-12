@@ -3,6 +3,9 @@ import numpy as np
 import logging
 from typing import Dict, Optional, Union, List, Callable
 from functools import partial
+import shutil
+import os
+from pathlib import Path
 
 # Setup logging
 logging.basicConfig(
@@ -94,6 +97,22 @@ def generate_config(source: Union[str, pd.DataFrame]) -> Dict:
         for k, v in builder(df).items()
     }
 
+def copy_default_config(destination=None):
+    """
+    Copy the default config.py from the installed package to the user's current directory (or specified destination).
+    """
+    package_dir = os.path.dirname(__file__)
+    src = os.path.join(package_dir, 'config.py')
+    if destination is None:
+        destination = os.path.join(os.getcwd(), 'config.py')
+    else:
+        destination = os.path.abspath(destination)
+    if os.path.exists(destination):
+        print(f"config.py already exists at {destination}. Aborting to avoid overwrite.")
+        return
+    shutil.copyfile(src, destination)
+    print(f"Default config.py copied to {destination}")
+
 # --------------------------
 # Example usage
 # --------------------------
@@ -110,3 +129,6 @@ if __name__ == "__main__":
     print("Generated Configuration:")
     print(config)
     '''
+
+if __name__ == "__main__":
+    copy_default_config()

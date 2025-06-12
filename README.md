@@ -35,7 +35,11 @@ pip install puripy
 
 1. **Set up your configuration:**
    
-   Edit `puripy/config.py` to set your input/output file paths and other options before running the application.
+   After installing, run the following command to copy the default config.py to your project directory:
+   ```powershell
+   cleansipy-config
+   ```
+   Then edit `config.py` to set your input/output file paths and other options before running the application.
 
 2. **Install requirements:**
    
