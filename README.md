@@ -1,5 +1,4 @@
 # CleansiPy
-
 CleansiPy 🧼📊
 Clean your data like a pro — Text, Categorical, Numerical, and DateTime — all in one package.
 
@@ -18,9 +17,10 @@ CleansiPy is an all-in-one Python package designed to clean and preprocess messy
 It’s built for data scientists, ML engineers, and analysts working on real-world data pipelines.
 
 🔧 Installation
-```powershell
-pip install cleansipy
-```
+bash
+Copy
+Edit
+pip install puripy
 📦 Features
 ✅ Configurable, modular pipelines
 ✅ Works with pandas DataFrames
@@ -54,19 +54,19 @@ pip install cleansipy
    ```
    Or, if you installed as a package and set up entry points:
    ```powershell
-   cleansipy
+   puripy
    ```
 
 ---
 
 ## 🖼️ Logo
 
-The official CleansiPy logo is included in the package at `puripy/assets/logo.png`.
+The official Puripy logo is included in the package at `CleansiPy/assets/logo.png`.
 
 To access or display the logo programmatically:
 
 ```python
-from puripy import get_logo_path, show_logo
+from CleansiPy import get_logo_path, show_logo
 print(get_logo_path())
 show_logo()
 ```
@@ -76,7 +76,7 @@ show_logo()
 ## 📦 Package Structure
 
 ```
-puripy/
+CleansiPy/
     __init__.py
     __main__.py
     app.py
@@ -94,9 +94,9 @@ requirements.txt
 README.md
 ```
 
-- All main code is inside the `puripy/` directory for packaging.
-- The logo is in `puripy/assets/logo.png` and accessible via `get_logo_path()` and `show_logo()`.
-- To run the app: set up config, install requirements, then run `python -m puripy.app`.
+- All main code is inside the `CleansiPy/` directory for packaging.
+- The logo is in `CleansiPy/assets/logo.png` and accessible via `get_logo_path()` and `show_logo()`.
+- To run the app: set up config, install requirements, then run `python -m CleansiPy.app`.
 
 ---
 
