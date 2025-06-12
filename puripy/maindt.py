@@ -8,7 +8,7 @@ import time
 import argparse
 from typing import List, Dict, Tuple, Optional, Any
 from .dt import DateTimeCleaner, clean_datetime_columns, save_datetime_cleaning_report_as_text
-from config import config3
+from .config import config3
 
 
 # config3ure logging

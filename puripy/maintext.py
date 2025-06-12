@@ -4,7 +4,7 @@ import time
 import os
 from .textcleaner import create_text_cleaner, clean_dataframe, auto_detect_text_column, save_text_cleaning_report_as_txt
 import logging
-from config import config
+from .config import config
 
 # Configure logging to match textcleaner's setup
 logger = logging.getLogger(__name__)

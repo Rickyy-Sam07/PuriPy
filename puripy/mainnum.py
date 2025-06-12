@@ -4,7 +4,7 @@ import time
 from .numericdata import create_cleaning_pipeline, generate_numeric_cleaning_report
 from typing import Dict
 import os
-from config import DEFAULT_CONFIG
+from .config import DEFAULT_CONFIG
 
 logging.basicConfig(
     level=logging.INFO,
