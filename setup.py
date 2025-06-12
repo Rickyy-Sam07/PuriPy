@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='CleansiPy',
-    version='0.1.0',
+    version='0.1.4',
     description='a modular Python package for cleaning text, categorical, numerical, and datetime data. It offers configurable pipelines with support for preprocessing, typo correction, encoding, imputation, logging, parallel processing, and audit reporting—perfect for data scientists handling messy, real-world datasets in ML workflows.',
     long_description=long_description,
     long_description_content_type="text/markdown",
