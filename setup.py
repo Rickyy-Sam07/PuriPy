@@ -45,5 +45,6 @@ setup(
     package_data={
         'puripy': ['assets/*', 'config.py']
     },
-    license="MIT",
+    # license="MIT",  # Temporarily remove to avoid license-file metadata issue
+    url="https://github.com/Rickyy-Sam07/PuriPy.git",
 )

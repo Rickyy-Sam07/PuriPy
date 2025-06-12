@@ -1,4 +1,4 @@
-LICENSE
+LICENSE.txt.bak
 README.md
 setup.py
 puripy/__init__.py
