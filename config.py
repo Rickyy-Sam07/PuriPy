@@ -27,6 +27,10 @@ config2 = {
 
 DEFAULT_CONFIG = {
 
+    'input_file': r'testdata\data.csv',  # Path to your input CSV file
+    'output_file': r'testdata\cleaned_output.csv',  # Path for output cleaned CSV file
+    'report_file': r'testdata\textreport.txt',  # Path to save cleaning reportq
+
     # Type Conversion Settings
     # -----------------------
     # Specify which columns should be converted to numeric types
@@ -95,8 +99,9 @@ DEFAULT_CONFIG = {
 #############################################
 # EDIT THESE SETTINGS AS NEEDED
 config3 = {
-    "INPUT_FILE": "dates.csv",             # Path to your input CSV file
-    "OUTPUT_FILE": "cleaned.csv",          # Where to save the cleaned data
+    "INPUT_FILE": r"testdata\dates.csv",             # Path to your input CSV file
+    "OUTPUT_FILE": r"testdata\cleaned.csv",          # Where to save the cleaned data
+    "REPORT_FILE": r"testdata\date_cleaning_report.txt",  # Path to save the cleaning report
 
     # Date column settings
     "DATE_COLUMNS": None,                  # Set to None for auto-detection or list specific columns
@@ -147,5 +152,10 @@ config = {
     'profanity_filter': False,      # Remove or mask profane words; set True to enable
     'language': 'english',          # Language for stopwords, lemmatization, and spell checking
     'custom_stopwords': None,       # List of additional stopwords to remove (e.g., ['foo', 'bar']); None for default
-    'custom_profanity': None        # List of additional profane words to filter; None for default
+    'custom_profanity': None,       # List of additional profane words to filter; None for default
+    'input_file': r"testdata\test.csv",   # Path to input CSV file
+    'output_file': r"testdata\cleaned_text.csv",  # Path to save cleaned output
+    'report_file': r"testdata\text_cleaning_report.txt",  # Path to save cleaning report
+    'text_column': None,            # Specify text column to clean (None for auto-detect)
+    'sample_count': 5               # Number of samples to show in report
 }

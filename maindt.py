@@ -1,4 +1,4 @@
-# maindt.py - Automated date and time data cleaning utility
+# main3dt.py - Automated date and time data cleaning utility
 import pandas as pd
 import numpy as np
 import logging
@@ -37,7 +37,7 @@ def preview_data(df: pd.DataFrame) -> None:
         missing_percent = missing / len(df) * 100
         print(f"- {col}: type={col_type}, unique={unique_count}, missing={missing} ({missing_percent:.1f}%)")
 
-def main(input_path: str = config3["INPUT_FILE"],
+def main3(input_path: str = config3["INPUT_FILE"],
          output_path: str = config3["OUTPUT_FILE"],
          date_columns: List[str] = config3["DATE_COLUMNS"],
          start_end_pairs: List[Tuple[str, str]] = config3["START_END_PAIRS"],
@@ -53,7 +53,7 @@ def main(input_path: str = config3["INPUT_FILE"],
          fiscal_year_start: int = config3["FISCAL_YEAR_START"],
          memory_efficient: bool = config3["MEMORY_EFFICIENT"]) -> None:
     """
-    Main workflow for date and time data cleaning
+    main3 workflow for date and time data cleaning
     
     Args:
         input_path: Path to input CSV file
@@ -152,7 +152,7 @@ def main(input_path: str = config3["INPUT_FILE"],
         df_cleaned = cleaner.df
         
         # Generate detailed report
-        report_path = "datereport.txt"
+        report_path = config3["REPORT_FILE"]
         save_datetime_cleaning_report_as_text(cleaner, file_path=report_path)
         print(f"\nDetailed cleaning report saved to: {report_path}")
         
@@ -240,7 +240,7 @@ if __name__ == "__main__":
         if args.features:
             cal_features = [f.strip() for f in args.features.split(',')]
         
-        main(
+        main3(
             input_path=args.input, 
             output_path=args.output,
             date_columns=date_cols,
@@ -259,4 +259,4 @@ if __name__ == "__main__":
         )
     else:
         # Use the default config3 from the top of the file
-        main()
+        main3()

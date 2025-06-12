@@ -1,7 +1,39 @@
+# Core data processing
 pandas
-logging
-emot
+numpy
+
+# NLP & Text Processing
+nltk
 emoji
 contractions
-better_profanity
-nltk
+better-profanity
+textblob
+emoji
+
+# String matching
+thefuzz
+python-Levenshtein
+
+# Machine learning
+scikit-learn
+statsmodels
+
+# Date & Time handling
+pytz
+python-dateutil
+
+# Progress bars & parallel processing
+tqdm
+joblib
+
+# File operations
+pathlib
+
+# Optional but recommended
+matplotlib
+seaborn
+
+# Development
+pytest
+black
+flake8

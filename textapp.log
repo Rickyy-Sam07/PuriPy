@@ -1582,3 +1582,36 @@ Total execution time: 7.76 seconds
 ========================================
 Total execution time: 9.86 seconds
 ========================================
+2025-06-12 10:32:51,618 - INFO - Downloaded NLTK resource: punkt
+2025-06-12 10:32:51,643 - INFO - Downloaded NLTK resource: stopwords
+2025-06-12 10:32:51,684 - INFO - Downloaded NLTK resource: wordnet
+2025-06-12 10:32:51,690 - ERROR - Processing failed: [Errno 2] No such file or directory: 'test.csv'
+2025-06-12 10:32:51,690 - INFO - 
+========================================
+Total execution time: 0.00 seconds
+========================================
+2025-06-12 10:32:51,691 - ERROR - An error occurred: [Errno 2] No such file or directory: 'test.csv'
+2025-06-12 10:38:59,920 - INFO - Downloaded NLTK resource: punkt
+2025-06-12 10:38:59,923 - INFO - Downloaded NLTK resource: stopwords
+2025-06-12 10:38:59,948 - INFO - Downloaded NLTK resource: wordnet
+2025-06-12 10:38:59,954 - ERROR - Processing failed: 'dict' object has no attribute 'input_path'
+2025-06-12 10:38:59,954 - INFO - 
+========================================
+Total execution time: 0.00 seconds
+========================================
+2025-06-12 10:38:59,954 - ERROR - An error occurred: 'dict' object has no attribute 'input_path'
+2025-06-12 10:40:13,002 - INFO - Downloaded NLTK resource: punkt
+2025-06-12 10:40:13,007 - INFO - Downloaded NLTK resource: stopwords
+2025-06-12 10:40:13,030 - INFO - Downloaded NLTK resource: wordnet
+2025-06-12 10:40:13,032 - ERROR - Processing failed: 'dict' object has no attribute 'input_file'
+2025-06-12 10:40:13,032 - INFO - 
+========================================
+Total execution time: 0.00 seconds
+========================================
+2025-06-12 10:40:13,032 - ERROR - An error occurred: 'dict' object has no attribute 'input_file'
+2025-06-12 10:41:05,791 - INFO - Downloaded NLTK resource: punkt
+2025-06-12 10:41:05,794 - INFO - Downloaded NLTK resource: stopwords
+2025-06-12 10:41:05,817 - INFO - Downloaded NLTK resource: wordnet
+2025-06-12 10:41:05,900 - INFO - Data loaded in 0.08s
+2025-06-12 10:41:05,971 - INFO - Auto-detected text column: OriginalTweet
+2025-06-12 10:41:05,984 - INFO - Processing 16 chunks across 16 cores

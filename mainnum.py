@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def main2(input_path: str = "data.csv", output_path: str = "cleaned_output.csv", config: Dict = None):
+def main2(input_path: str = DEFAULT_CONFIG["input_file"], output_path: str = DEFAULT_CONFIG["output_file"], config: Dict = None):
     """
     Clean numeric data from a CSV file based on the provided configuration.
     
@@ -46,7 +46,7 @@ def main2(input_path: str = "data.csv", output_path: str = "cleaned_output.csv",
         logger.info(f"Cleaned data saved to {output_path}")
         
         # Changed to use fixed filename as requested
-        report_path = "textreport.txt"
+        report_path = DEFAULT_CONFIG["report_file"]
         generate_numeric_cleaning_report(
             original_df=original_df,
             cleaned_df=cleaned_df,

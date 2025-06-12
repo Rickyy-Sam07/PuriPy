@@ -10,6 +10,12 @@ Rows removed: 5
 
 CLEANING CONFIGURATION
 --------------------------------------------------
+Input File:
+  - testdata\data.csv
+Output File:
+  - testdata\cleaned_output.csv
+Report File:
+  - testdata\textreport.txt
 Type Conversion:
   - numeric_cols: ['Sales_Before', 'Sales_After', 'Customer_Satisfaction_Before', 'Customer_Satisfaction_After']
 Missing Values:
@@ -45,6 +51,18 @@ Column: Customer_Satisfaction_After
   - Business rule constraints were applied
   - Outlier handling applied using iqr method
 
+Column: Customer_Satisfaction_Before
+  - Data type: float64 → float64
+  - Missing values: 1670 → 0
+  - Statistics comparison:
+    - Min: 22.20 → 27.00
+    - Max: 100.00 → 100.00
+    - Mean: 70.25 → 70.26
+    - Median: 69.49 → 70.30
+  - Precision adjusted to 1 decimal places
+  - Business rule constraints were applied
+  - Outlier handling applied using iqr method
+
 Column: Sales_Before
   - Data type: float64 → float64
   - Missing values: 1522 → 0
@@ -66,18 +84,6 @@ Column: Sales_After
     - Mean: 280.46 → 279.74
     - Median: 273.13 → 280.53
   - Precision adjusted to 2 decimal places
-  - Business rule constraints were applied
-  - Outlier handling applied using iqr method
-
-Column: Customer_Satisfaction_Before
-  - Data type: float64 → float64
-  - Missing values: 1670 → 0
-  - Statistics comparison:
-    - Min: 22.20 → 27.00
-    - Max: 100.00 → 100.00
-    - Mean: 70.25 → 70.26
-    - Median: 69.49 → 70.30
-  - Precision adjusted to 1 decimal places
   - Business rule constraints were applied
   - Outlier handling applied using iqr method
 

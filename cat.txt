@@ -1,8 +1,0 @@
-# Auto-detect and clean categorical columns
-python maincat.py --input yourdataset.csv
-
-# Explore data without cleaning
-python maincat.py --input yourdataset.csv --explore
-
-# Clean specific columns only
-python maincat.py --input yourdataset.csv --columns "category,product_type,region"

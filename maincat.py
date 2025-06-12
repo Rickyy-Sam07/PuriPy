@@ -1,4 +1,4 @@
-# maincat.py - Automated categorical data cleaning utility
+# main0cat.py - Automated categorical data cleaning utility
 import pandas as pd
 import numpy as np
 import logging
@@ -63,13 +63,13 @@ def preview_data(df: pd.DataFrame) -> None:
     
     print("\nColumn information:")
     for col in df.columns:
-        col_type = df[col].dtype
+        col_type = df[col].dtypesv
         unique_count = df[col].nunique()
         missing = df[col].isna().sum()
         missing_percent = missing / len(df) * 100
         print(f"- {col}: type={col_type}, unique={unique_count}, missing={missing} ({missing_percent:.1f}%)")
 
-def main2(input_path: str = config2["INPUT_FILE"], 
+def main0(put_path: str = config2["INPUT_FILE"], 
          output_path: str = config2["OUTPUT_FILE"],
          target_column: str = config2["TARGET_COLUMN"],
          columns: List[str] = config2["COLUMNS_TO_CLEAN"],
@@ -83,7 +83,7 @@ def main2(input_path: str = config2["INPUT_FILE"],
          memory_efficient: bool = config2["MEMORY_EFFICIENT"],
          parallel_jobs: int = config2["PARALLEL_JOBS"]):
     """
-    Main workflow for categorical data cleaning with automatic detection
+    main0 workflow for categorical data cleaning with automatic detection
     
     Args:
         input_path: Path to input CSV file
@@ -256,7 +256,7 @@ if __name__ == "__main__":
         if args.exclude:
             exclude_list = [col.strip() for col in args.exclude.split(',')]
         
-        main2(
+        main0(
             input_path=args.input, 
             output_path=args.output,
             target_column=args.target,
@@ -272,4 +272,4 @@ if __name__ == "__main__":
             file_path=args.file
         )
     else:
-        main2()
+        main0()
