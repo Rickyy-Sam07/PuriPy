@@ -7,7 +7,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('puripy.log'),
+        logging.FileHandler('cleansipy.log'),
         logging.StreamHandler()
     ]
 )
@@ -18,7 +18,7 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main():
-    print("Welcome to PURIPY")
+    print("Welcome to CleansiPy")
     
     response = input(
                 "What kind of data cleaning you want \n"
@@ -32,7 +32,7 @@ def main():
     
     # Check for exit first
     if response == "5":
-        print("Exiting PURIPY. Goodbye!")
+        print("Exiting CleansiPy. Goodbye!")
         return
     
     # Check if the response is valid
@@ -66,7 +66,7 @@ def main():
             from .maindt import main3
             main3()
             
-        print("\nProcessing complete. Thank you for using PURIPY!")
+        print("\nProcessing complete. Thank you for using CleansiPy!")
             
     except Exception as e:
         logger.error(f"An error occurred: {e}")

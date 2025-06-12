@@ -1,4 +1,4 @@
-# This file marks puripy as a Python package.
+# This file marks CleansiPy as a Python package.
 
 from .mainnum import *
 from .maincat import *

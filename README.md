@@ -1,11 +1,11 @@
-# puripy
+# CleansiPy
 
-Puripy 🧼📊
+CleansiPy 🧼📊
 Clean your data like a pro — Text, Categorical, Numerical, and DateTime — all in one package.
 
 
 🚀 Overview
-Puripy is an all-in-one Python package designed to clean and preprocess messy datasets with ease and flexibility. It supports four major data types:
+CleansiPy is an all-in-one Python package designed to clean and preprocess messy datasets with ease and flexibility. It supports four major data types:
 
 📝 Text – tokenization, stemming, lemmatization, stopword removal, n-gram generation, profanity filtering, emoji & HTML cleaning, and more.
 
@@ -18,10 +18,9 @@ Puripy is an all-in-one Python package designed to clean and preprocess messy da
 It’s built for data scientists, ML engineers, and analysts working on real-world data pipelines.
 
 🔧 Installation
-bash
-Copy
-Edit
-pip install puripy
+```powershell
+pip install cleansipy
+```
 📦 Features
 ✅ Configurable, modular pipelines
 ✅ Works with pandas DataFrames
@@ -55,14 +54,14 @@ pip install puripy
    ```
    Or, if you installed as a package and set up entry points:
    ```powershell
-   puripy
+   cleansipy
    ```
 
 ---
 
 ## 🖼️ Logo
 
-The official Puripy logo is included in the package at `puripy/assets/logo.png`.
+The official CleansiPy logo is included in the package at `puripy/assets/logo.png`.
 
 To access or display the logo programmatically:
 

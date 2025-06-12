@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='puripy',
+    name='CleansiPy',
     version='0.1.0',
     description='a modular Python package for cleaning text, categorical, numerical, and datetime data. It offers configurable pipelines with support for preprocessing, typo correction, encoding, imputation, logging, parallel processing, and audit reporting—perfect for data scientists handling messy, real-world datasets in ML workflows.',
     author='Sambhranta Ghosh',
@@ -39,12 +39,13 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'puripy=puripy.app:main',
+            'cleansipy=puripy.app:main',
         ],
     },
     package_data={
+        # The package directory is still 'puripy', but the PyPI name is 'CleansiPy'
         'puripy': ['assets/*', 'config.py']
     },
     # license="MIT",  # Temporarily remove to avoid license-file metadata issue
-    url="https://github.com/Rickyy-Sam07/PuriPy.git",
+    url="https://github.com/Rickyy-Sam07/CleansiPy.git",
 )
