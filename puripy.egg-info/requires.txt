@@ -1,0 +1,15 @@
+pandas
+numpy
+nltk
+emoji
+contractions
+better-profanity
+textblob
+thefuzz
+python-Levenshtein
+scikit-learn
+statsmodels
+pytz
+python-dateutil
+tqdm
+joblib

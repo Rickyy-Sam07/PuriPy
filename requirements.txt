@@ -8,7 +8,6 @@ emoji
 contractions
 better-profanity
 textblob
-emoji
 
 # String matching
 thefuzz
@@ -26,14 +25,11 @@ python-dateutil
 tqdm
 joblib
 
-# File operations
-pathlib
+# Optional but recommended (for advanced users)
+# matplotlib
+# seaborn
 
-# Optional but recommended
-matplotlib
-seaborn
-
-# Development
-pytest
-black
-flake8
+# Development dependencies (for contributors only)
+# pytest
+# black
+# flake8
