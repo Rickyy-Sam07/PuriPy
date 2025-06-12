@@ -104,6 +104,110 @@ README.md
 
 ---
 
+in case you dont get the config.py then use this template : 
+
+ ```powershell
+   # ==================== CATEGORICAL DATA CONFIG ====================
+config2 = {
+    # File paths
+    "INPUT_FILE": r"testdata\xx.csv",              # Raw data source
+    "OUTPUT_FILE": r"testdata\cleaned.csv",        # Cleaned data destination
+    "TARGET_COLUMN": None,                         # Target variable for ML tasks
+    "FILE_PATH": r"testdata\cleaning_report.txt",  # Cleaning audit log
+    
+    # Column selection
+    "COLUMNS_TO_CLEAN": ["category", "other_cat_col"],  # Specific columns to process
+    "EXCLUDE_COLUMNS": [],                         # Columns to skip
+    
+    # Core cleaning features
+    "FIX_TYPOS": True,                            # Auto-correct spelling variations
+    "GROUP_RARE": True,                           # Consolidate infrequent categories
+    "RARE_THRESHOLD": 0.05,                       # Minimum frequency to keep as separate category
+    "SIMILARITY_THRESHOLD": 80,                   # Fuzzy matching sensitivity (0-100)
+    
+    # Performance
+    "MEMORY_EFFICIENT": False,                    # Optimize for large datasets
+    "PARALLEL_JOBS": -1                           # CPU cores to use (-1 = all)
+}
+
+# ==================== NUMERICAL DATA CONFIG ====================
+DEFAULT_CONFIG = {
+    # File handling
+    'input_file': r'testdata\data.csv',
+    'output_file': r'testdata\cleaned_output.csv',
+    'report_file': r'testdata\textreport.txt',
+
+    # Data type handling
+    'type_conversion': {
+        'numeric_cols': ['Sales_Before', 'Sales_After']  # Columns to force-convert to numeric
+    },
+    
+    # Missing data
+    'missing_values': {
+        'strategy': 'mean',                      # Imputation method (mean/median/mode)
+        'threshold': 0.5                         # Max allowed missingness per column
+    },
+    
+    # Data validation
+    'data_errors': {
+        'constraints': {                         # Value range rules
+            'Sales_Before': lambda x: (x >= 50) & (x <= 500)
+        },
+        'correction': 'median'                   # How to fix invalid values
+    },
+    
+    # Outlier treatment
+    'outliers': {
+        'method': 'iqr',                         # Detection method (iqr/zscore)
+        'action': 'cap',                         # Handling (cap/remove)
+        'columns': ['Sales_Before', 'Sales_After']  # Columns to check
+    },
+    
+    # Precision control
+    'precision': {
+        'Sales_Before': 2                        # Decimal places to round
+    }
+}
+
+# ==================== DATE/TIME CONFIG ====================
+config3 = {
+    # File setup
+    "INPUT_FILE": r"testdata\dates.csv",
+    "OUTPUT_FILE": r"testdata\cleaned.csv",
+    "REPORT_FILE": r"testdata\date_cleaning_report.txt",
+
+    # Date processing
+    "PARSE_DATES": True,                        # Convert string dates
+    "IMPUTE_MISSING": True,                     # Fill missing timestamps
+    "IMPUTATION_METHOD": "linear",              # Filling strategy
+    "STANDARDIZE_TIMEZONE": False,              # Convert to target timezone
+    
+    # Feature generation
+    "EXTRACT_FEATURES": True,                   # Create calendar features
+    "CALENDAR_FEATURES": ["year", "month"],     # Features to extract
+    "FISCAL_YEAR_START": 10                     # Fiscal year starting month
+}
+
+# ==================== TEXT CLEANING CONFIG ====================
+config = {
+    # Core text processing
+    'lowercase': True,                          # Convert to lowercase
+    'remove_punctuation': True,                 # Strip punctuation
+    'remove_stopwords': True,                   # Filter common words
+    'lemmatize': True,                          # Reduce to base form
+    
+    # Advanced cleaning
+    'remove_urls': True,                        # Strip web addresses
+    'remove_emojis': True,                      # Filter emoji characters
+    'spelling_correction': False,               # Fix spelling errors
+    
+    # File handling
+    'input_file': r"testdata\test.csv",
+    'output_file': r"testdata\cleaned_text.csv",
+    'text_column': None                         # Auto-detect text column
+}
+   ```
+
 >> Author
 Developed by Sambhranta Ghosh
 Open to contributions, feedback, and improvements!  
