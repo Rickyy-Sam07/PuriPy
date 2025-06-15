@@ -2,6 +2,7 @@
 
 ![logo](https://github.com/user-attachments/assets/9851a803-cc05-43b6-918e-e8a407d3296d)
 
+DOWNLOADS : [![PyPI Downloads](https://static.pepy.tech/badge/cleansipy)](https://pepy.tech/projects/cleansipy)
 # CleansiPy
 CleansiPy 🧼📊
 Clean your data like a pro — Text, Categorical, Numerical, and DateTime — all in one package.
