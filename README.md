@@ -59,12 +59,11 @@ venv\Scripts\activate
 
 2. **write the main file:**
 
-bash
-Copy
-Edit
+```powershell
 from puripy.app import main
 if __name__ == "__main__":
     main()
+```
 
 3. **Run the application:**
    
