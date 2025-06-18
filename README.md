@@ -25,7 +25,7 @@ It’s built for data scientists, ML engineers, and analysts working on real-wor
 bash
 Copy
 Edit
-pip install puripy
+pip install cleansipy
 📦 Features
 ✅ Configurable, modular pipelines
 ✅ Works with pandas DataFrames
@@ -38,6 +38,20 @@ pip install puripy
 
 ## ⚡ Quick Start
 
+>> before doing any thing to avoid errors create a venv:
+bash
+Copy
+Edit
+python -m venv venv
+
+-now activate the venv 
+
+bash
+Copy
+Edit
+venv\Scripts\activate
+
+
 1. **Set up your configuration:**
    
    After installing, run the following command to copy the default config.py to your project directory:
@@ -46,25 +60,21 @@ pip install puripy
    ```
    Then edit `config.py` to set your input/output file paths and other options before running the application.
 
-2. **Install requirements:**
-   
-   ```powershell
-   pip install -r requirements.txt
-   ```
-   Or, if you want to use the package mode:
-   ```powershell
-   pip install .
-   ```
+2. **write the main file:**
+
+bash
+Copy
+Edit
+from puripy.app import main
+if __name__ == "__main__":
+    main()
 
 3. **Run the application:**
    
    ```powershell
-   python -m puripy.app
+   python main.py
    ```
-   Or, if you installed as a package and set up entry points:
-   ```powershell
-   puripy
-   ```
+  
 
 ---
 
@@ -95,6 +105,10 @@ CleansiPy/
     maindt.py
     logo.py
     config.py
+   numericdata.py
+   categoricaldata.py
+   dt.py
+   textualdata.py
     assets/
         logo.png
         README.txt
