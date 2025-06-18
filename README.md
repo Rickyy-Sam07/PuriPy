@@ -39,17 +39,14 @@ pip install cleansipy
 ## ⚡ Quick Start
 
 >> before doing any thing to avoid errors create a venv:
-bash
-Copy
-Edit
+```powershell
 python -m venv venv
+```
 
 -now activate the venv 
-
-bash
-Copy
-Edit
+```powershell
 venv\Scripts\activate
+```
 
 
 1. **Set up your configuration:**
